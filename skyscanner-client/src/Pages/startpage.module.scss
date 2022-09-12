@@ -1,0 +1,112 @@
+:global(#app) {
+	.backImg {
+		background-image: url("https://content.skyscnr.com/m/785bdfcbe683606c/Large-Flights-hero-2.jpg?crop=1800px:1375px&quality=60");
+		min-height: 60%;
+		width: 100%;
+		height: auto;
+		position: fixed;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+	.spColumn {
+		top: 100px;
+	}
+
+	.text1 {
+		line-height: 1.2;
+		font-size: 55px;
+		font-weight: 600;
+		color: #fff;
+	}
+
+	.filterRow {
+		margin-top: 80px;
+	}
+	.filter {
+		height: 12em;
+		background-color: #00004d;
+		color: #fff;
+	}
+	.radioBtnGroup {
+		margin-top: 20px;
+	}
+	.filterGroup {
+		display: inline;
+		padding-left: 10px;
+		font-size: 17px;
+	}
+	.radioLabel {
+		margin-left: 10px;
+	}
+
+	.inputGroup {
+		display: inline;
+		border-radius: 5px;
+		label {
+			display: block;
+			color: #fff;
+			font-size: 0.75rem;
+			font-weight: 700;
+			line-height: 1rem;
+		}
+	}
+
+	.changrBtn {
+		border: none;
+		background-color: #fff;
+		background-image: url("../static/changeArrow.svg");
+		background-size: cover;
+		margin-top: 14px;
+		min-height: 48px;
+		min-width: 3em;
+	}
+	
+	.formInput {
+		border: none;
+		width: 14em;		
+		border-bottom-left-radius: 3px;
+		border-top-left-radius: 3px;		
+	}
+
+	.formInput2,
+	.formInput {
+		font-size: 16px;
+		min-height: 48px;
+		display: "flex";
+		width: 14em;
+		padding-left: 15px;
+		&::placeholder {
+			font-size: 15px;
+		}
+	}
+
+	.formInput2 {
+		min-height: 48px;		
+		border: none;
+		border-left: 1px solid gray;
+	}
+
+	.datePicker1, .datePicker2{
+		display: flex;
+		min-height: 48px;
+		width: 8em;	
+		border: none
+	}
+	.datePicker1{
+		border-left: 2px solid #00004d;
+	}
+	.datePicker2{
+		border-left: 1px solid gray;
+	}
+	.dropdown{
+		min-height: 48px;
+		border: none;
+		border-left: 1px solid gray;
+		border-radius: 0;		
+		border-bottom-right-radius: 3px;
+		border-top-right-radius: 3px;		
+	}
+
+
+}
