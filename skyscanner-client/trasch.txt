@@ -1,0 +1,654 @@
+  const panels = [
+	  	{
+	  		key: "find-best-deals",
+	  		title: {
+	  			icon: "dropdown",
+	  			content: (<span>How can I find the best flight deals?</span>),
+
+	  		},
+	  		content: {
+	  			content: (
+	  				<div>
+	  					<span>Here are a few ways:</span>
+	  					<ul>
+	  						<li>
+	  							Search for flights, but don’t enter a departure date. Instead,
+	  							hit Whole month ,' then select ‘.’ You’ll see exactly which days
+	  							are cheapest to fly out and then return back to Ukraine.
+	  						</li>
+	  						<li>
+	  							Be spontaneous and book a cheap flight anywhere! If you know
+	  							when you want to travel but you're flexible on where,Everywhere
+	  							Search shows you the cheapest flight deals from your chosen
+	  							location. Simply enter your departure city or airport, select
+	  							your dates and search ‘Everywhere
+	  						</li>
+	  						<li>
+	  							If you already have a destination and dates in mind, get
+	  							notified whenever fares go up or down by setting up a Price
+	  							Alert
+	  						</li>
+	  						<li>
+	  							<a href="#email-capture-root">Sign up</a> to get the best weekly
+	  							flight deals straight in your inbox.{" "}
+	  						</li>
+	  					</ul>
+	  				</div>
+	  			),
+	  		},
+	  	},
+	  	{
+	  		key: "last-minute-flight-deals",
+	  		title: {
+	  			content: "How can I find the best last-minute flight deals?",
+	  			icon: "dropdown",
+	  		},
+	  		content: {
+	  			content: (
+	  				<div>
+	  					<span>
+	  						Sometimes it’s worth waiting until the last minute to see if
+	  						airlines reduce the price of unsold seats on their flights – but
+	  						this can be a gamble. Here are some ways to snag a cheap flight a
+	  						week or two before flying using our flight search:
+	  					</span>
+	  					<ul>
+	  						<li>
+	  							If you just want a vacation but don’t care where, search flights
+	  							to ‘Everywhere’ for the cheapest plane tickets to any
+	  							destination in the near future.
+	  						</li>
+	  						<li>
+	  							If you just want a vacation but don’t care where, search flights
+	  							to ‘Everywhere’ for the cheapest plane tickets to any
+	  							destination in the near future.
+	  						</li>
+	  					</ul>
+	  				</div>
+	  			),
+	  		},
+	  	},
+	  	{
+	  		key: "cheap-flight-deals",
+	  		title: {
+	  			content: "How can I stay updated on cheap flight deals?",
+	  			icon: "dropdown",
+	  		},
+	  		content: {
+	  			content: (
+	  				<div>
+	  					<span>
+	  						If you’ve got a trip in mind but you’re not ready to book, there's
+	  						no pressure. You can keep an eye on prices in two ways.
+	  					</span>
+	  					<ul>
+	  						<li>
+	  							Set up a <b>Price Alert</b> – we’ll watch fares for you, and let
+	  							you know via email if they go up or down.
+	  						</li>
+	  						<li>
+	  							Go one step further,{" "}
+	  							<a href="https: skyscanner.app.link/bzrbdN0HB7">
+	  								download our app
+	  							</a>{" "}
+	  							so you can also get Price Alerts straight to your phone.
+	  						</li>
+	  						<li>
+	  							<a href="#email-capture-root">Sign up</a> for our weekly deals
+	  							emails to get cheap flights and travel updates sent straight to
+	  							your inbox!{" "}
+	  						</li>
+	  					</ul>
+	  				</div>
+	  			),
+	  		},
+	  	},
+	  	{
+	  		key: " flight-deals",
+	  		title: {
+	  			content: "Can I still book flights during COVID-19?",
+	  			icon: "dropdown",
+	  		},
+	  		content: {
+	  			content: (
+	  				<div class="QuestionAndAnswer_Answer__expanded__YTJiZ">
+	  					Many airlines have reopened their routes, but entry requirements and
+	  					quarantine regulations often change. If you're planning a trip
+	  					anywhere, we're here to help you get the advice you need. You can{" "}
+	  					<a href="https: www.skyscanner.com.ua/travel-restrictions">
+	  						find the latest travel restriction info here
+	  					</a>
+	  					.
+	  				</div>
+	  			),
+	  		},
+	  	},
+	  	{
+	  		key: "cheap-flight ",
+	  		title: {
+	  			content: "What happens after I've booked my flight?",
+	  			icon: "dropdown",
+	  		},
+	  		content: {
+	  			content: (
+	  				<div class="QuestionAndAnswer_Answer__expanded__YTJiZ">
+	  					Once you select your flight, you’ll book directly with one of our
+	  					airline or travel partners, usually on their site. Your flight
+	  					booking confirmation email and all the other info you'll need will
+	  					come from them. Or if you book directly with Skyscanner, we'll send
+	  					you your booking confirmation via email. If you've booked directly
+	  					with Skyscanner, you can check your account on our website or app to
+	  					see the details of your booking. You can also get in touch with our
+	  					dedicated Customer Care team if you need any help.
+	  				</div>
+	  			),
+	  		},
+	  	},
+	  	{
+	  		key: " deals",
+	  		title: {
+	  			content: "What happens if my flight is canceled because of COVID-19?",
+	  			icon: "dropdown",
+	  		},
+	  		content: {
+	  			content: (
+	  				<div class="QuestionAndAnswer_Answer__expanded__YTJiZ">
+	  					Some airlines currently offer flexible booking policies to give you
+	  					peace of mind when you book. So if your flight is changed or your
+	  					trip is canceled due to COVID-19, you won't lose out. You could be
+	  					able to change your dates of travel without a fee, or even claim a
+	  					refund or vouchers.
+	  				</div>
+	  			),
+	  		},
+	  	},
+	  	{
+	  		key: "co2",
+	  		title: {
+	  			content: "How do I book flights that emit less CO₂?",
+	  			icon: "dropdown",
+	  		},
+	  		content: {
+	  			content: (
+	  				<div class="QuestionAndAnswer_Answer__expanded__YTJiZ">
+	  					Easy. If you want to limit your impact on the planet while
+	  					traveling, look for flights labeled '<b>Greener Choice</b>.' Since
+	  					launching this feature, over 10 million travelers have found flights
+	  					with the lowest emissions for their route.
+	  				</div>
+	  			),
+	  		},
+	  	},
+	  	{
+	  		key: "book",
+	  		title: {
+	  			content: "Where should I book a flight to right now?",
+	  			icon: "dropdown",
+	  		},
+	  		content: {
+	  			content: (
+	  				<div class="QuestionAndAnswer_Answer__expanded__YTJiZ">
+	  					To see which destinations have more relaxed travel restrictions,
+	  					check our&nbsp;
+	  					<a href="https: www.skyscanner.com.ua/travel-restrictions">
+	  						live global map
+	  					</a>
+	  					.
+	  				</div>
+	  			),
+	  		},
+	  	},
+	  ];
+
+
+			<Grid.Row centered>
+				<Grid.Column width={10} className={styles.accordionColumn}>
+					<span className={styles.accText}>
+						Как найти дешевые авиабилеты: часто задаваемые вопросы
+					</span>
+					{/* <Accordion exclusive={false} panels={panels}/> */}
+					<Accordion exclusive={false} fluid>
+						<div className={styles.accord}>
+							<Accordion.Title
+								className={styles.accTitle}
+								active={activeIndex === 1}
+								index={1}
+								onClick={(e) => setActiveIndex(0)}
+							>
+								<Icon name="dropdown" />
+								How can I find the best flight deals?
+							</Accordion.Title>
+							<Accordion.Content
+								className={styles.accContent}
+								active={activeIndex === 1}
+							>
+								<div>
+									<span>Here are a few ways:</span>
+									<ul>
+										<li>
+											Search for flights, but don’t enter a departure date.
+											Instead, hit Whole month ,' then select ‘.’ You’ll see
+											exactly which days are cheapest to fly out and then return
+											back to Ukraine.
+										</li>
+										<li>
+											Be spontaneous and book a cheap flight anywhere! If you
+											know when you want to travel but you're flexible on
+											where,Everywhere Search shows you the cheapest flight
+											deals from your chosen location. Simply enter your
+											departure city or airport, select your dates and search
+											‘Everywhere
+										</li>
+										<li>
+											If you already have a destination and dates in mind, get
+											notified whenever fares go up or down by setting up a
+											Price Alert
+										</li>
+										<li>
+											<a href="#email-capture-root">Sign up</a> to get the best
+											weekly flight deals straight in your inbox.{" "}
+										</li>
+									</ul>
+								</div>
+							</Accordion.Content>
+						</div>
+
+						<div className={styles.accord}>
+							<Accordion.Title
+								active={activeIndex === 2}
+								index={2}
+								onClick={(e) => setActiveIndex(0)}
+							>
+								<Icon name="dropdown" />
+								How can I find the best last-minute flight deals?
+							</Accordion.Title>
+							<Accordion.Content active={activeIndex === 2}>
+								<div>
+									<span>
+										Sometimes it’s worth waiting until the last minute to see if
+										airlines reduce the price of unsold seats on their flights –
+										but this can be a gamble. Here are some ways to snag a cheap
+										flight a week or two before flying using our flight search:
+									</span>
+									<ul>
+										<li>
+											If you just want a vacation but don’t care where, search
+											flights to ‘Everywhere’ for the cheapest plane tickets to
+											any destination in the near future.
+										</li>
+										<li>
+											If you just want a vacation but don’t care where, search
+											flights to ‘Everywhere’ for the cheapest plane tickets to
+											any destination in the near future.
+										</li>
+									</ul>
+								</div>
+							</Accordion.Content>
+						</div>
+						<div className={styles.accord}>
+							<Accordion.Title
+								active={activeIndex === 3}
+								index={3}
+								onClick={(e) => setActiveIndex(0)}
+							>
+								<Icon name="dropdown" />
+								How can I stay updated on cheap flight deals?
+							</Accordion.Title>
+							<Accordion.Content active={activeIndex === 3}>
+								<div>
+									<span>
+										If you’ve got a trip in mind but you’re not ready to book,
+										there's no pressure. You can keep an eye on prices in two
+										ways.
+									</span>
+									<ul>
+										<li>
+											Set up a <b>Price Alert</b> – we’ll watch fares for you,
+											and let you know via email if they go up or down.
+										</li>
+										<li>
+											Go one step further,{" "}
+											<a href="https: skyscanner.app.link/bzrbdN0HB7">
+												download our app
+											</a>{" "}
+											so you can also get Price Alerts straight to your phone.
+										</li>
+										<li>
+											<a href="#email-capture-root">Sign up</a> for our weekly
+											deals emails to get cheap flights and travel updates sent
+											straight to your inbox!{" "}
+										</li>
+									</ul>
+								</div>
+							</Accordion.Content>
+						</div>
+						<div className={styles.accord}>
+							<Accordion.Title
+								active={activeIndex === 4}
+								index={4}
+								onClick={(e) => setActiveIndex(0)}
+							>
+								<Icon name="dropdown" />
+								Can I still book flights during COVID-19?
+							</Accordion.Title>
+							<Accordion.Content active={activeIndex === 4}>
+								<div class="QuestionAndAnswer_Answer__expanded__YTJiZ">
+									Many airlines have reopened their routes, but entry
+									requirements and quarantine regulations often change. If
+									you're planning a trip anywhere, we're here to help you get
+									the advice you need. You can{" "}
+									<a href="https: www.skyscanner.com.ua/travel-restrictions">
+										find the latest travel restriction info here
+									</a>
+									.
+								</div>
+							</Accordion.Content>
+						</div>
+						<div className={styles.accord}>
+							<Accordion.Title
+								active={activeIndex === 5}
+								index={5}
+								onClick={(e) => setActiveIndex(0)}
+							>
+								<Icon name="dropdown" />
+								What happens after I've booked my flight?
+							</Accordion.Title>
+							<Accordion.Content active={activeIndex === 5}>
+								<div>
+									Easy. If you want to limit your impact on the planet while
+									traveling, look for flights labeled '<b>Greener Choice</b>.'
+									Since launching this feature, over 10 million travelers have
+									found flights with the lowest emissions for their route.
+								</div>
+							</Accordion.Content>
+						</div>
+						<div className={styles.accord}>
+							<Accordion.Title
+								active={activeIndex === 6}
+								index={6}
+								onClick={(e) => setActiveIndex(0)}
+							>
+								<Icon name="dropdown" />
+								Where should I book a flight to right now?
+							</Accordion.Title>
+							<Accordion.Content active={activeIndex === 6}>
+								<div class="QuestionAndAnswer_Answer__expanded__YTJiZ">
+									Once you select your flight, you’ll book directly with one of
+									our airline or travel partners, usually on their site. Your
+									flight booking confirmation email and all the other info
+									you'll need will come from them. Or if you book directly with
+									Skyscanner, we'll send you your booking confirmation via
+									email. If you've booked directly with Skyscanner, you can
+									check your account on our website or app to see the details of
+									your booking. You can also get in touch with our dedicated
+									Customer Care team if you need any help.
+								</div>
+							</Accordion.Content>
+						</div>
+						<div className={styles.accord}>
+							<Accordion.Title
+								active={activeIndex === 7}
+								index={7}
+								onClick={(e) => setActiveIndex(0)}
+							>
+								<Icon name="dropdown" />
+								What happens if my flight is canceled because of COVID-19?
+							</Accordion.Title>
+							<Accordion.Content active={activeIndex === 7}>
+								<div class="QuestionAndAnswer_Answer__expanded__YTJiZ">
+									Some airlines currently offer flexible booking policies to
+									give you peace of mind when you book. So if your flight is
+									changed or your trip is canceled due to COVID-19, you won't
+									lose out. You could be able to change your dates of travel
+									without a fee, or even claim a refund or vouchers.
+								</div>
+							</Accordion.Content>
+						</div>
+						<div className={styles.accord}>
+							<Accordion.Title
+								active={activeIndex === 8}
+								index={8}
+								onClick={(e) => setActiveIndex(0)}
+							>
+								<Icon name="dropdown" />
+								How do I book flights that emit less CO₂?
+							</Accordion.Title>
+							<Accordion.Content active={activeIndex === 8}>
+								<div class="QuestionAndAnswer_Answer__expanded__YTJiZ">
+									Easy. If you want to limit your impact on the planet while
+									traveling, look for flights labeled '<b>Greener Choice</b>.'
+									Since launching this feature, over 10 million travelers have
+									found flights with the lowest emissions for their route.
+								</div>
+							</Accordion.Content>
+						</div>
+					</Accordion>
+				</Grid.Column>
+			</Grid.Row>
+			
+
+
+
+
+
+
+
+
+			===================================================================
+				const panels = [
+		{
+			key: "find-best-deals",
+			title: {
+				icon: "dropdown",
+				content: (
+					<span className={styles.accord}>
+						How can I find the best flight deals?
+					</span>
+				),
+			},
+			content: {
+				content: (
+					<div>
+						<span>Here are a few ways:</span>
+						<ul>
+							<li>
+								Search for flights, but don’t enter a departure date. Instead,
+								hit Whole month ,' then select ‘.’ You’ll see exactly which days
+								are cheapest to fly out and then return back to Ukraine.
+							</li>
+							<li>
+								Be spontaneous and book a cheap flight anywhere! If you know
+								when you want to travel but you're flexible on where,Everywhere
+								Search shows you the cheapest flight deals from your chosen
+								location. Simply enter your departure city or airport, select
+								your dates and search ‘Everywhere
+							</li>
+							<li>
+								If you already have a destination and dates in mind, get
+								notified whenever fares go up or down by setting up a Price
+								Alert
+							</li>
+							<li>
+								<a href="#email-capture-root">Sign up</a> to get the best weekly
+								flight deals straight in your inbox.{" "}
+							</li>
+						</ul>
+					</div>
+				),
+			},
+		},
+		{
+			key: "last-minute-flight-deals",
+			title: {
+				content: (
+					<span className={styles.accord}>
+						How can I find the best last-minute flight deals?
+					</span>
+				),
+				icon: "dropdown",
+			},
+			content: {
+				content: (
+					<div>
+						<span>
+							Sometimes it’s worth waiting until the last minute to see if
+							airlines reduce the price of unsold seats on their flights – but
+							this can be a gamble. Here are some ways to snag a cheap flight a
+							week or two before flying using our flight search:
+						</span>
+						<ul>
+							<li>
+								If you just want a vacation but don’t care where, search flights
+								to ‘Everywhere’ for the cheapest plane tickets to any
+								destination in the near future.
+							</li>
+							<li>
+								If you just want a vacation but don’t care where, search flights
+								to ‘Everywhere’ for the cheapest plane tickets to any
+								destination in the near future.
+							</li>
+						</ul>
+					</div>
+				),
+			},
+		},
+		{
+			key: "cheap-flight-deals",
+			title: {
+				content: "How can I stay updated on cheap flight deals?",
+				icon: "dropdown",
+			},
+			content: {
+				content: (
+					<div>
+						<span>
+							If you’ve got a trip in mind but you’re not ready to book, there's
+							no pressure. You can keep an eye on prices in two ways.
+						</span>
+						<ul>
+							<li>
+								Set up a <b>Price Alert</b> – we’ll watch fares for you, and let
+								you know via email if they go up or down.
+							</li>
+							<li>
+								Go one step further,{" "}
+								<a href="https: skyscanner.app.link/bzrbdN0HB7">
+									download our app
+								</a>{" "}
+								so you can also get Price Alerts straight to your phone.
+							</li>
+							<li>
+								<a href="#email-capture-root">Sign up</a> for our weekly deals
+								emails to get cheap flights and travel updates sent straight to
+								your inbox!{" "}
+							</li>
+						</ul>
+					</div>
+				),
+			},
+		},
+		{
+			key: " flight-deals",
+			title: {
+				content: "Can I still book flights during COVID-19?",
+				icon: "dropdown",
+			},
+			content: {
+				content: (
+					<div class="QuestionAndAnswer_Answer__expanded__YTJiZ">
+						Many airlines have reopened their routes, but entry requirements and
+						quarantine regulations often change. If you're planning a trip
+						anywhere, we're here to help you get the advice you need. You can{" "}
+						<a href="https: www.skyscanner.com.ua/travel-restrictions">
+							find the latest travel restriction info here
+						</a>
+						.
+					</div>
+				),
+			},
+		},
+		{
+			key: "cheap-flight ",
+			title: {
+				content: "What happens after I've booked my flight?",
+				icon: "dropdown",
+			},
+			content: {
+				content: (
+					<div class="QuestionAndAnswer_Answer__expanded__YTJiZ">
+						Once you select your flight, you’ll book directly with one of our
+						airline or travel partners, usually on their site. Your flight
+						booking confirmation email and all the other info you'll need will
+						come from them. Or if you book directly with Skyscanner, we'll send
+						you your booking confirmation via email. If you've booked directly
+						with Skyscanner, you can check your account on our website or app to
+						see the details of your booking. You can also get in touch with our
+						dedicated Customer Care team if you need any help.
+					</div>
+				),
+			},
+		},
+		{
+			key: " deals",
+			title: {
+				content: "What happens if my flight is canceled because of COVID-19?",
+				icon: "dropdown",
+			},
+			content: {
+				content: (
+					<div class="QuestionAndAnswer_Answer__expanded__YTJiZ">
+						Some airlines currently offer flexible booking policies to give you
+						peace of mind when you book. So if your flight is changed or your
+						trip is canceled due to COVID-19, you won't lose out. You could be
+						able to change your dates of travel without a fee, or even claim a
+						refund or vouchers.
+					</div>
+				),
+			},
+		},
+		{
+			key: "co2",
+			title: {
+				content: "How do I book flights that emit less CO₂?",
+				icon: "dropdown",
+			},
+			content: {
+				content: (
+					<div class="QuestionAndAnswer_Answer__expanded__YTJiZ">
+						Easy. If you want to limit your impact on the planet while
+						traveling, look for flights labeled '<b>Greener Choice</b>.' Since
+						launching this feature, over 10 million travelers have found flights
+						with the lowest emissions for their route.
+					</div>
+				),
+			},
+		},
+		{
+			key: "book",
+			title: {
+				content: "Where should I book a flight to right now?",
+				icon: "dropdown",
+			},
+			content: {
+				content: (
+					<div class="QuestionAndAnswer_Answer__expanded__YTJiZ">
+						To see which destinations have more relaxed travel restrictions,
+						check our&nbsp;
+						<a href="https: www.skyscanner.com.ua/travel-restrictions">
+							live global map
+						</a>
+						.
+					</div>
+				),
+			},
+		},
+	];
+
+		// const [value, setValue] = useState("both-way");
+	const [activeIndex, setActiveIndex] = useState(0);
+	const [template, setTemp] = useState("gbhbh");
+	const handleC = (e) => {
+		console.log("props === ", e.target.value);
+		setTemp(e.target.value);
+		console.log("temp == ", template);
+	};

@@ -1,0 +1,19 @@
+:global(#app) {
+  .accordionColumn {
+		border: 2px solid red;
+		.accText {
+			font-size: 30px;
+			font-weight: 600;
+		}
+	}
+	.accord {
+		border-top: 1px solid gray;
+	}
+	.accTitle {
+		font-size: 15px;
+		font-weight: 600;
+	}
+	.accContent {
+		margin-left: 23px;
+	}
+}

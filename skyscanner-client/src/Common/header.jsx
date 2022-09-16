@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Icon } from "semantic-ui-react";
 import { Button } from "semantic-ui-react";
-import { Image } from "semantic-ui-react";
 import { Grid } from "semantic-ui-react";
 import logo from "../static/logo.svg";
 const Header = () => {
@@ -16,7 +15,7 @@ const Header = () => {
           paddingTop: '25px'
 				}}
 			>
-				<Grid.Row columns={2}>
+				<Grid.Row columns={2} style ={{paddingLeft: '5vh', paddingRight: '5vh'}}>
 					<Grid.Column width={4}>
 						<div>
 							<img width={200} src={logo} />
@@ -46,7 +45,7 @@ const Header = () => {
 						</div>
 					</Grid.Column>
 				</Grid.Row>
-				<Grid.Row>
+				<Grid.Row  style ={{paddingLeft: '5vh', paddingRight: '5vh'}}>
 					<Grid.Column style={{  marginTop: '-15px' }}>
 						<Button>
 							<Icon name="instagram" />1
