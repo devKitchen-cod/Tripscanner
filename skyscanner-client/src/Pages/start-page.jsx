@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Grid, Icon } from "semantic-ui-react";
+import { Button, Card, Grid, Icon } from "semantic-ui-react";
 import styles from "./startpage.module.scss";
 
 import Filter from "../Common/filter";
@@ -201,11 +201,16 @@ const StartPage = () => {
 													straight to your inbox.
 												</span>
 											</div>
-											<div>
-												<input className={styles.cardInput} placeholder="Enter your email address" />
-												<button>Sign up</button>
+											<div style={{ marginTop: "15px" }}>
+												<input
+													className={styles.cardInput}
+													placeholder="Enter your email address"
+												/>
+												<Button style={{ marginLeft: "5px", height: "3em" }}>
+													Sign Up
+												</Button>
 											</div>
-											<div>
+											<div className={styles.subText}>
 												<span>
 													You can unsubscribe at any time. Read our Privacy
 													Policy for more info.
@@ -213,7 +218,7 @@ const StartPage = () => {
 											</div>
 										</Grid.Column>
 										<Grid.Column width={6}>
-											<img
+											<img alt="some"
 												className={styles.cardImg}
 												src="https://content.skyscnr.com/m/6ea151fbaf83db9e/original/Emailcapture.png"
 											/>
@@ -222,40 +227,18 @@ const StartPage = () => {
 								</Grid>
 							</Grid.Column>
 						</Grid.Row>
-						{/* <Card className={styles.card}>
-						<Grid.Row columns={2} className={styles.row5p3}>
-							<Grid.Column width={10} className={styles.row5p3col1}>
-								<div className={styles.headRow5p3}>
-									<span>Don't miss a single flight deal </span>
-								</div>
-								<div className={styles.subRow5p3}>
-									<span>
-										Get cheap flights and unmissable travel deals sent straight
-										to your inbox.
-									</span>
-								</div>
-								<div>
-									<input placeholder="Enter your email address" />
-									<button>Sign up</button>
-								</div>
-								<div>
-									<span>
-										You can unsubscribe at any time. Read our Privacy Policy for
-										more info.
-									</span>
-								</div>
-							</Grid.Column>
-
-							<Grid.Column
-								width={3}
-								className={styles.row5p3col1}
-							></Grid.Column>
-						</Grid.Row>
-						</Card> */}
 					</Grid>
 				</Grid.Column>
 			</Grid.Row>
 
+			<Grid.Row className={styles.row6}>
+				<Grid.Column>
+					<div className={styles.headerRow6}>  
+						<span>Ready to start your adventure?</span>
+					</div>
+				</Grid.Column>
+			</Grid.Row>
+			<Grid.Row></Grid.Row>
 			<Grid.Row></Grid.Row>
 			<Grid.Row></Grid.Row>
 		</Grid>
