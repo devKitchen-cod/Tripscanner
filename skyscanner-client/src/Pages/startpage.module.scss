@@ -38,13 +38,13 @@
 	}
 	.textOptions {
 		float: right;
+		font-weight: 600;
 	}
 
 	//=================accordion====
-	.row3{
-
+	.row3 {
 	}
-	
+
 	//=======================================
 	.row4 {
 		padding-left: 10vh;
@@ -52,10 +52,7 @@
 		margin-top: 100px;
 		background-color: #f1f2f8;
 	}
-	.row3Column1 {
-		// margin-left: 48vh;
-		// margin-right: 48vh;
-	}
+
 	.bestFlightHeader {
 		display: block;
 		font-size: 35px;
@@ -91,4 +88,88 @@
 		font-weight: 600;
 		display: block;
 	}
+
+	//======row5=========
+	.row5 {
+		margin-top: 100px;
+		padding-left: 50vh;
+		padding-right: 50vh;
+	}
+	.row5p1 {
+		// border: 2px solid red;
+
+		.headRow5p1 {
+			font-size: 30px;
+			display: block;
+			font-weight: 600;
+		}
+		.subRow5p1 {
+			font-size: 16px;
+		}
+	}
+
+	.row5p2 {
+		margin-top: 30px;
+		.row5p2Col1 {
+			.headRow5p2,
+			.head2Row5p2 {
+				font-size: 18px;
+				font-weight: 500;
+				span {
+					margin-left: 20px;
+				}
+			}
+			.subRow5p2v1 {
+				margin-left: 45px;
+				line-height: 1.9;
+				font-size: 15px;
+			}
+		}
+	}
+	// .card {
+	// 	width: 100em;
+	// 	height: 20em;
+	// }
+	// .headRow5p3 {
+	// 	margin: 20px;
+	// 	span {
+	// 		font-size: 20px;
+	// 		font-weight: 600;
+	// 	}
+	// }
+	// .subRow5p3 {
+	// }
+
+	.card {
+		border: 1px solid   #bbb9b9;
+		border-radius: 3px;
+		width: fit-content;
+		height: min-content;
+		.cardHeader {
+			margin-left: 25px;
+			margin-top: 10px;	
+			font-size: 20px;
+			font-weight: 600;
+		}
+		.cardSubText{
+			margin-top: 10px;
+			margin-left: 25px;
+			font-size: 16;
+			
+		}
+		.cardImg{
+			// border: 1px solid red;
+			margin-left: 25px;
+			border-top-right-radius: 3px;
+			border-bottom-right-radius: 3px;
+			// margin-right: 1px;
+		}
+	}
+	.cardInput{
+		border: 1px solid gray;
+		height: 3rem;
+		font-size: 1rem;
+		
+	}
+
 }
