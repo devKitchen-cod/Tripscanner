@@ -4,26 +4,12 @@ import styles from "./startpage.module.scss";
 
 import Filter from "../Common/filter";
 import AccordionS from "../Common/accordion";
+import { flights, options } from "../mock/mockdata";
+import Footer from "../Common/footer";
 
 const StartPage = () => {
-	const options = [
-		{
-			width: 5,
-			url: "https://content.skyscnr.com/m/139a24f17c26c197/original/p1.svg",
-			text: "Находите лучшие варианты для перелета между любыми точками мира и	бронируйте авиабилеты без комиссий.",
-		},
-		{
-			width: 5,
-			url: "https://content.skyscnr.com/m/139a24f17c26c197/original/p1.svg",
-			text: "Сравнивайте цены в сотнях агентств и авиакомпаний. Выбирайте самые дешевые, быстрые или экологичные перелеты.",
-		},
-		{
-			width: 6,
-			url: "https://content.skyscnr.com/m/139a24f17c26c197/original/p1.svg",
-			text: "Найдите самый дешевый месяц и день для перелета по вашему направлению. Подпишитесь на уведомления, чтобы отслеживать изменение цен.",
-		},
-	];
-
+	const f = flights;
+ 
 	return (
 		<Grid>
 			<Grid.Row className={styles.row1}>
@@ -57,7 +43,7 @@ const StartPage = () => {
 				))}
 			</Grid.Row>
 
-			<Grid.Row className={styles.row3}>
+			<Grid.Row className={styles.row3} centered>
 				<AccordionS />
 			</Grid.Row>
 
@@ -218,7 +204,8 @@ const StartPage = () => {
 											</div>
 										</Grid.Column>
 										<Grid.Column width={6}>
-											<img alt="some"
+											<img
+												alt="some"
 												className={styles.cardImg}
 												src="https://content.skyscnr.com/m/6ea151fbaf83db9e/original/Emailcapture.png"
 											/>
@@ -233,14 +220,36 @@ const StartPage = () => {
 
 			<Grid.Row className={styles.row6}>
 				<Grid.Column>
-					<div className={styles.headerRow6}>  
+					<div className={styles.headerRow6}>
 						<span>Ready to start your adventure?</span>
 					</div>
+
+					<div className={styles.subRow6}>
+						<span>
+							So are we. Find the cheapest flight deals to some of the most
+							popular destinations, or pick your favorite airline below.
+						</span>
+					</div>
+					<div className={styles.buttonGroup}>
+						<Button>Popular cities</Button>
+						<Button>Popular countries</Button>
+						<Button>Popular flight routes</Button>
+						<Button>Top airlines</Button>
+					</div>
+
+					<Grid className={styles.linkGroup}>
+						<Grid.Row columns={4}>
+							{f.map((item) => (
+								<Grid.Column className={styles.links}>
+									<a href={item.url}>{item.text}</a>
+								</Grid.Column>
+							))}
+						</Grid.Row>
+					</Grid>
 				</Grid.Column>
 			</Grid.Row>
-			<Grid.Row></Grid.Row>
-			<Grid.Row></Grid.Row>
-			<Grid.Row></Grid.Row>
+
+			<Grid.Row className={styles.row7}><Footer/></Grid.Row>
 		</Grid>
 	);
 };
