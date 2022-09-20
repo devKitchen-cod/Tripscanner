@@ -140,3 +140,57 @@ export const footerData = [
 		opts: ["Help ", "Privacy settings ", "Security"],
 	},
 ];
+export const countries = [
+	{
+		url: '#',
+		text: 'Cheap flights'
+	},
+	{
+		url: '#',
+		text: 'India - Flight tickets'
+	},
+	{
+		url: '#',
+		text: 'Россия - авиабилеты'
+	},
+	{
+		url: '#',
+		text: 'Australia - Cheap flights'
+	},
+
+	{
+		url: '#',
+		text: 'Indonesia - Flight tickets'
+	},
+	{
+		url: '#',
+		text: 'Saudi Arabia - flights'
+	},
+	{
+		url: '#',
+		text: 'Canada - vols'
+	},
+	{
+		url: '#',
+		text: '日本 - 航空券'
+	},
+	{
+		url: '#',
+		text: 'Україна - авиабилеты'
+	},
+	{
+		url: '#',
+		text: '中国 - 机票'
+	},
+	{
+		url: '#',
+		text: 'México - vuelos'
+	},
+
+	{
+		url: '#',
+		text: 'USA - flights'
+	},
+
+	
+]
