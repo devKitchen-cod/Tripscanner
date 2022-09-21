@@ -1,0 +1,37 @@
+:global(#app) {
+	.header {
+		margin-left: 40vh;
+		margin-right: 40vh;
+		padding-top: 25px;
+		// border: 2px solid red;
+	}
+	.headerRow {
+		padding-left: 5vh;
+		padding-right: 5vh;
+	}
+	.groupBtn1 {
+		display: flex;
+		// border: 2px solid red;
+		height: 3em;
+		margin-right: -10px;
+		a {
+			margin-top: 10px;
+		}
+		.loginbtn {
+			width: 6em;
+		}
+		.settings {
+			margin-left: 10px;
+			font-size: 13px;
+		}
+	}
+	.flightsBtn {
+		background-color: #0770e3;
+		color: #fff;
+		font-size: 16px;
+		font-weight: 600;
+		&:hover {
+			background-color: #022a55;
+		}
+	}
+}

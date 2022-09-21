@@ -9,7 +9,7 @@ import Footer from "../Common/footer";
 
 const StartPage = () => {
 	const f = flights;
- 
+
 	return (
 		<Grid>
 			<Grid.Row className={styles.row1}>
@@ -43,9 +43,9 @@ const StartPage = () => {
 				))}
 			</Grid.Row>
 
-			<Grid.Row className={styles.row3} centered>
+			{/* <Grid.Row className={styles.row3} centered>
 				<AccordionS />
-			</Grid.Row>
+			</Grid.Row> */}
 
 			<Grid.Row centered className={styles.row4}>
 				<Grid.Column width={10}>
@@ -249,7 +249,9 @@ const StartPage = () => {
 				</Grid.Column>
 			</Grid.Row>
 
-			<Grid.Row className={styles.row7}><Footer/></Grid.Row>
+			<Grid.Row className={styles.row7}>
+				<Footer />
+			</Grid.Row>
 		</Grid>
 	);
 };

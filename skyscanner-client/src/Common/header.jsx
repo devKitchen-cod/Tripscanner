@@ -4,52 +4,43 @@ import { Icon } from "semantic-ui-react";
 import { Button } from "semantic-ui-react";
 import { Grid } from "semantic-ui-react";
 import logo from "../static/logo.svg";
+import styles from "./styles/header.module.scss";
+import getUnicodeFlagIcon from "country-flag-icons/unicode";
 const Header = () => {
+
+	const handleLogin = () => {
+		console.log('login')
+	}
 	return (
-		<div className="h-wrapper">
-			<Grid
-				style={{
-					marginLeft: "40vh",
+		<Grid className={styles.header}>
+			<Grid.Row columns={2} className={styles.headerRow}>
+				<Grid.Column width={4}>
+					<img alt="some" width={200} src={logo} />
+				</Grid.Column>
 
-					marginRight: "40vh",
-					paddingTop: "25px",
-				}}
-			>
-				<Grid.Row
-					columns={2}
-					style={{ paddingLeft: "5vh", paddingRight: "5vh" }}
-				>
-					<Grid.Column width={4}>
-						<div>
-							<img alt="some" width={200} src={logo} />
-						</div>
-					</Grid.Column>
-
-					<Grid.Column width={6} style={{ textAlign: "right" }} floated="right">
-						<div
-							style={{
-								display: "inline-block",
-							}}
-						>
-							<Link to={"/"} style={{ textDecoration: "none", color: "black" }}>
-								Help
-							</Link>
-							<Button>English(UK) Ukrain $USD</Button>
-							<Button>Log In</Button>
-						</div>
-					</Grid.Column>
-				</Grid.Row>
-				<Grid.Row style={{ paddingLeft: "5vh", paddingRight: "5vh" }}>
-					<Grid.Column style={{ marginTop: "-15px" }}>
-						<Button>
-							<Icon name="instagram" />1
-						</Button>
-						<Button>2</Button>
-						<Button>3</Button>
-					</Grid.Column>
-				</Grid.Row>
-			</Grid>
-		</div>
+				<Grid.Column width={6} floated="right" className={styles.groupBtn1}>
+					<a href="#">Help</a>
+					<Button className={styles.settings}>English(UK) {getUnicodeFlagIcon("ua")} Ukrain $USD</Button>
+					<Button className={styles.loginbtn} onClick ={handleLogin }>Log In</Button>
+				</Grid.Column>
+			</Grid.Row>
+			<Grid.Row style={{ paddingLeft: "5vh", paddingRight: "5vh" }}>
+				<Grid.Column style={{ marginTop: "-15px" }}>
+					<Button className={styles.flightsBtn}>
+						<Icon name="paper plane outline" />
+						Flights
+					</Button>
+					<Button className={styles.flightsBtn}>
+						<Icon name="paper plane outline" />
+							Hotels
+					</Button>
+					<Button className={styles.flightsBtn}>
+						<Icon name="paper plane outline" />
+						Car Rental
+					</Button>
+				</Grid.Column>
+			</Grid.Row>
+		</Grid>
 	);
 };
 

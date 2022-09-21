@@ -140,6 +140,7 @@ export const footerData = [
 		opts: ["Help ", "Privacy settings ", "Security"],
 	},
 ];
+
 export const countries = [
 	{
 		url: '#',
