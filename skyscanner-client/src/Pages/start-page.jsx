@@ -1,9 +1,7 @@
 import React from "react";
 import { Button, Card, Grid, Icon } from "semantic-ui-react";
 import styles from "./startpage.module.scss";
-
 import Filter from "../Common/filter";
-import AccordionS from "../Common/accordion";
 import { flights, options } from "../mock/mockdata";
 import Footer from "../Common/footer";
 
