@@ -8,21 +8,21 @@ const Filter = () => {
 			id: "both-way",
 			name: "way",
 			for: "both-way",
-			content: "Туда-обратно",
+			content: "Roundtrip",
 		},
 		{
 			type: "radio",
 			id: "one-way",
 			name: "way",
 			for: "one-way",
-			content: "В одну сторону",
+			content: "One way",
 		},
 		{
 			type: "radio",
 			id: "complex-route",
 			name: "way",
 			for: "complex-route",
-			content: "Сложный маршрут",
+			content: "Multi-city",
 		},
 	];
 	return (
@@ -46,7 +46,7 @@ const Filter = () => {
 						<Grid.Row className={styles.inputGroup}>
 							<Grid.Column width={8} className={styles.inputGroupColumn}>
 								<div>
-									<label>Откуда</label>
+									<label>From</label>
 									<input
 										className={styles.formInput}
 										placeholder="Страна, город или аэропорт"
@@ -54,28 +54,28 @@ const Filter = () => {
 								</div>
 								<button className={styles.changrBtn} />
 								<div>
-									<label>Куда</label>
+									<label>To</label>
 									<input
 										className={styles.formInput2}
 										placeholder=" Страна, город или аэропорт"
 									/>
 								</div>
 								<div>
-									<label>Туда</label>
+									<label>Depart</label>
 									<input
 										className={styles.datePicker1}
 										placeholder="12.09.2022"
 									/>
 								</div>
 								<div>
-									<label>Обратно</label>
+									<label>Return</label>
 									<input
 										className={styles.datePicker2}
 										placeholder="19.09.2022"
 									/>
 								</div>
 								<div>
-									<label>Обратно</label>
+									<label>Cabin Class & Travelers</label>
 									<Dropdown
 										className={styles.dropdown}
 										placeholder="Тип, кол. мест"
@@ -89,22 +89,22 @@ const Filter = () => {
 							<Grid.Column width={8} className={styles.checkboxForm}>
 								<label className={styles.label1}>
 									<input type={"checkbox"} />
-									<span>Добавить аэропорты поблизости</span>
+									<span>Add nearby airports</span>
 								</label>
 
 								<label className={styles.label2}>
 									<input type={"checkbox"} />
-									<span>Добавить аэропорты поблизости</span>
+									<span>Add nearby airports</span>
 								</label>
 
 								<label className={styles.label3}>
 									<input type={"checkbox"} />
-									<span>Только рейсы без пересадок</span>
+									<span>Non-stop flights only</span>
 								</label>
 							</Grid.Column>
 							<Grid.Column width={6} className={styles.findTicketsBTN}>
 								<Button className={styles.findBtn1}>
-									Hайти билеты
+								Search flights
 									<Icon name="arrow right" color="white" />
 								</Button>
 							</Grid.Column>

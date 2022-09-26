@@ -15,7 +15,8 @@ const Header = () => {
 		<Grid className={styles.header}>
 			<Grid.Row columns={2} className={styles.headerRow}>
 				<Grid.Column width={4}>
-					<img alt="some" width={200} src={logo} />
+					{/* <img alt="some" width={200} src={logo} /> */}
+					<div style={{fontSize: '25px', fontWeight: '700', color: 'blue'}}>Tripscaner</div>
 				</Grid.Column>
 
 				<Grid.Column width={6} floated="right" className={styles.groupBtn1}>

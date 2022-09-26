@@ -19,7 +19,7 @@ const StartPage = () => {
 							<Grid.Column width={4}></Grid.Column>
 							<Grid.Column width={8} className={styles.spColumn}>
 								<span className={styles.text1}>
-									Дешевые рейсы куда угодно и откуда угодно
+								Cheap flights everywhere, from anywhere
 								</span>
 							</Grid.Column>
 							<Grid.Column width={4}></Grid.Column>
