@@ -191,7 +191,6 @@ export const countries = [
 	{
 		url: '#',
 		text: 'USA - flights'
-	},
-
-	
+	},	
 ]
+ 

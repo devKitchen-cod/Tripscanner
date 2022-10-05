@@ -1,27 +1,30 @@
 :global(#app) {
 	.filter {
-		height: 15em;
-		margin-top: 10px;
+		height: 17em;
+		margin-top: -20px;
 		background-color: #111236;
 		color: #fff;
 		border-radius: 3px;
 	}
+	.innerfilter {
+		padding-left: 1em;
+		padding-right: 1em;
+	}
 
 	.radioBtnGroup {
 		margin-top: 20px;
-		margin-left: 10px;
-	}
-	.filterGroup {
-		display: inline;
-		padding-left: 10px;
-		font-size: 17px;
-	}
-	.radioLabel {
-		margin-left: 10px;
+		margin-left: -10px;
+		.filterGroup {
+			margin-left: 10px;
+			display: inline;
+			font-size: 17px;
+		}
+		.radioLabel {
+			margin-left: 10px;
+		}
 	}
 
 	.inputGroup {
-		margin-left: 10px;
 		border-radius: 5px;
 		label {
 			display: block;
@@ -33,86 +36,82 @@
 	}
 	.inputGroupColumn {
 		display: flex;
-		margin-top: -10px;
-	}
+		// border: 2px solid red;
+		.changrBtn {
+			border: none;
+			background-color: #fff;
+			background-image: url("../../static/changeArrow.svg");
+			background-size: cover;
+			margin-top: 18px;
+			min-width: 3em;
+			max-height: 3em;
+		}
+		.form1,
+		.form2 {
+			min-width: 16em;
+			// min-width: 155%;
+			padding: 0;
+			input {
+				min-height: 3em;
+				border-radius: 0;
+			}
+		}
+		.form3 {
+			input {
+				border-left: 1px solid gray;
+			}
+		}
+		.form3,
+		.form4 {
+			min-width: 9em;
+			// min-width: 60%;
+			padding: 0;
+			input {
+				min-height: 3em;
+				border-radius: 0;
+			}
+		}
+		.select1 {
+			border-radius: 0;
+			padding: 0;
+		}
+		.select1 {
+			input {
+				border-radius: 0;
+			}
+		}
 
-	.changrBtn {
-		border: none;
-		background-color: #fff;
-		background-image: url("../../static/changeArrow.svg");
-		background-size: cover;
-		margin-top: 14px;
-		min-height: 48px;
-		min-width: 3em;
-	}
+		.dropdown {
+			margin-top: 4px;
+			height: 3em;
+			min-width: 17em;
 
-	.formInput {
-		border: none;
-		width: 14em;
-		border-bottom-left-radius: 3px;
-		border-top-left-radius: 3px;
-	}
-
-	.formInput2,
-	.formInput {
-		font-size: 16px;
-		min-height: 48px;
-		display: "flex";
-		width: 14em;
-		padding-left: 15px;
-		&::placeholder {
-			font-size: 15px;
+			border-left: 1px solid gray;
+			border-radius: 0;
+			border-bottom-right-radius: 3px;
+			border-top-right-radius: 3px;
 		}
 	}
 
-	.formInput2 {
-		min-height: 48px;
-		border: none;
-		border-left: 1px solid gray;
+	.labelGroup{
+		// border: 2px solid white;
+		margin-top: -10px;
+		.label1 {
+			margin-right: 130px;
+		}
+		.label3 {
+			display: block;
+			margin-top: 20px;
+		}
+		.label1,
+		.label2,
+		.label3 {
+			cursor: pointer;
+		}
 	}
 
-	.datePicker1,
-	.datePicker2 {
-		display: flex;
-		min-height: 48px;
-		width: 15vh;
-		border: none;
-	}
-	.datePicker1 {
-		border-left: 2px solid #00004d;
-	}
-	.datePicker2 {
-		border-left: 1px solid gray;
-	}
-	.dropdown {
-		min-height: 48px;
-		border: none;
-		border-left: 1px solid gray;
-		border-radius: 0;
-		border-bottom-right-radius: 3px;
-		border-top-right-radius: 3px;
-	}
-	.checkboxForm {
-		margin-left: 10px;
-	}
-	.label1 {
-		margin-right: 10px;
-	}
-	.label3 {
-		display: block;
-		margin-top: 10px;
-	}
-	.label1,
-	.label2,
-	.label3 {
-		cursor: pointer;
-	}
-	.lowRow {
-		margin-left: 1px;
-	}
-	.findTicketsBTN {
-		margin-left: 110px;
-	}
+
+
 	.findBtn1 {
 		border-radius: 0.375rem;
 		font-size: 1.5rem;
@@ -123,8 +122,71 @@
 		cursor: pointer;
 		background-color: #00a698;
 		padding: 0.8rem 1rem;
+		margin: 0;
 		width: 10em;
 		float: right;
 		color: #fff;
 	}
 }
+
+// .inputGroupColumn {
+// 	display: flex;
+// 	margin-top: -10px;
+
+// 	.changrBtn {
+// 		border: none;
+// 		background-color: #fff;
+// 		background-image: url("../../static/changeArrow.svg");
+// 		background-size: cover;
+// 		margin-top: 14px;
+// 		min-height: 48px;
+// 		min-width: 3em;
+// 	}
+
+// 	.formInput {
+// 		border: none;
+// 		border-bottom-left-radius: 3px;
+// 		border-top-left-radius: 3px;
+// 	}
+
+// 	.formInput2,
+// 	.formInput {
+// 		min-width: 19em;
+// 		font-size: 16px;
+// 		min-height: 48px;
+// 		display: "flex";
+// 		padding-left: 15px;
+// 		&::placeholder {
+// 			font-size: 15px;
+// 		}
+// 	}
+
+// 	.formInput2 {
+// 		min-height: 48px;
+// 		border: none;
+// 		border-left: 1px solid gray;
+// 	}
+
+// 	.datePicker1,
+// 	.datePicker2 {
+// 		display: flex;
+// 		min-height: 48px;
+// 		width: 15vh;
+// 		border: none;
+// 	}
+// 	.datePicker1 {
+// 		border-left: 2px solid #00004d;
+// 	}
+// 	.datePicker2 {
+// 		border-left: 1px solid gray;
+// 	}
+// 	.dropdown {
+// 		min-height: 48px;
+// 		min-width: 17em;
+// 		border: none;
+// 		border-left: 1px solid gray;
+// 		border-radius: 0;
+// 		border-bottom-right-radius: 3px;
+// 		border-top-right-radius: 3px;
+// 	}
+// }

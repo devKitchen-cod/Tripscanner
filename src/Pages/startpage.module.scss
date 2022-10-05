@@ -12,7 +12,9 @@
 		background-position: center;
 	}
 	.spColumn {
-		top: 100px;
+		// top: 100px;
+		padding: 0;
+		text-align: left;
 	}
 	.text1 {
 		line-height: 1.2;
@@ -20,8 +22,15 @@
 		font-weight: 600;
 		color: #fff;
 	}
+
+	.innerblockfilter {
+		margin-left: 46vh;
+		margin-right: 46vh;
+		margin-top: 60px;
+		// text-align: left !important;
+	}
+
 	.filterRow {
-		margin-top: 80px;
 	}
 	//====================================
 	.row2 {
@@ -62,7 +71,6 @@
 	.bestFlightText {
 		font-size: 17px;
 		margin-top: 20px;
-		
 	}
 
 	.img2row {
@@ -167,37 +175,37 @@
 		}
 	}
 
-	.row6{
+	.row6 {
 		margin-top: 100px;
 		padding-left: 47vh;
 		padding-right: 47vh;
-		.headerRow6{
+		.headerRow6 {
 			font-size: 35px;
 			font-weight: 400;
 		}
-		.subRow6{
+		.subRow6 {
 			margin-top: 35px;
 			font-size: 19px;
 		}
-		.buttonGroup{
+		.buttonGroup {
 			display: flex;
 			margin-top: 30px;
-			
-			button{
+
+			button {
 				height: 4em;
-				border-radius:30px;				
-			}:hover{
+				border-radius: 30px;
+			}
+			:hover {
 				background-color: #0770e3;
 				color: #fff;
 				transition: 0.5s;
 			}
 		}
-		.linkGroup{
+		.linkGroup {
 			margin-top: 20px;
 		}
-		.links{
+		.links {
 			margin-top: 30px;
 		}
 	}
- 
 }

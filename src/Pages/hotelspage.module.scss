@@ -1,0 +1,38 @@
+:global(#app) {
+	.row1 {
+		height: max-content;
+		padding: 0px;
+		border: 2px solid red;
+	}
+
+	.backImg {
+		background-image: url("https://content.skyscnr.com/m/5283dbe4ac4c9189/original/alexander-kaunas-xEaAoizNFV8-unsplash_CROP.jpg?resize=2880px:1148px&quality=80");
+		min-height: 56vh;
+		width: 100%;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+	}
+	.spColumn {
+		padding: 0;	
+		text-align: left;
+	}
+	.text1 {
+		line-height: 1.2;
+		font-size: 70px;
+		font-weight: 600;
+		color: #fff;
+    
+    text-shadow:0.15s ease-in-out ;
+	}
+	.innerblockfilter {		
+		margin-left: 46vh;
+		margin-right: 46vh;
+    margin-top: 100px;
+		// text-align: left !important;
+	}
+	.filterRowHotels{
+		margin-top: 60px;
+		border: 2px solid red;
+	}
+}

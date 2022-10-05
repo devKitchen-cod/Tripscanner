@@ -1,0 +1,41 @@
+:global(#app) {
+  .wrapper{
+    background-color: #f1f2f8;
+  }
+  .header{
+    height: 5em;
+    background-color: #042759;
+    margin-left: 48vh;
+    margin-right: 47vh;
+    // margin-top: -16px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: 2px solid red;
+  }
+  .headerleft{
+    display: flex;
+  }
+  .searchbtn{
+    color: white;
+    // margin-top: 10px;
+    background-color: green;
+    border-radius: 50%;
+    height: 3em;
+    width: 3em;
+    padding: 0 0 0 10px;
+    float: left;
+  }
+  .searchparams{
+    display: block;
+    color: #f1f2f8;
+    font-size: 15px;
+    span{
+      display: block;
+    }
+    // margin-top: 10px;
+  }
+  .datePicker{
+    float: right;
+    border: 2px solid red;
+  }
+}

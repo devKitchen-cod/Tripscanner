@@ -1,7 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { Form } from "semantic-ui-react";
 import { Button, Grid, Icon, Dropdown } from "semantic-ui-react";
 import styles from "./styles/filter.module.scss";
 const Filter = () => {
+	const navigate = useNavigate()
 	const radioBtn = [
 		{
 			type: "radio",
@@ -27,9 +30,9 @@ const Filter = () => {
 	];
 	return (
 		<Grid>
-			<Grid.Row centered>
-				<Grid.Column width={9} className={styles.filter}>
-					<Grid>
+			<Grid.Row>
+				<Grid.Column width={16} className={styles.filter}>
+					<Grid className={styles.innerfilter}>
 						<Grid.Row>
 							<Grid.Column className={styles.radioBtnGroup}>
 								{radioBtn.map((item) => (
@@ -44,8 +47,37 @@ const Filter = () => {
 						</Grid.Row>
 
 						<Grid.Row className={styles.inputGroup}>
-							<Grid.Column width={8} className={styles.inputGroupColumn}>
-								<div>
+							<Grid.Column width={16} className={styles.inputGroupColumn}>
+								<Form>
+									<Form.Group widths={"equal"}>
+										<Form.Input
+											className={styles.form1}
+											label="From"
+											fluid
+											placeholder="Страна, город или аэропорт"
+										/>
+										<button className={styles.changrBtn} />
+										<Form.Input
+											className={styles.form2}
+											label="To"
+											fluid
+											placeholder="Страна, город или аэропорт"
+										/>
+										<Form.Input className={styles.form3} label="Depart" fluid />
+										<Form.Input className={styles.form4} label="Return" fluid />
+										<div>
+											<label>Cabin Class & Travelers</label>
+											<Dropdown
+												className={styles.dropdown}
+												placeholder="Тип, кол. мест"
+												selection
+												label="asd"
+											/>
+										</div>
+									</Form.Group>
+								</Form>
+
+								{/* <div>
 									<label>From</label>
 									<input
 										className={styles.formInput}
@@ -81,12 +113,12 @@ const Filter = () => {
 										placeholder="Тип, кол. мест"
 										selection
 									/>
-								</div>
+								</div> */}
 							</Grid.Column>
 						</Grid.Row>
 
-						<Grid.Row className={styles.lowRow}>
-							<Grid.Column width={8} className={styles.checkboxForm}>
+						<Grid.Row>
+							<Grid.Column width={9} className = {styles.labelGroup}>
 								<label className={styles.label1}>
 									<input type={"checkbox"} />
 									<span>Add nearby airports</span>
@@ -102,9 +134,10 @@ const Filter = () => {
 									<span>Non-stop flights only</span>
 								</label>
 							</Grid.Column>
-							<Grid.Column width={6} className={styles.findTicketsBTN}>
-								<Button className={styles.findBtn1}>
-								Search flights
+
+							<Grid.Column width={7}>
+								<Button className={styles.findBtn1} onClick = {() => navigate("/flight-search")}>
+									Search flights
 									<Icon name="arrow right" color="white" />
 								</Button>
 							</Grid.Column>

@@ -2,18 +2,32 @@ import React from "react";
 import { Route } from "react-router-dom";
 import { Routes } from "react-router-dom";
 import Layout from "./Components/Layout";
-import StartPage from "./Pages/start-page";
 
+import { createBrowserHistory } from "history";
+import { routes } from "./mock/routes";
 function App() {
+	const history = createBrowserHistory()
 	return (
-		<div className="App">
+		<div className="app">
 			<Layout>
-				<Routes>
-					<Route path="/" element={<StartPage />} />
-				</Routes>         
+				<Routes history={history}>
+					{routes.map((route, key) => (
+						<Route path={route.path} element = {route.element} key= {key}/>
+					))}										
+				</Routes>
 			</Layout>
 		</div>
 	);
 }
 
 export default App;
+
+{
+	/* <Layout>
+	<Routes history={history}>
+		{routes.map((route, index) => (
+			<Route path={route.path} element={route.component} key={index} />
+		))}
+	</Routes>
+</Layout>; */
+}

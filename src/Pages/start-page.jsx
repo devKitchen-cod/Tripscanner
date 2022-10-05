@@ -12,19 +12,19 @@ const StartPage = () => {
 		<Grid>
 			<Grid.Row className={styles.row1}>
 				<Grid.Column width={16} className={styles.backImg}>
-					<Grid>
+					<Grid className={styles.innerblockfilter}>
 						<Grid.Row>
-							<Grid.Column width={4}></Grid.Column>
-							<Grid.Column width={8} className={styles.spColumn}>
+							
+							<Grid.Column width={16} className={styles.spColumn}>
 								<span className={styles.text1}>
-								Cheap flights everywhere, from anywhere
+									Cheap flights everywhere, from {(<br/>)} anywhere
 								</span>
 							</Grid.Column>
-							<Grid.Column width={4}></Grid.Column>
+							
 						</Grid.Row>
 
-						<Grid.Row className={styles.filterRow} centered columns={5}>
-							<Grid.Column width={15}>
+						<Grid.Row className={styles.filterRow}>
+							<Grid.Column width={16}>
 								<Filter />
 							</Grid.Column>
 						</Grid.Row>
@@ -39,11 +39,7 @@ const StartPage = () => {
 						<span className={styles.textOptions}>{item.text}</span>
 					</Grid.Column>
 				))}
-			</Grid.Row>
-
-			{/* <Grid.Row className={styles.row3} centered>
-				<AccordionS />
-			</Grid.Row> */}
+			</Grid.Row>			 
 
 			<Grid.Row centered className={styles.row4}>
 				<Grid.Column width={10}>

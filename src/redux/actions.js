@@ -1,6 +1,9 @@
 // import axios from 'axios'
 
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { LOGIN, SETEMAIL, SETNAME, SETPASSWORD } from "./redux-types";
+// const dispatch = useDispatch();
 
 const start_login = () => {
 	return { type: "start_req" };
@@ -31,7 +34,7 @@ export const reqLogin = (obj) => {
 	return (dispatch) => {
 		dispatch(start_login());
 		axios({
-			method: "POST",
+			method: "post",
 			url: "http://localhost:8080/api/auth-user-login",
 			data: {
 				email: obj.email,
@@ -44,75 +47,30 @@ export const reqLogin = (obj) => {
 		});
 	};
 };
-// export const reqAuth = (obj) => {
-// 	console.log("reqAuth obdj =", obj.name);
-// 	return async (dispatch) => {
 
-// 	//  axios({
-// 	// 		method: "POST",
-// 	// 		uri: "http://localhost:8080/api/auth-user-create",
-// 	// 		data: {
-// 	// 			name: obj.name,
-// 	// 			email: obj.email,
-// 	// 			password: obj.password,
-// 	// 		},
-
-// 	// 	}).then((res) => {
-// 	// 		localStorage.setItem("token", res.data.token);
-// 	// 		console.log("token", res.data.token)
-// 	// 		dispatch(success_login());
-// 	// 		dispatch(err_login());
-// 	// 	})
-
-// 		try {
-// 			console.log('a');
-// 			// dispatch(start_auth())
-// 			const result = await axios({
-// 				method: "POST",
-// 				url: "http://localhost:8080/api/auth-user-create",
-// 				data: {
-// 					name: obj.name,
-// 					email: obj.email,
-// 					password: obj.password
-// 				},
-// 			});
-// 			if (result.status === 200) {
-// 				localStorage.setItem("token", result.data.token);
-// 				console.log('res.data.token', result.data.token);
-// 				dispatch(success_auth());
-// 				dispatch(err_auth());
-// 			} else {
-// 				console.log('err');
-// 			}
-// 		} catch (err) {
-// 			console.log('err', err);
-// 		}
-// 	};
-// };
-
-export const reqAuth = async (obj) => {
-	console.log(obj);
-	// const res = await axios.post("http://localhost:8080/api/auth-user-create", {
-	// 	name: obj.name,
-	// 	email: obj.email,
-	// 	password: obj.password,
-	// });
-	// console.log(res)
-	const result = await axios({
-		method: "post",
-		url: "http://localhost:8080/api/auth-user-create",
-		data: {
-	name: obj.name,
-	email: obj.email,
-	password: obj.password,
-		},
-	})
- 
-	if (result.status < 300) {
-		console.log(result)
+export const reqAuth = (obj) => {
+	
+	return async dispatch => {
+		console.log("as", obj);
+	const res = await axios.post("http://localhost:8080/api/auth-user-create", {
+		name: obj.name,
+		email: obj.email,
+		password: obj.password,
+	});
+	console.log(res);
+	if (res.status === 200) {
+		localStorage.setItem("token", res.data.token);
+		dispatch({type: SETNAME, payload: obj.name})
+		dispatch({type: SETEMAIL, payload: obj.email})
+		dispatch({type: SETPASSWORD, payload: obj.password})
+		dispatch({type: LOGIN, payload: true})
 	}
+	}
+	// console.log("res ==", res);
 };
 
 export const reqCheckToken = (obj) => {
 	console.log("reqCheckToken obj = ", obj);
 };
+
+// res.status<300? localStorage.setItem("token", res.data.token): console.log("error")
