@@ -193,4 +193,102 @@ export const countries = [
 		text: 'USA - flights'
 	},	
 ]
- 
+
+export const Airlines = [
+	{
+		name: "Aire France",
+		price: 97771
+	},
+	{
+		name: "Aire France",
+		price: 97771
+	},
+	{
+		name: "Aire France",
+		price: 97771
+	},
+	{
+		name: "Aire France",
+		price: 97771
+	},
+	{
+		name: "Aire France",
+		price: 97771
+	},
+	{
+		name: "Aire France",
+		price: 97771
+	},
+	{
+		name: "Aire France",
+		price: 97771
+	},
+	{
+		name: "Aire France",
+		price: 97771
+	},
+	{
+		name: "Aire France",
+		price: 97771
+	},
+	{
+		name: "Aire France",
+		price: 97771
+	},
+	{
+		name: "Aire France",
+		price: 97771
+	},
+	{
+		name: "Aire France",
+		price: 97771
+	},
+
+]
+
+export const radioBtn = [
+	{
+		type: "radio",
+		id: "both-way",
+		name: "way",
+		for: "both-way",
+		content: "Roundtrip",
+	},
+	{
+		type: "radio",
+		id: "one-way",
+		name: "way",
+		for: "one-way",
+		content: "One way",
+	},
+	{
+		type: "radio",
+		id: "complex-route",
+		name: "way",
+		for: "complex-route",
+		content: "Multi-city",
+	},
+];
+
+export const testResSerch = [
+	{
+		time_from1: "7:30",
+		time_to1: '8:30',
+		time_from2: '9:20',
+		time_to2: '10:20',
+		name_from: 'VIE',
+		name_to: 'AMS',
+		price: 8000,
+		deals: 4,
+	},
+	{
+		time_from1: "7:30",
+		time_to1: '8:30',
+		time_from2: '9:20',
+		time_to2: '10:20',
+		name_from: 'US',
+		name_to: 'AMS',
+		price: 6000,
+		deals: 6,
+	},
+]

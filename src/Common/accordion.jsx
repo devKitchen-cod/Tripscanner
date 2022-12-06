@@ -11,7 +11,7 @@ const AccordionS = () => {
 		<Grid>
 			<Grid.Row centered>
 				<Grid.Column width={9} className={styles.accColumn}>
-					{/* <Accordion>
+					<Accordion>
 						<AccordionItem>
 							<AccordionItemHeading>
 								<AccordionItemButton>
@@ -40,7 +40,7 @@ const AccordionS = () => {
 								</p>
 							</AccordionItemPanel>
 						</AccordionItem>
-					</Accordion>*/}
+					</Accordion>
           Accordion
 				</Grid.Column>
 			</Grid.Row>

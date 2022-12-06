@@ -86,7 +86,7 @@ const Filter = () => {
 								</div>
 								<button className={styles.changrBtn} />
 								<div>
-									<label>To</label>
+										<label>To</label>
 									<input
 										className={styles.formInput2}
 										placeholder=" Страна, город или аэропорт"

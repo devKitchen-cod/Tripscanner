@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import Header from "../Common/header";
 
 const Layout = ({ children }) => {
-	const location = useLocation();
+	const location = useLocation()	;
 	const [currentPath, setCurrentPath] = useState(location.pathname);
 
 	useEffect(() => {

@@ -1,0 +1,31 @@
+:global(#app) {
+  .titleStops {
+    border-bottom: 2px solid gray;
+  }
+  .label1 {
+    display: block;
+    margin-top: 10px;
+    span {
+      margin-left: 10px;
+    }
+    :hover {
+      color: #0c6df5;
+    }
+  }					
+  .results {
+    border: 2px solid blue;
+    .bestChoise{
+      border: 2px solid green;
+      height: max-content;
+      margin-top: 15px;
+      .best, .cheap, .fastest{
+        // border: 2px solid gray;
+        height: 5em;
+        background-color: #fff;
+      }
+      .cheap, .fastest{
+        border-left: 1px solid rgb(228, 222, 222);
+      }
+    }
+  }
+}
