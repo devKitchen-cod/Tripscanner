@@ -13,22 +13,38 @@
 			border-right: 1px solid rgb(204, 200, 200);
 			border-bottom-left-radius: 7px;
 			border-top-left-radius: 7px;
-      
-      .row2{
-        // border: 2px solid green;
-        // height: max-content;
-				margin-top: 15px;
-      }
-      .logoflight{
-        
-        // border: 2px solid red;
 
-      }
+			.row2 {
+				.logoFlight {
+				}
+				.timeTo {
+          border: 2px solid red;
+					display: inline;
+          .divider{
+            border-bottom: 2px solid red;
+            width: 50px ;
+          }
+					.flightsvg {
+						height: 15px;
+						width: 15px;
+					}
+				}
+			}
+			.row3 {
+				.logoflight {
+					// border: 2px solid red;
+				}
+				.timeFrom {
+					.flightsvg1 {
+						height: 15px;
+						width: 15px;
+					}
+				}
+			}
 		}
 		.priceFlight {
 			border-bottom-right-radius: 7px;
 			border-top-right-radius: 7px;
 		}
-
 	}
 }
