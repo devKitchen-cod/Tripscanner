@@ -15,27 +15,60 @@
 			border-top-left-radius: 7px;
 
 			.row2 {
-				.logoFlight {
-				}
+				margin-top: 20px;
 				.timeTo {
-          border: 2px solid red;
 					display: inline;
-          .divider{
-            border-bottom: 2px solid red;
-            width: 50px ;
-          }
+					.flightTo,
+					.flightFrom {
+						font-size: 25px;
+						color: rgb(12, 12, 12);
+					}
+					.f {
+						display: inline-flex;
+					}
+					.divider {
+						float: left;
+						border-bottom: 2px solid rgb(103, 103, 103);
+						width: 150px;
+						display: inline-flex;
+						margin-top: -5px;
+						.time_flight {
+							margin-left: 50px;
+						}
+					}
 					.flightsvg {
+						padding-top: 8px;
+						float: right;
 						height: 15px;
 						width: 15px;
 					}
 				}
 			}
 			.row3 {
-				.logoflight {
-					// border: 2px solid red;
-				}
+				margin-top: 20px;
 				.timeFrom {
+					display: inline;
+					.flightTo,
+					.flightFrom {
+						font-size: 25px;
+						color: rgb(12, 12, 12);
+					}
+					.f {
+						display: inline-flex;
+					}
+					.divider {
+						float: left;
+						border-bottom: 2px solid rgb(103, 103, 103);
+						width: 150px;
+						display: inline-flex;
+						margin-top: -5px;
+						.time_flight {
+							margin-left: 50px;
+						}
+					}
 					.flightsvg1 {
+						padding-top: 8px;
+						float: right;
 						height: 15px;
 						width: 15px;
 					}
@@ -45,6 +78,15 @@
 		.priceFlight {
 			border-bottom-right-radius: 7px;
 			border-top-right-radius: 7px;
+			.price {
+				.countPrice {
+					display: block;
+				}
+				.coastPrice {
+				}
+			}
+			.buyFlight {
+			}
 		}
 	}
 }
