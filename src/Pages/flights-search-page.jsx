@@ -6,11 +6,7 @@ import { Button } from "semantic-ui-react";
 import { Grid } from "semantic-ui-react";
 import { Form } from "semantic-ui-react";
 import { Dropdown } from "semantic-ui-react";
-import { Accordion } from "semantic-ui-react";
-import { useEffect } from "react";
-import { TransitionablePortal } from "semantic-ui-react";
 
-import { options } from "../mock/mockdata";
 import {   testResSerch } from "../mock/mockdata";
 import { radioBtn } from "../mock/mockdata";
 import ResCard from "../Common/result_card";
@@ -230,10 +226,12 @@ const FlightSearch = () => {
 							</Grid.Column>
 
 						</Grid.Row>
+
+						
 						<Grid.Row centered>
 							<Grid.Column width={15}>
-							{testResSerch.map(() => (
-						<ResCard />
+							{testResSerch.map((item) => (
+						<ResCard  item = {item} />
 					))}
 							</Grid.Column>
 						</Grid.Row>

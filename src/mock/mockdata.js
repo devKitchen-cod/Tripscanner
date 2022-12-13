@@ -143,108 +143,107 @@ export const footerData = [
 
 export const countries = [
 	{
-		url: '#',
-		text: 'Cheap flights'
+		url: "#",
+		text: "Cheap flights",
 	},
 	{
-		url: '#',
-		text: 'India - Flight tickets'
+		url: "#",
+		text: "India - Flight tickets",
 	},
 	{
-		url: '#',
-		text: 'Россия - авиабилеты'
+		url: "#",
+		text: "Россия - авиабилеты",
 	},
 	{
-		url: '#',
-		text: 'Australia - Cheap flights'
-	},
-
-	{
-		url: '#',
-		text: 'Indonesia - Flight tickets'
-	},
-	{
-		url: '#',
-		text: 'Saudi Arabia - flights'
-	},
-	{
-		url: '#',
-		text: 'Canada - vols'
-	},
-	{
-		url: '#',
-		text: '日本 - 航空券'
-	},
-	{
-		url: '#',
-		text: 'Україна - авиабилеты'
-	},
-	{
-		url: '#',
-		text: '中国 - 机票'
-	},
-	{
-		url: '#',
-		text: 'México - vuelos'
+		url: "#",
+		text: "Australia - Cheap flights",
 	},
 
 	{
-		url: '#',
-		text: 'USA - flights'
-	},	
-]
+		url: "#",
+		text: "Indonesia - Flight tickets",
+	},
+	{
+		url: "#",
+		text: "Saudi Arabia - flights",
+	},
+	{
+		url: "#",
+		text: "Canada - vols",
+	},
+	{
+		url: "#",
+		text: "日本 - 航空券",
+	},
+	{
+		url: "#",
+		text: "Україна - авиабилеты",
+	},
+	{
+		url: "#",
+		text: "中国 - 机票",
+	},
+	{
+		url: "#",
+		text: "México - vuelos",
+	},
+
+	{
+		url: "#",
+		text: "USA - flights",
+	},
+];
 
 export const Airlines = [
 	{
 		name: "Aire France",
-		price: 97771
+		price: 97771,
 	},
 	{
 		name: "Aire France",
-		price: 97771
+		price: 97771,
 	},
 	{
 		name: "Aire France",
-		price: 97771
+		price: 97771,
 	},
 	{
 		name: "Aire France",
-		price: 97771
+		price: 97771,
 	},
 	{
 		name: "Aire France",
-		price: 97771
+		price: 97771,
 	},
 	{
 		name: "Aire France",
-		price: 97771
+		price: 97771,
 	},
 	{
 		name: "Aire France",
-		price: 97771
+		price: 97771,
 	},
 	{
 		name: "Aire France",
-		price: 97771
+		price: 97771,
 	},
 	{
 		name: "Aire France",
-		price: 97771
+		price: 97771,
 	},
 	{
 		name: "Aire France",
-		price: 97771
+		price: 97771,
 	},
 	{
 		name: "Aire France",
-		price: 97771
+		price: 97771,
 	},
 	{
 		name: "Aire France",
-		price: 97771
+		price: 97771,
 	},
-
-]
+];
 
 export const radioBtn = [
 	{
@@ -272,23 +271,107 @@ export const radioBtn = [
 
 export const testResSerch = [
 	{
-		time_from1: "7:30",
-		time_to1: '8:30',
-		time_from2: '9:20',
-		time_to2: '10:20',
-		name_from: 'VIE',
-		name_to: 'AMS',
+		flight_logo: "https://www.skyscanner.net/images/airlines/small/OS.png",
+		outbound: {
+			from: "7:30",
+			to: "8:30",
+			total_time: "1:00",
+		},
+		return: {
+			from: "9:20",
+			to: "10:20",
+			total_time: "1:00",
+		},
+		name_from: "US",
+		name_to: "AMS",
+		price: 6000,
+		deals: 6,
+	},
+	{
+		flight_logo: "https://www.skyscanner.net/images/airlines/small/OS.png",
+		outbound: {
+			from: "7:30",
+			to: "8:30",
+			total_time: "1:00",
+		},
+		return: {
+			from: "9:20",
+			to: "10:20",
+			total_time: "1:00",
+		},
+		name_from: "US",
+		name_to: "AMS",
 		price: 8000,
 		deals: 4,
 	},
 	{
-		time_from1: "7:30",
-		time_to1: '8:30',
-		time_from2: '9:20',
-		time_to2: '10:20',
-		name_from: 'US',
-		name_to: 'AMS',
-		price: 6000,
-		deals: 6,
+		flight_logo: "https://www.skyscanner.net/images/airlines/small/OS.png",
+		outbound: {
+			from: "7:30",
+			to: "8:30",
+			total_time: "1:00",
+		},
+		return: {
+			from: "9:20",
+			to: "10:20",
+			total_time: "1:00",
+		},
+		name_from: "US",
+		name_to: "AMS",
+		price: 8000,
+		deals: 4,
+	},	
+	{
+		flight_logo: "https://www.skyscanner.net/images/airlines/small/OS.png",
+		outbound: {
+			from: "7:30",
+			to: "8:30",
+			total_time: "1:00",
+		},
+		return: {
+			from: "9:20",
+			to: "10:20",
+			total_time: "1:00",
+		},
+		name_from: "US",
+		name_to: "AMS",
+		price: 8000,
+		deals: 4,
 	},
-]
+	{
+		flight_logo: "https://www.skyscanner.net/images/airlines/small/OS.png",
+		outbound: {
+			from: "7:30",
+			to: "8:30",
+			total_time: "1:00",
+		},
+		return: {
+			from: "9:20",
+			to: "10:20",
+			total_time: "1:00",
+		},
+		name_from: "US",
+		name_to: "AMS",
+		price: 8000,
+		deals: 4,
+	},
+	{
+		flight_logo: "https://www.skyscanner.net/images/airlines/small/OS.png",
+		outbound: {
+			from: "7:30",
+			to: "8:30",
+			total_time: "1:00",
+		},
+		return: {
+			from: "9:20",
+			to: "10:20",
+			total_time: "1:00",
+		},
+		name_from: "US",
+		name_to: "AMS",
+		price: 8000,
+		deals: 4,
+	},
+];
+
+ 
