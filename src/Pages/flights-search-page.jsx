@@ -135,7 +135,7 @@ const FlightSearch = () => {
 															<div>
 																<label className={styles.label2}>
 																	<input type={"checkbox"} />
-																	<span>1Add nearby airports</span>
+																	<span>Add nearby airports</span>
 																</label>
 															</div>
 														</Grid.Column>
@@ -227,7 +227,6 @@ const FlightSearch = () => {
 
 						</Grid.Row>
 
-						
 						<Grid.Row centered>
 							<Grid.Column width={15}>
 							{testResSerch.map((item) => (

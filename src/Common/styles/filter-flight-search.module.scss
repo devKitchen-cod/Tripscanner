@@ -1,31 +1,63 @@
 :global(#app) {
-  .titleStops {
-    border-bottom: 2px solid gray;
-  }
-  .label1 {
-    display: block;
-    margin-top: 10px;
-    span {
-      margin-left: 10px;
-    }
-    :hover {
-      color: #0c6df5;
-    }
-  }					
-  .results {
-    border: 2px solid blue;
-    .bestChoise{
-      border: 2px solid green;
-      height: max-content;
-      margin-top: 15px;
-      .best, .cheap, .fastest{
-        // border: 2px solid gray;
-        height: 5em;
-        background-color: #fff;
-      }
-      .cheap, .fastest{
-        border-left: 1px solid rgb(228, 222, 222);
-      }
-    }
-  }
+	.titleStops,
+	.titleDepartureTimes,
+	.titleTripDuration,
+	.titleAirlines,
+	.titleGreenFlights {
+		border-bottom: 2px solid rgb(199, 199, 199);
+		font-size: 18px;
+		color: black;
+	}
+
+	.nonStop,
+	.oneStop,
+	.twoStop {
+		display: inline-flex;
+	}
+	.rowOneStop,
+	.rowTowStop {
+		margin-top: -20px;
+	}
+
+	.label1 {
+		display: inline;
+		margin-top: 10px;
+		span {
+			margin-left: 10px;
+		}
+		:hover {
+			color: #0c6df5;
+		}
+		.price {
+			display: block;
+			margin-left: 28px;
+			color: #7d8185;
+		}
+	}
+	.customCheckbox {
+		/* removing default appearance */
+		// -webkit-appearance: none;
+		// appearance: none;
+		/* creating a custom design */
+		width: 1.2em;
+		height: 1.2em;
+		border-radius: 1em;
+		// margin-right: 0.5em;
+		border-radius: 5px;
+		border: 0.15em solid #007a7e;
+		// outline: none;
+		cursor: pointer;
+	}
+	.nameAirline {
+		margin-left: 10px;
+		color: #000000;
+
+
+	}
+	.priceAirline {
+		display: block;
+		margin-left: 30px;
+		color: #7d8185;
+
+	}
 }
