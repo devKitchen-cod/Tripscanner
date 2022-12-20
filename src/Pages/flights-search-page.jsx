@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./flight-search-page.module.scss";
+import styles from "./flight_search_page.module.scss";
 
 import { Icon } from "semantic-ui-react";
 import { Button } from "semantic-ui-react";
@@ -7,14 +7,13 @@ import { Grid } from "semantic-ui-react";
 import { Form } from "semantic-ui-react";
 import { Dropdown } from "semantic-ui-react";
 
-import {   testResSerch } from "../mock/mockdata";
+import { testResSerch } from "../mock/mockdata";
 import { radioBtn } from "../mock/mockdata";
 import ResCard from "../Common/result_card";
-import FilterSearch from "../Common/filter-flight--search";
+import FilterSearch from "../Common/filter_flight_search";
 
 const FlightSearch = () => {
 	const [open, setOpen] = useState(true);
-	
 
 	const obj = {
 		from: "London (Any)",
@@ -56,7 +55,6 @@ const FlightSearch = () => {
 						) : (
 							<Grid.Row className={styles.header1}>
 								<Grid.Column width={16} onClick={() => setOpen(true)}>
-
 									<Grid>
 										<Grid.Row className={styles.header12}>
 											<Grid.Column width={8}>
@@ -153,7 +151,7 @@ const FlightSearch = () => {
 											<Grid.Column width={8} className={styles.labelGroup2}>
 												<label className={styles.label2}>
 													<input type={"checkbox"} />
-													<span>1Add nearby airports</span>
+													<span>Add nearby airports</span>
 												</label>
 												{/* <Form.Input className={styles.form5} label="Depart" fluid /> */}
 												<div className={styles.dropdownGroup}>
@@ -169,6 +167,7 @@ const FlightSearch = () => {
 					</Grid>
 				</Grid.Column>
 			</Grid.Row>
+
 			<Grid.Row className={styles.linkRow}>
 				<Grid.Column width={8}>
 					<span className={styles.sp1}>Show whole month</span>
@@ -205,8 +204,7 @@ const FlightSearch = () => {
 
 				<Grid.Column width={12} className={styles.results}>
 					<Grid>
-
-						<Grid.Row centered className={styles.bestChoise}>							
+						<Grid.Row centered className={styles.bestChoise}>
 							<Grid.Column width={5} className={styles.best}>
 								<span className={styles.type}>Best</span>
 								<span className={styles.price}>9518</span>
@@ -224,20 +222,16 @@ const FlightSearch = () => {
 								<span className={styles.price}>11518</span>
 								<span className={styles.time}>1h50m(avarage)</span>
 							</Grid.Column>
-
 						</Grid.Row>
 
 						<Grid.Row centered>
 							<Grid.Column width={15}>
-							{testResSerch.map((item) => (
-						<ResCard  item = {item} />
-					))}
+								{testResSerch.map((item) => (
+									<ResCard item={item} />
+								))}
 							</Grid.Column>
 						</Grid.Row>
 					</Grid>
-
-					
-
 				</Grid.Column>
 			</Grid.Row>
 		</Grid>
@@ -245,4 +239,3 @@ const FlightSearch = () => {
 };
 
 export default FlightSearch;
-

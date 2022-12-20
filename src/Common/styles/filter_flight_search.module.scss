@@ -51,13 +51,59 @@
 	.nameAirline {
 		margin-left: 10px;
 		color: #000000;
-
-
 	}
 	.priceAirline {
 		display: block;
 		margin-left: 30px;
 		color: #7d8185;
+	}
+
+	.filterOption {
+		display: inline-flex;
+		color: #0c6df5;
+		height: 50px;
+		margin-top: 10px;
+		font-size: 15px;
+		padding-top: 15px;
+		.selctAll {
+			margin-right: 10px;
+		}
+		.divider {
+			width: 1px;
+			max-height: 40px;
+			background-color: #b7b9bb;
+			margin-top: -10px;
+		}
+		.clearAll {
+			padding-left: 10px;
+		}
+	}
+
+	.airlineOption {
+		margin-top: -20px;
+		margin-left: 20px;
+		margin-bottom: 20px;
+		span {
+			display: block;
+			margin-top: 10px;
+			font-size: 15px;
+			color: #0c6df5;
+			font-weight: 600;
+		}
+	}
+	.airlines {
+		margin-top: 10px;
+	}
+	.greenChoise{
+		display: inline-flex;
+		.greenerT{
+			margin-left: 10px;
+		}:hover{
+			span{
+				color: #0c6df5;
+			}
+		}
 
 	}
+
 }

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import styles from "./styles/filter-flight-search.module.scss";
-import { Form, Grid, Icon } from "semantic-ui-react";
+import styles from "./styles/filter_flight_search.module.scss";
+import { Divider, Form, Grid, Icon } from "semantic-ui-react";
 import { Accordion } from "semantic-ui-react";
 import { Airlines } from "../mock/mockdata";
 
@@ -10,10 +10,10 @@ const FilterSearch = () => {
 	const [trip, setTrip] = useState(true);
 	const [airlines, setAirlines] = useState(true);
 	const [greener, setGreener] = useState(true);
-	const [duration, setDuration] = useState(500)
+	const [duration, setDuration] = useState(500);
 	const handleChange = () => {
-		setDuration(duration + 100)
-	}
+		setDuration(duration + 100);
+	};
 	return (
 		<Accordion fluid>
 			<Accordion.Title
@@ -30,10 +30,10 @@ const FilterSearch = () => {
 						<Grid.Column width={16}>
 							<div className={styles.nonStop}>
 								<label className={styles.label1}>
-									<input type={"checkbox"} className={styles.customCheckbox}/>
- 									<span>Non-stop</span>
+									<input type={"checkbox"} className={styles.customCheckbox} />
+									<span>Non-stop</span>
 									<span className={styles.price}>from 8,163 грн.</span>
- 								</label>
+								</label>
 							</div>
 						</Grid.Column>
 					</Grid.Row>
@@ -41,7 +41,7 @@ const FilterSearch = () => {
 						<Grid.Column>
 							<div className={styles.oneStop}>
 								<label className={styles.label1}>
-									<input type={"checkbox"} className={styles.customCheckbox}/>
+									<input type={"checkbox"} className={styles.customCheckbox} />
 									<span>1 stop</span>
 									<span className={styles.price}>from 8,163 грн.</span>
 								</label>
@@ -52,7 +52,7 @@ const FilterSearch = () => {
 						<Grid.Column>
 							<div className={styles.twoStop}>
 								<label className={styles.label1}>
-									<input type={"checkbox"} className={styles.customCheckbox}/>
+									<input type={"checkbox"} className={styles.customCheckbox} />
 									<span>2+ stops</span>
 									<span className={styles.price}>from 8,163 грн.</span>
 								</label>
@@ -60,8 +60,6 @@ const FilterSearch = () => {
 						</Grid.Column>
 					</Grid.Row>
 				</Grid>
-
-		
 			</Accordion.Content>
 
 			{/* <Accordion.Title
@@ -100,7 +98,7 @@ const FilterSearch = () => {
 				</div>
 			</Accordion.Content> */}
 
-			<Accordion.Title
+			{/* <Accordion.Title
 				className={styles.titleTripDuration}
 				onClick={() => setTrip(!trip)}
 			>
@@ -109,13 +107,13 @@ const FilterSearch = () => {
 			</Accordion.Title>
 			<Accordion.Content active={trip}>
 				<div>
-					{/* <p>Jorney duration</p> */}
+					
 					<span>5 AM - 14 PM</span>
 					<div>
 						<input type={"range"} id="min" step={1} />
 					</div>
 				</div>
-			</Accordion.Content>
+			</Accordion.Content> */}
 
 			<Accordion.Title
 				className={styles.titleAirlines}
@@ -126,17 +124,25 @@ const FilterSearch = () => {
 			</Accordion.Title>
 
 			<Accordion.Content active={airlines}>
-				<div>
-					<span>Select all</span>
-					<span>Clear all</span>
-				</div>
-				<div>
-					<span>Star Alliance</span>
-					<span>SkyTeam</span>
-				</div>
+				<Grid>
+					<Grid.Row className={styles.rowF1}>
+						<Grid.Column width={16} className={styles.filterOption}>
+							<span className={styles.selctAll}>Select all</span>
+							<div className={styles.divider} />
+							<span className={styles.clearAll}>Clear all</span>
+						</Grid.Column>
+					</Grid.Row>
+					<Grid.Row>
+						<Grid.Column width={16} className={styles.airlineOption}>
+							<span>Star Alliance</span>
+							<span>SkyTeam</span>
+						</Grid.Column>
+					</Grid.Row>
+				</Grid>
+
 				{Airlines.map((item) => (
-					<div>
-						<input type={"checkbox"} className={styles.customCheckbox}/>
+					<div className={styles.airlines}>
+						<input type={"checkbox"} className={styles.customCheckbox} />
 						<span className={styles.nameAirline}>{item.name}</span>
 						<span className={styles.priceAirline}>from {item.price}</span>
 					</div>
@@ -151,9 +157,13 @@ const FilterSearch = () => {
 				<Icon name="dropdown" />
 			</Accordion.Title>
 
-			<Accordion.Content active={greener}>
-				<input type={"checkbox"} />
-				<span>Only show flights with lower CO₂ emissions</span>
+			<Accordion.Content active={greener} className = {styles.greenChoise}>
+				<input type={"checkbox"} className={styles.customCheckbox} />
+				<div className={styles.greenerT}>
+					<span >
+						Only show flights with lower CO₂ emissions
+					</span>
+				</div>
 			</Accordion.Content>
 		</Accordion>
 	);
