@@ -7,10 +7,8 @@
 		background-color: #042759;
 		margin-left: 48vh;
 		margin-right: 47vh;
-		// margin-top: -16px;
 		border-bottom-left-radius: 5px;
 		border-bottom-right-radius: 5px;
-		// border: 2px solid red;
 	}
 	.header1 {
 		height: 25em;
@@ -70,7 +68,6 @@
 	.form1,
 	.form2 {
 		min-width: 35em;
-		// min-width: 155%;
 		padding: 0;
 		input {
 			min-height: 3em;
@@ -89,7 +86,6 @@
 
 	.labelGroup1,
 	.labelGroup2 {
-		// border: 2px solid white;
 		margin-top: -30px;
 		.label1 {
 			margin-right: 350px;
@@ -102,11 +98,9 @@
 	}
 
 	.lowformgroup {
-		// border: 2px solid red;
 		.form3,
 		.form4 {
 			width: 16em;
-			// border: 2px solid red;
 			label {
 				color: #fff;
 			}
@@ -123,9 +117,8 @@
 	}
 
 	.linkRow {
-		// border: 2px solid black;
 		margin-left: 47vh;
-		margin-right: 46vh;
+		margin-right: 49vh;
 		padding: 0;
 		margin-top: 10px;
 		margin-bottom: 10px;
@@ -143,14 +136,12 @@
 	}
 
 	.searchResult {
-		// border: 2px solid red;
 		margin-left: 48vh;
 		margin-right: 47vh;
 		padding: 0;
 
 		.resultFilter {
 			padding: 0;
-			// border: 2px solid green;
 		}
 
 		.alertsBtn {
@@ -165,7 +156,6 @@
 	}
 
 	.resultWrapper {
-		// border: 2px solid blueviolet;
 		padding: 0;
 
 		.countresults {
@@ -173,7 +163,6 @@
 		}
 
 		.sortdrop {
-			// float: right;
 			margin-left: 10px;
 		}
 		.sorttext {
@@ -185,14 +174,11 @@
 		}
 	}
 	.resultsRow {
-		// border: 2px solid red;
 		margin-left: 48vh;
 		margin-right: 47vh;
 
 		.results {
-			// border: 2px solid blue;
 			.bestChoise {
-				// border: 2px solid green;
 				height: max-content;
 				margin-top: 15px;
 

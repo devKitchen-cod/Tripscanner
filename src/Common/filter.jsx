@@ -4,7 +4,7 @@ import { Form } from "semantic-ui-react";
 import { Button, Grid, Icon, Dropdown } from "semantic-ui-react";
 import styles from "./styles/filter.module.scss";
 const Filter = () => {
-	const navigate = useNavigate()
+	const navigate = useNavigate();
 	const radioBtn = [
 		{
 			type: "radio",
@@ -76,49 +76,11 @@ const Filter = () => {
 										</div>
 									</Form.Group>
 								</Form>
-
-								{/* <div>
-									<label>From</label>
-									<input
-										className={styles.formInput}
-										placeholder="Страна, город или аэропорт"
-									/>
-								</div>
-								<button className={styles.changrBtn} />
-								<div>
-										<label>To</label>
-									<input
-										className={styles.formInput2}
-										placeholder=" Страна, город или аэропорт"
-									/>
-								</div>
-								<div>
-									<label>Depart</label>
-									<input
-										className={styles.datePicker1}
-										placeholder="12.09.2022"
-									/>
-								</div>
-								<div>
-									<label>Return</label>
-									<input
-										className={styles.datePicker2}
-										placeholder="19.09.2022"
-									/>
-								</div>
-								<div>
-									<label>Cabin Class & Travelers</label>
-									<Dropdown
-										className={styles.dropdown}
-										placeholder="Тип, кол. мест"
-										selection
-									/>
-								</div> */}
 							</Grid.Column>
 						</Grid.Row>
 
 						<Grid.Row>
-							<Grid.Column width={9} className = {styles.labelGroup}>
+							<Grid.Column width={9} className={styles.labelGroup}>
 								<label className={styles.label1}>
 									<input type={"checkbox"} />
 									<span>Add nearby airports</span>
@@ -136,7 +98,10 @@ const Filter = () => {
 							</Grid.Column>
 
 							<Grid.Column width={7}>
-								<Button className={styles.findBtn1} onClick = {() => navigate("/flight-search")}>
+								<Button
+									className={styles.findBtn1}
+									onClick={() => navigate("/flight-search")}
+								>
 									Search flights
 									<Icon name="arrow right" color="white" />
 								</Button>

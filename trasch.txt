@@ -853,3 +853,194 @@ const [openStop`s, setOpenStops] = useState(true);
 	const [trip, setTrip] = useState(true);
 	const [airlines, setAirlines] = useState(true);
 	const [greener, setGreener] = useState(true);
+
+
+
+	// eslint-disable-next-line no-lone-blocks
+{
+	/* <Grid>
+							<Grid.Row className={styles.radioBtnGroup}>
+								{radioBtn.map((item) => (
+									<div className={styles.filterGroup}>
+										<input type={item.type} id={item.id} name={item.name} />
+										<label className={styles.radioLabel} for={item.for}>
+											{item.content}
+										</label>
+									</div>
+								))}
+							</Grid.Row>
+
+							<Grid.Row className={styles.inputGroup}>
+								<Grid.Column width={16}>
+									<Form>
+										<Form.Group>
+											<Form.Input
+												className={styles.form1}
+												label="From"
+												fluid
+												placeholder="From"
+											/>
+											<button className={styles.changeBtn} />
+											<Form.Input
+												className={styles.form2}
+												label="To"
+												fluid
+												placeholder="To"
+											/>
+										</Form.Group>
+									</Form>
+								</Grid.Column>
+							</Grid.Row>
+d
+							<Grid.Row>
+								<Grid.Column width={8} className={styles.labelGroup1}>
+									<label className={styles.label1}>
+										<input type={"checkbox"} />
+										<span>Add nearby airports</span>
+									</label>
+
+									<Grid className={styles.lowformgroup}>
+										<Grid.Row>
+											<Grid.Column>
+												<Form.Input
+													className={styles.form3}
+													label="Depart"
+													fluid
+												/>
+												<div>
+													<label className={styles.label2}>
+														<input type={"checkbox"} />
+														<span>Add nearby airports</span>
+													</label>
+												</div>
+											</Grid.Column>
+
+											<Grid.Column>
+												<Form.Input
+													className={styles.form4}
+													label="Return"
+													fluid
+												/>
+											</Grid.Column>
+										</Grid.Row>
+									</Grid>
+								</Grid.Column>
+								<Grid.Column width={8} className={styles.labelGroup2}>
+									<label className={styles.label2}>
+										<input type={"checkbox"} />
+										<span>Add nearby airports</span>
+									</label>
+									<Form.Input className={styles.form5} label="Depart" fluid />
+									<div className={styles.dropdownGroup}>
+										<label>Cabin class & Travelers</label>
+										<Dropdown className={styles.form5} selection />
+									</div>
+								</Grid.Column>
+							</Grid.Row>
+
+						</Grid> */
+}
+
+
+
+// .inputGroupColumn {
+// 	display: flex;
+// 	margin-top: -10px;
+
+// 	.changrBtn {
+// 		border: none;
+// 		background-color: #fff;
+// 		background-image: url("../../static/changeArrow.svg");
+// 		background-size: cover;
+// 		margin-top: 14px;
+// 		min-height: 48px;
+// 		min-width: 3em;
+// 	}
+
+// 	.formInput {
+// 		border: none;
+// 		border-bottom-left-radius: 3px;
+// 		border-top-left-radius: 3px;
+// 	}
+
+// 	.formInput2,
+// 	.formInput {
+// 		min-width: 19em;
+// 		font-size: 16px;
+// 		min-height: 48px;
+// 		display: "flex";
+// 		padding-left: 15px;
+// 		&::placeholder {
+// 			font-size: 15px;
+// 		}
+// 	}
+
+// 	.formInput2 {
+// 		min-height: 48px;
+// 		border: none;
+// 		border-left: 1px solid gray;
+// 	}
+
+// 	.datePicker1,
+// 	.datePicker2 {
+// 		display: flex;
+// 		min-height: 48px;
+// 		width: 15vh;
+// 		border: none;
+// 	}
+// 	.datePicker1 {
+// 		border-left: 2px solid #00004d;
+// 	}
+// 	.datePicker2 {
+// 		border-left: 1px solid gray;
+// 	}
+// 	.dropdown {
+// 		min-height: 48px;
+// 		min-width: 17em;
+// 		border: none;
+// 		border-left: 1px solid gray;
+// 		border-radius: 0;
+// 		border-bottom-right-radius: 3px;
+// 		border-top-right-radius: 3px;
+// 	}
+// }
+
+
+
+								{/* <div>
+									<label>From</label>
+									<input
+										className={styles.formInput}
+										placeholder="Страна, город или аэропорт"
+									/>
+								</div>
+								<button className={styles.changrBtn} />
+								<div>
+										<label>To</label>
+									<input
+										className={styles.formInput2}
+										placeholder=" Страна, город или аэропорт"
+									/>
+								</div>
+								<div>
+									<label>Depart</label>
+									<input
+										className={styles.datePicker1}
+										placeholder="12.09.2022"
+									/>
+								</div>
+								<div>
+									<label>Return</label>
+									<input
+										className={styles.datePicker2}
+										placeholder="19.09.2022"
+									/>
+								</div>
+								<div>
+									<label>Cabin Class & Travelers</label>
+									<Dropdown
+										className={styles.dropdown}
+										placeholder="Тип, кол. мест"
+										selection
+									/>
+								</div> */}

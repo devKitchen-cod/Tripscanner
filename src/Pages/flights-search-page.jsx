@@ -14,8 +14,6 @@ import SearchForm from "../Common/search_form_accordion";
 const FlightSearch = () => {
 	const [open, setOpen] = useState(true);
 
-
-
 	const countRes = 508;
 
 	return (

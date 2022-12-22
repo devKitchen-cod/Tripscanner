@@ -143,7 +143,8 @@
 		border: 1px solid #bbb9b9;
 		border-radius: 3px;
 		width: fit-content;
-		height: min-content;
+		// height: max-content;
+		height: 16.4em;
 		padding-left: 5vh;
 
 		.cardHeader {
@@ -157,7 +158,8 @@
 			font-size: 16px;
 		}
 		.cardImg {
-			margin-left: 25px;
+			margin-left: 15px;
+			// margin-top: px;
 			border-top-right-radius: 3px;
 			border-bottom-right-radius: 3px;
 		}

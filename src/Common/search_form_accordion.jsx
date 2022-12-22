@@ -95,7 +95,7 @@ const SearchForm = () => {
 												</div>
 											</Grid.Column>
 
-											<Grid.Column width={5}>
+											<Grid.Column width={6}>
 												<Form.Input
 													className={styles.form4}
 													label="Return"
@@ -107,7 +107,7 @@ const SearchForm = () => {
 									</Grid>
 								</Grid.Column>
 
-								<Grid.Column width={8} className={styles.labelGroup2}>
+								<Grid.Column width={8}  className={styles.labelGroup2}>
 									<label className={styles.label2}>
 										<input type={"checkbox"} />
 										<span> Add nearby airports</span>
@@ -118,6 +118,7 @@ const SearchForm = () => {
 									</div>
 								</Grid.Column>
 							</Grid.Row>
+
 							<Grid.Row>
 								<Grid.Column width={16}>
 									<Button
@@ -140,88 +141,3 @@ const SearchForm = () => {
 };
 
 export default SearchForm;
-
-// eslint-disable-next-line no-lone-blocks
-{
-	/* <Grid>
-							<Grid.Row className={styles.radioBtnGroup}>
-								{radioBtn.map((item) => (
-									<div className={styles.filterGroup}>
-										<input type={item.type} id={item.id} name={item.name} />
-										<label className={styles.radioLabel} for={item.for}>
-											{item.content}
-										</label>
-									</div>
-								))}
-							</Grid.Row>
-
-							<Grid.Row className={styles.inputGroup}>
-								<Grid.Column width={16}>
-									<Form>
-										<Form.Group>
-											<Form.Input
-												className={styles.form1}
-												label="From"
-												fluid
-												placeholder="From"
-											/>
-											<button className={styles.changeBtn} />
-											<Form.Input
-												className={styles.form2}
-												label="To"
-												fluid
-												placeholder="To"
-											/>
-										</Form.Group>
-									</Form>
-								</Grid.Column>
-							</Grid.Row>
-d
-							<Grid.Row>
-								<Grid.Column width={8} className={styles.labelGroup1}>
-									<label className={styles.label1}>
-										<input type={"checkbox"} />
-										<span>Add nearby airports</span>
-									</label>
-
-									<Grid className={styles.lowformgroup}>
-										<Grid.Row>
-											<Grid.Column>
-												<Form.Input
-													className={styles.form3}
-													label="Depart"
-													fluid
-												/>
-												<div>
-													<label className={styles.label2}>
-														<input type={"checkbox"} />
-														<span>Add nearby airports</span>
-													</label>
-												</div>
-											</Grid.Column>
-
-											<Grid.Column>
-												<Form.Input
-													className={styles.form4}
-													label="Return"
-													fluid
-												/>
-											</Grid.Column>
-										</Grid.Row>
-									</Grid>
-								</Grid.Column>
-								<Grid.Column width={8} className={styles.labelGroup2}>
-									<label className={styles.label2}>
-										<input type={"checkbox"} />
-										<span>Add nearby airports</span>
-									</label>
-									<Form.Input className={styles.form5} label="Depart" fluid />
-									<div className={styles.dropdownGroup}>
-										<label>Cabin class & Travelers</label>
-										<Dropdown className={styles.form5} selection />
-									</div>
-								</Grid.Column>
-							</Grid.Row>
-
-						</Grid> */
-}
