@@ -1,3 +1,62 @@
+ 
+ 
+ // display: flex;
+		// margin-right: -10px;
+		// .settings {
+		// 	min-width: 15em;
+		// 	min-height: 2em;
+		// 	margin-left: 10px;
+		// 	font-size: 13px;
+		// }
+
+		// .authbtnblock {
+		// 	display: flex;
+		// 	.authbtn {
+		// 		text-align: center;
+		// 		display: flex;
+		// 		width: 7em;
+		// 	}
+		// }
+ 
+ {/* {isAuth ? (
+						<Button content="Log Out" />
+					) : (
+						<div className={styles.authbtnblock}>
+							<Button
+								className={styles.authbtn}
+								onClick={() => {
+									setOpen1(true);
+									setType("signup");
+								}}
+							>
+								Sign up
+							</Button>
+
+							<Button
+								className={styles.authbtn}
+								onClick={() => {
+									setOpen1(true);
+									setType("signin");
+								}}
+							>
+								Sign in{" "}
+							</Button>
+						</div>
+					)} */}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ =======================================
+ 
   const panels = [
 	  	{
 	  		key: "find-best-deals",
@@ -789,8 +848,8 @@
 
 </Accordion> */
 }
-const [openStops, setOpenStops] = useState(true);
-	const [openDepart, setOpenDepart] = useState(true);
+const [openStop`s, setOpenStops] = useState(true);
+`	const [openDepart, setOpenDepart] = useState(true);
 	const [trip, setTrip] = useState(true);
 	const [airlines, setAirlines] = useState(true);
 	const [greener, setGreener] = useState(true);

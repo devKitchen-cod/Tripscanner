@@ -3,26 +3,31 @@
 		margin-left: 40vh;
 		margin-right: 40vh;
 		padding-top: 25px;
-		// border: 2px solid red;
 	}
 	.headerRow {
 		padding-left: 5vh;
 		padding-right: 5vh;
 	}
+	.logo {
+		font-size: 25px;
+		font-weight: 700;
+		color: #0770e3;
+	}
 	.groupBtn1 {
-		display: flex;
-		// border: 2px solid red;
-		height: 3em;
-		margin-right: -10px;
-		a {
-			margin-top: 10px;
+		.help {
+			margin-top: 8px;
 		}
-		.loginbtn {
-			width: 6em;
+		.settingsBtn {
+			.settings {
+				height: 3em;
+				font-size: 12px;
+				border-radius: 8px;
+			}
 		}
-		.settings {
-			margin-left: 10px;
-			font-size: 13px;
+		.login {
+			font-weight: 600;
+			color: rgb(0, 0, 0);
+			border-radius: 8px;
 		}
 	}
 	.flightsBtn {
@@ -33,14 +38,5 @@
 		&:hover {
 			background-color: #022a55;
 		}
-	}
-	.authbtn{
-		text-align: center;
-		height: 40px;
-		display: flex;
-		
-	}
-	.authbtnblock{
-		display: flex;
 	}
 }

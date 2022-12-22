@@ -4,11 +4,9 @@ import styles from "./flight_search_page.module.scss";
 import { Icon } from "semantic-ui-react";
 import { Button } from "semantic-ui-react";
 import { Grid } from "semantic-ui-react";
-import { Form } from "semantic-ui-react";
 import { Dropdown } from "semantic-ui-react";
 
 import { testResSerch } from "../mock/mockdata";
-import { radioBtn } from "../mock/mockdata";
 import ResCard from "../Common/result_card";
 import FilterSearch from "../Common/filter_flight_search";
 import SearchForm from "../Common/search_form_accordion";
@@ -16,12 +14,7 @@ import SearchForm from "../Common/search_form_accordion";
 const FlightSearch = () => {
 	const [open, setOpen] = useState(true);
 
-	const obj = {
-		from: "London (Any)",
-		to: "Amsterdam (AMS)",
-		countTrev: 2,
-		type: "Economy",
-	};
+
 
 	const countRes = 508;
 
@@ -29,8 +22,7 @@ const FlightSearch = () => {
 		<Grid className={styles.wrapper}>
 			<Grid.Row>
 				<Grid.Column width={16} onClick={() => setOpen(!open)}>
-					<SearchForm  />
-				
+					<SearchForm />
 				</Grid.Column>
 			</Grid.Row>
 

@@ -51,7 +51,7 @@ const SearchForm = () => {
 
 							<Grid.Row className={styles.inputGroup1}>
 								<Grid.Column width={16}>
-									<Form>
+									<Form className={styles.formCont}>
 										<Form.Group>
 											<Form.Input
 												className={styles.form1}
