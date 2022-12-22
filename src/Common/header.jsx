@@ -15,7 +15,6 @@ const Header = () => {
 	const [type, setType] = useState("");
 	const [open1, setOpen1] = useState(false);
 	const isAuth = useSelector((state) => state.login.isAuth);
-	// console.log(isAuth);
 
 	return (
 		<Grid className={styles.header}>
