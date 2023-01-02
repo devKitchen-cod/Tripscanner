@@ -62,59 +62,6 @@ const FilterSearch = () => {
 				</Grid>
 			</Accordion.Content>
 
-			{/* <Accordion.Title
-				className={styles.titleDepartureTimes}
-				onClick={() => setOpenDepart(!openDepart)}
-			>
-				Departure times
-				<Icon name="dropdown" />
-			</Accordion.Title> */}
-
-			{/* <Accordion.Content active={openDepart}>
-				<div>
-					<p>Outbound</p>
-					<span>5 AM - 14 PM</span>
-					<div>
-						<input type={"range"} id="min" step={1} />
-						<Form.Input
-              label={`Duration: ${duration}ms `}
-              min={100}
-              max={2000}
-              name='duration'
-              onChange={handleChange}
-              step={100}
-              type='range'
-              value={duration}
-            />
-					</div>
-				</div>
-
-				<div>
-					<p>Return</p>
-					<span>5 AM - 14 PM</span>
-					<div>
-						<input type={"range"} id="min" step={1} />
-					</div>
-				</div>
-			</Accordion.Content> */}
-
-			{/* <Accordion.Title
-				className={styles.titleTripDuration}
-				onClick={() => setTrip(!trip)}
-			>
-				Trip Duration
-				<Icon name="dropdown" />
-			</Accordion.Title>
-			<Accordion.Content active={trip}>
-				<div>
-					
-					<span>5 AM - 14 PM</span>
-					<div>
-						<input type={"range"} id="min" step={1} />
-					</div>
-				</div>
-			</Accordion.Content> */}
-
 			<Accordion.Title
 				className={styles.titleAirlines}
 				onClick={() => setAirlines(!airlines)}
@@ -157,12 +104,10 @@ const FilterSearch = () => {
 				<Icon name="dropdown" />
 			</Accordion.Title>
 
-			<Accordion.Content active={greener} className = {styles.greenChoise}>
+			<Accordion.Content active={greener} className={styles.greenChoise}>
 				<input type={"checkbox"} className={styles.customCheckbox} />
 				<div className={styles.greenerT}>
-					<span >
-						Only show flights with lower CO₂ emissions
-					</span>
+					<span>Only show flights with lower CO₂ emissions</span>
 				</div>
 			</Accordion.Content>
 		</Accordion>

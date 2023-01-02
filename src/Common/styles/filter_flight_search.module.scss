@@ -42,10 +42,8 @@
 		width: 1.2em;
 		height: 1.2em;
 		border-radius: 1em;
-		// margin-right: 0.5em;
 		border-radius: 5px;
 		border: 0.15em solid #007a7e;
-		// outline: none;
 		cursor: pointer;
 	}
 	.nameAirline {
@@ -94,16 +92,15 @@
 	.airlines {
 		margin-top: 10px;
 	}
-	.greenChoise{
+	.greenChoise {
 		display: inline-flex;
-		.greenerT{
+		.greenerT {
 			margin-left: 10px;
-		}:hover{
-			span{
+		}
+		:hover {
+			span {
 				color: #0c6df5;
 			}
 		}
-
 	}
-
 }

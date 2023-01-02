@@ -1,0 +1,17 @@
+:global(#app) {
+	.modal_cont {
+		height: 40em;
+ 		.cont_row1 {
+			.cont_header {
+				font-size: 20px;
+				font-weight: 800;
+				display: block;
+			}
+		}
+		.signup {
+			span {
+				margin-right: 10px;
+			}
+		}
+	}
+}

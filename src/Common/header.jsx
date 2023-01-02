@@ -5,7 +5,7 @@ import { Grid } from "semantic-ui-react";
 import styles from "./styles/header.module.scss";
 import getUnicodeFlagIcon from "country-flag-icons/unicode";
 import { useState } from "react";
-import ModalComp from "./modal";
+import AuthModal from "./modal";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
@@ -52,7 +52,7 @@ const Header = () => {
 						</Grid.Row>
 					</Grid>
 
-					<ModalComp setOpen1={setOpen1} open1={open1} type={type} />
+					<AuthModal setOpen1={setOpen1} open1={open1} type={type} />
 				</Grid.Column>
 			</Grid.Row>
 

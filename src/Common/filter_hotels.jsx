@@ -8,14 +8,13 @@ import { Form } from "semantic-ui-react";
 import { Grid } from "semantic-ui-react";
 import styles from "./styles/filter_hotels.module.scss";
 const FilterHotels = () => {
-  const [activeIndex, setActiveIndex] = useState(0)
-  const handleClick = (e, titleProps) => {
-    const { index } = titleProps
-    const { activeIndex } = activeIndex
-    const newIndex = activeIndex === index ? -1 : index
-    setActiveIndex(newIndex)
-    
-  }
+	const [activeIndex, setActiveIndex] = useState(0);
+	const handleClick = (e, titleProps) => {
+		const { index } = titleProps;
+		const { activeIndex } = activeIndex;
+		const newIndex = activeIndex === index ? -1 : index;
+		setActiveIndex(newIndex);
+	};
 	const radioBtn = [
 		{
 			type: "radio",
@@ -44,13 +43,12 @@ const FilterHotels = () => {
 		<Grid>
 			<Grid.Row>
 				<Grid.Column width={16} className={styles.filterHotels}>
-					<Accordion fluid
-          >
-						<Accordion.Title 
-              active= {activeIndex === 0}
-              index={0}
-              onClick ={handleClick}
-            >
+					<Accordion fluid>
+						<Accordion.Title
+							active={activeIndex === 0}
+							index={0}
+							onClick={handleClick}
+						>
 							<Grid>
 								<Grid.Row>
 									<Grid.Column width={16} className={styles.title}>
@@ -63,7 +61,7 @@ const FilterHotels = () => {
 								</Grid.Row>
 							</Grid>
 						</Accordion.Title>
-						<Accordion.Content active = {activeIndex === 1}>
+						<Accordion.Content active={activeIndex === 1}>
 							<Grid>
 								<Grid.Row>
 									<Grid.Column width={16}>
@@ -143,8 +141,7 @@ const FilterHotels = () => {
 														<input type={"checkbox"} />
 														<span>1Add nearby airports</span>
 													</label>
-													{/* <Form.Input className={styles.form5} label="Depart" fluid /> */}
-													<div className={styles.dropdownGroup}>
+ 													<div className={styles.dropdownGroup}>
 														<label>Cabin class & Travelers</label>
 														<Dropdown className={styles.form5} selection />
 													</div>
@@ -157,12 +154,16 @@ const FilterHotels = () => {
 						</Accordion.Content>
 					</Accordion>
 				</Grid.Column>
-
-				
 			</Grid.Row>
 			<Grid.Row>
-				<Grid.Column width={16} className = {styles.test13}>
-					<input type={'range'} min={1} max ={100} step = {1} className = {styles.myslider} />
+				<Grid.Column width={16} className={styles.test13}>
+					<input
+						type={"range"}
+						min={1}
+						max={100}
+						step={1}
+						className={styles.myslider}
+					/>
 				</Grid.Column>
 			</Grid.Row>
 		</Grid>
@@ -170,5 +171,3 @@ const FilterHotels = () => {
 };
 
 export default FilterHotels;
-
-{/* <Grid.Row className={styles.header1}></Grid.Row>; */}
