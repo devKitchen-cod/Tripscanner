@@ -13,6 +13,7 @@ const Header = () => {
 	const navigate = useNavigate();
 	const [type, setType] = useState("");
 	const [open1, setOpen1] = useState(false);
+
 	const isAuth = useSelector((state) => state.login.isAuth);
 
 	return (
@@ -36,7 +37,12 @@ const Header = () => {
 							</Grid.Column>
 							<Grid.Column width={5}>
 								{isAuth ? (
-									<Button className={styles.login}>Log out</Button>
+									<Button
+										className={styles.login}
+										onClick={() => navigate("/")}
+									>
+										Log out
+									</Button>
 								) : (
 									<Button
 										className={styles.login}
