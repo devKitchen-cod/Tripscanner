@@ -1,5 +1,13 @@
 import axios from "axios";
-import { LOGIN, LOGOUT, SETEMAIL, SETNAME, SETPASSWORD , FLIGHTS} from "./redux-types";
+import {
+	LOGIN,
+	LOGOUT,
+	SETEMAIL,
+	SETNAME,
+	SETPASSWORD,
+	FLIGHTS,
+	SETADMINKEY,
+} from "./redux-types";
 
 const start_login = () => {
 	return { type: "start_req" };
@@ -36,9 +44,12 @@ export const reqLogin = (obj) => {
 				password: obj.password,
 			},
 		}).then((res) => {
-			localStorage.setItem("token", res.data);
-			dispatch(success_login());
-			dispatch(err_login());
+			console.log(res.data);
+			localStorage.setItem("token", res.data.token);
+			const user = res.data.data_user;
+			dispatch({ type: SETNAME, payload: user.name });
+			dispatch({ type: SETEMAIL, payload: user.email });
+			dispatch({ type: SETPASSWORD, payload: obj.password });
 			dispatch({ type: LOGIN, payload: true });
 		});
 	};
@@ -47,21 +58,38 @@ export const reqLogin = (obj) => {
 export const reqAuth = (obj) => {
 	return async (dispatch) => {
 		console.log("as", obj);
+
 		const res = await axios.post("http://localhost:8080/api/auth-user-create", {
 			name: obj.name,
 			email: obj.email,
 			password: obj.password,
 		});
+		
 		console.log(res);
 		if (res.status === 200) {
+			console.log("data == ", res.data);
 			localStorage.setItem("token", res.data);
 			dispatch({ type: SETNAME, payload: obj.name });
 			dispatch({ type: SETEMAIL, payload: obj.email });
 			dispatch({ type: SETPASSWORD, payload: obj.password });
 			dispatch({ type: LOGIN, payload: true });
+		} else {
+			console.log("ERR");
 		}
 	};
 };
+export const reqGetAdmin = (obj) => {
+	console.log('d', obj)
+	return async (dispatch) => {
+		console.log('obj = ', obj)
+		const res = await axios.post('http://localhost:8080/api/getadmin', {
+			key: obj.key,
+			email: obj.email
+		})
+		// console.log('res =', res.data.key_admin)
+		res.status === 200 ? (dispatch({type: SETADMINKEY, payload: res.data.key_admin})) : (console.log('err'))
+	}
+}
 
 export const reqLogout = () => {
 	return async (dispatch) => {
@@ -70,10 +98,8 @@ export const reqLogout = () => {
 };
 
 export const reqFlights = () => {
-	return async (dispatch) => {
-		
-	}
-}
+	return async (dispatch) => {};
+};
 
 export const reqCheckToken = (obj) => {
 	console.log("reqCheckToken obj = ", obj);

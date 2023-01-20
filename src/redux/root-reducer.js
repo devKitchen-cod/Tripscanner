@@ -1,10 +1,11 @@
 import { combineReducers } from "redux";
-import { FLIGHTS, LOGIN, LOGOUT, SETEMAIL, SETNAME, SETPASSWORD } from "./redux-types";
+import { FLIGHTS, LOGIN, LOGOUT, SETADMINKEY, SETEMAIL, SETNAME, SETPASSWORD } from "./redux-types";
 
 const init_auth = {
 	email: "",
 	name: "",
 	password: "",
+	key: ""
 };
 function Auth(state = init_auth, action) {
 	switch (action.type) {
@@ -16,6 +17,9 @@ function Auth(state = init_auth, action) {
 		}
 		case SETPASSWORD: {
 			return { ...state, password: action.payload };
+		}
+		case SETADMINKEY: {
+			return {...state, key: action.payload}
 		}
 
 		default:

@@ -13,7 +13,9 @@ const AuthModal = ({ setOpen1, open1 }) => {
 		name: "",
 		email: "",
 		password: "",
+		key: "",
 	});
+	const [admin, setAdmin] = useState(false);
 
 	const handleSubAuth = () => {
 		(user.email, user.password, user.name) === ""
@@ -28,7 +30,7 @@ const AuthModal = ({ setOpen1, open1 }) => {
 	};
 
 	return (
-		<Modal size="mini" onClose={() => setOpen1(false)} open={open1}>
+		<Modal size="mini" dimmer ='blurring' onClose={() => setOpen1(false)} open={open1}>
 			<Modal.Content className={styles.modal_cont}>
 				<Grid>
 					<Grid.Row className={styles.cont_row1} textAlign="center">
@@ -103,6 +105,7 @@ const AuthModal = ({ setOpen1, open1 }) => {
 							)}
 						</Grid.Column>
 					</Grid.Row>
+
 					<Grid.Row textAlign="center">
 						<Grid.Column>
 							<Button color="black" onClick={() => setOpen1(false)}>
@@ -152,6 +155,8 @@ const AuthModal = ({ setOpen1, open1 }) => {
 
 						<Grid.Column width={8} className={styles.group_btn2}></Grid.Column>
 					</Grid.Row>
+
+				
 				</Grid>
 			</Modal.Content>
 		</Modal>

@@ -1,5 +1,106 @@
- // {type === "signup" ? (
-//   <Form>
+{/* <Grid.Row className={styles.modal_action_row} textAlign="center">
+						<Grid.Column width={16} floated="left" className={styles.signup}>
+							{type === "signup" ? (
+								<span>Already have an account ?</span>
+							) : (
+								<span>In first time here ?</span>
+							)}
+							{type === "signup" ? (
+								<Button content="Log in" onClick={() => setType("login")} />
+							) : (
+								<Button content="Sign up" onClick={() => setType("signup")} />
+							)}
+						</Grid.Column> */}
+
+					{/* <Grid.Column width={8} className={styles.group_btn2}></Grid.Column>
+					</Grid.Row> */}{/* {type === "signup" ? (
+								<Form>
+									<Form.Field>
+										<label>Name</label>
+										<input
+											placeholder="Name"
+											value={user.name}
+											onChange={(e) =>
+												setUser({ ...user, name: e.target.value })
+											}
+										/>
+									</Form.Field>
+									<Form.Field>
+										<label>Email</label>
+										<input
+											placeholder="Email"
+											value={user.email}
+											onChange={(e) =>
+												setUser({ ...user, email: e.target.value })
+											}
+										/>
+									</Form.Field>
+									<Form.Field>
+										<label>Password</label>
+										<input
+											placeholder="Password"
+											value={user.password}
+											onChange={(e) =>
+												setUser({ ...user, password: e.target.value })
+											}
+										/>
+									</Form.Field>
+								</Form>
+							) : (
+								<Form>
+									<Form.Field>
+										<label>Email</label>
+										<input
+											placeholder="Email"
+											value={user.email}
+											onChange={(e) =>
+												setUser({ ...user, email: e.target.value })
+											}
+										/>
+									</Form.Field>
+									<Form.Field>
+										<label>Password</label>
+										<input
+											placeholder="Password"
+											value={user.password}
+											onChange={(e) =>
+												setUser({ ...user, password: e.target.value })
+											}
+										/>
+									</Form.Field>
+								</Form>
+							)} */} // {type === "signup" ? (
+/	{/* <Grid.Row className={styles.isAdmin} textAlign="center">
+						<Grid.Column>
+							{type === "signup" ? (
+								<Button toggle active={admin} onClick={() => setAdmin(!admin)}>
+									Auth admin
+								</Button>
+							) : (
+								<></>
+							)}
+						</Grid.Column>
+					</Grid.Row> */}
+					{/* {admin ? (
+						<Grid.Row>
+							<Grid.Column>
+								<Form>
+									<Form.Field>
+										<label>Admin Key</label>
+										<input
+											placeholder="Key"
+											value={user.key}
+											onChange={(e) =>
+												setUser({ ...user, key: e.target.value })
+											}
+										/>
+									</Form.Field>
+								</Form>
+							</Grid.Column>
+						</Grid.Row>
+					) : (
+						<></>
+					)} */}/   <Form>
 //     <Form.Field>
 //       <label>Name</label>
 //       <input

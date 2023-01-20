@@ -1,21 +1,40 @@
-import React from "react";
-import { Icon } from "semantic-ui-react";
+import React, { useEffect } from "react";
+import { Dropdown, Icon } from "semantic-ui-react";
 import { Button } from "semantic-ui-react";
 import { Grid } from "semantic-ui-react";
 import styles from "./styles/header.module.scss";
 import getUnicodeFlagIcon from "country-flag-icons/unicode";
 import { useState } from "react";
 import AuthModal from "./modal";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-
-const Header = () => {
+import { reqLogout } from "../redux/actions";
+import AdminModal from "./adminModal";
+function Header() {
 	const navigate = useNavigate();
+	const dispatch = useDispatch();
 	const [type, setType] = useState("");
 	const [open1, setOpen1] = useState(false);
-
+	const [admin, setAdmin] = useState(false);
+	const [open_admin_modal, setOpenAdmMod] = useState(false);
 	const isAuth = useSelector((state) => state.login.isAuth);
+	const name = useSelector((state) => state.auth.name);
+	const key = useSelector((state) => state.auth.key);
+	useEffect(() => {
+		console.log('key =', key)
+	}, [key])
+	// console.log(name);
 
+	const handleLogOut = () => {
+		localStorage.setItem("token", null);
+		window.location.replace("/");
+		dispatch(reqLogout);
+	};
+
+	// const handleGetAdmin = () => {
+	// 	setAdmin(true);
+	// 	// console.log(admin)
+	// };
 	return (
 		<Grid className={styles.header}>
 			<Grid.Row className={styles.headerRow}>
@@ -37,13 +56,26 @@ const Header = () => {
 							</Grid.Column>
 							<Grid.Column width={5}>
 								{isAuth ? (
-									<Button
-										className={styles.login}
-										onClick={() => navigate("/")}
-									>
-										Log out
-									</Button>
+									// <Button className={styles.login}>
+									<Dropdown text={name} className={styles.login1}>
+										<Dropdown.Menu>
+											<Dropdown.Item text="Profile" />
+											{key ? (
+												<Dropdown.Item text="Admin Profile" />
+											) : (
+												<Dropdown.Item
+													text="Get Admin"
+													onClick={() => setOpenAdmMod(true)}
+												/>
+											)}
+											<Dropdown.Item
+												text="Log Out"
+												onClick={() => handleLogOut()}
+											/>
+										</Dropdown.Menu>
+									</Dropdown>
 								) : (
+									// </Button>
 									<Button
 										className={styles.login}
 										onClick={() => {
@@ -59,6 +91,7 @@ const Header = () => {
 					</Grid>
 
 					<AuthModal setOpen1={setOpen1} open1={open1} type={type} />
+					<AdminModal setOpenAdm={setOpenAdmMod} openAdm={open_admin_modal} />
 				</Grid.Column>
 			</Grid.Row>
 
@@ -83,6 +116,6 @@ const Header = () => {
 			</Grid.Row>
 		</Grid>
 	);
-};
+}
 
 export default Header;
