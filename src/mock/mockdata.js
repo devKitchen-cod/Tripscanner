@@ -85,18 +85,15 @@ export const options = [
 	{
 		width: 5,
 		url: "https://content.skyscnr.com/m/139a24f17c26c197/original/p1.svg",
-		text: "Находите лучшие варианты для перелета между любыми точками мира и	бронируйте авиабилеты без комиссий.",
-	},
+		text: "Find the best deals to fly anywhere in the world and book flights without commission.",	},
 	{
 		width: 5,
 		url: "https://content.skyscnr.com/m/139a24f17c26c197/original/p1.svg",
-		text: "Сравнивайте цены в сотнях агентств и авиакомпаний. Выбирайте самые дешевые, быстрые или экологичные перелеты.",
-	},
+		text: "Compare prices across hundreds of agencies and airlines. Choose the cheapest, fastest, or greenest flights.",	},
 	{
 		width: 6,
 		url: "https://content.skyscnr.com/m/139a24f17c26c197/original/p1.svg",
-		text: "Найдите самый дешевый месяц и день для перелета по вашему направлению. Подпишитесь на уведомления, чтобы отслеживать изменение цен.",
-	},
+		text: "Find the cheapest month and day to fly to your destination. Sign up for notifications to keep track of price changes.",	},
 ];
 
 export const footerData = [

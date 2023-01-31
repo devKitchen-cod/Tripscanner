@@ -46,15 +46,19 @@ export const reqLogin = (obj) => {
 		}).then((res) => {
 			console.log(res.data);
 			localStorage.setItem("token", res.data.token);
+			
 			const user = res.data.data_user;
 			dispatch({ type: SETNAME, payload: user.name });
 			dispatch({ type: SETEMAIL, payload: user.email });
-			dispatch({ type: SETPASSWORD, payload: obj.password });
+			dispatch({ type: SETPASSWORD, payload: user.password });
 			dispatch({ type: LOGIN, payload: true });
+			dispatch({ type: SETADMINKEY, payload: user.key_admin})
 		});
 	};
 };
+// export const rendActive = () =>{
 
+// }
 export const reqAuth = (obj) => {
 	return async (dispatch) => {
 		console.log("as", obj);
@@ -96,6 +100,14 @@ export const reqLogout = () => {
 		dispatch({ type: LOGOUT, payload: false });
 	};
 };
+export const reqGetCountries = () => {
+	return async (dispatch) => {
+		const countries = await axios.get('http://localhost:8080/api/getdata')
+		console.log('countries ==', countries.data		)
+	}
+	//https://restcountries.com/v3.1/all
+	//http://localhost:8080/api/getdata
+}
 
 export const reqFlights = () => {
 	return async (dispatch) => {};

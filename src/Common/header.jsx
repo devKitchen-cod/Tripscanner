@@ -18,12 +18,11 @@ function Header() {
 	const [admin, setAdmin] = useState(false);
 	const [open_admin_modal, setOpenAdmMod] = useState(false);
 	const isAuth = useSelector((state) => state.login.isAuth);
-	const name = useSelector((state) => state.auth.name);
+	const name = useSelector((state) => state.auth.email);
 	const key = useSelector((state) => state.auth.key);
 	useEffect(() => {
 		console.log('key =', key)
 	}, [key])
-	// console.log(name);
 
 	const handleLogOut = () => {
 		localStorage.setItem("token", null);
@@ -31,10 +30,7 @@ function Header() {
 		dispatch(reqLogout);
 	};
 
-	// const handleGetAdmin = () => {
-	// 	setAdmin(true);
-	// 	// console.log(admin)
-	// };
+
 	return (
 		<Grid className={styles.header}>
 			<Grid.Row className={styles.headerRow}>
@@ -51,7 +47,7 @@ function Header() {
 
 							<Grid.Column width={9} className={styles.settingsBtn}>
 								<Button className={styles.settings}>
-									English(UK) {getUnicodeFlagIcon("ua")} Ukrain $USD
+									English(UK) {getUnicodeFlagIcon("ua")} Ukraine $USD
 								</Button>
 							</Grid.Column>
 							<Grid.Column width={5}>
@@ -61,7 +57,7 @@ function Header() {
 										<Dropdown.Menu>
 											<Dropdown.Item text="Profile" />
 											{key ? (
-												<Dropdown.Item text="Admin Profile" />
+												<Dropdown.Item text="Admin Profile" onClick={() => navigate('/admin-profile')} />
 											) : (
 												<Dropdown.Item
 													text="Get Admin"

@@ -1,3 +1,36 @@
+
+{/* <Menu.Item >
+							Home
+							<Menu.Menu>
+								<Menu.Item
+									name="search"
+									active={active === "search"}
+									onClick={() => setActive("search")}
+
+								>
+									Search
+								</Menu.Item>
+
+								<Menu.Item
+									name="add"
+									active={active === "add"}
+									// active={true}
+									onClick={() => setActive("add")}
+								>
+									Add
+								</Menu.Item>
+
+								<Menu.Item
+									name="about"
+									active={active === "about"}
+
+									onClick={() => setActive("about")}
+									// onClick={handleSetActive}
+								>
+									Remove
+								</Menu.Item>
+							</Menu.Menu>
+						</Menu.Item> */}
 {/* <Grid.Row className={styles.modal_action_row} textAlign="center">
 						<Grid.Column width={16} floated="left" className={styles.signup}>
 							{type === "signup" ? (

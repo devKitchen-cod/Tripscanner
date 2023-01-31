@@ -1,5 +1,6 @@
 import { combineReducers } from "redux";
-import { FLIGHTS, LOGIN, LOGOUT, SETADMINKEY, SETEMAIL, SETNAME, SETPASSWORD } from "./redux-types";
+// import About from "../Common/about";
+import {  FLIGHTS, LOGIN, LOGOUT, SETADMINKEY, SETEMAIL, SETNAME, SETPASSWORD } from "./redux-types";
 
 const init_auth = {
 	email: "",
@@ -11,6 +12,9 @@ function Auth(state = init_auth, action) {
 	switch (action.type) {
 		case SETEMAIL: {
 			return { ...state, email: action.payload };
+			// state.email = action.payload
+			// return { ...state, email: ac };
+
 		}
 		case SETNAME: {
 			return { ...state, name: action.payload };
@@ -56,9 +60,18 @@ function get_Flights(state = init_getFlights, action) {
 			return state;
 	}
 }
+// const init = {
+
+// }
+// function getRender (state = init, action){
+// 	switch(action.type){
+// 		case ABOUT: { return(<About/>) }
+// 	}
+// }
 
 export const rootReducer = combineReducers({
 	login: Login,
 	auth: Auth,
-	flights: get_Flights
+	flights: get_Flights, 
+	// rend: getRender
 });

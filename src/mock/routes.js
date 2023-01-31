@@ -1,3 +1,4 @@
+import AdminProfileLayout from "../Common/admin-profile-layout";
 import FlightSearch from "../Pages/flights-search-page";
 import HotelsPage from "../Pages/hotels-page";
 import StartPage from "../Pages/start-page";
@@ -14,5 +15,9 @@ export const routes = [
   {
     path: '/flight-search',
     element: <FlightSearch/>
-  }
+  },
+  {
+    path: '/admin-profile',
+    element: <AdminProfileLayout/>
+  },
 ]
