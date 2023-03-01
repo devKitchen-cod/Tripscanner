@@ -1,4 +1,134 @@
-
+{
+  /* <Grid item xs={12} display={'flex'} justifyContent={'end'} marginTop={'20px'}>
+<Paper elevation={2} sx={{ height: "60px", padding: '15px',}}>
+  {/* <TextField label="O" sx={{width: '2em'}}/>
+    <Button variant="contained" sx={{ width: "100px" }}>
+      Save
+    </Button> */
+}
+//   <Box sx={{marginTop: '10px', display: 'flex'}}>
+//     <span style={{ marginRight: "15px", marginTop: '5px' }}>Notes</span>
+//     <Input
+//       placeholder="Enter Order Notes"
+//       variant="outlined"
+//       size ='sm'
+//       sx={{  marginRight: '10px', borderColor: 'rgb(219, 219, 219) !important' }}
+//     />
+//     <Button variant="contained" sx={{ width: "100px" }}>
+//       Save
+//     </Button>
+//   </Box>
+// </Paper>
+// </Grid> */}
+{
+  /* <Grid xs={6} sx={{ marginLeft: "0px" }}>
+                      <span
+                        style={{
+                          display: "block",
+                          fontSize: "13px",
+                          fontWeight: "600",
+                        }}
+                      >
+                        Requested Qty
+                      </span>
+                      <span style={{ fontSize: "30px", fontWeight: "600" }}>
+                        {" "}
+                        0
+                      </span>{" "}
+                    </Grid>
+                    <Grid xs={6}>
+                      <span
+                        style={{
+                          display: "block",
+                          fontSize: "13px",
+                          fontWeight: "600",
+                        }}
+                      >
+                        Recommended Cost
+                      </span>
+                      <span style={{ fontSize: "30px", fontWeight: "600" }}>
+                        {" "}
+                        $ 53,264.46
+                      </span>{" "}
+                    </Grid>
+                    <Grid xs={6}>
+                      <span
+                        style={{
+                          display: "block",
+                          fontSize: "13px",
+                          fontWeight: "600",
+                        }}
+                      >
+                        Order Cost
+                      </span>
+                      <span style={{ fontSize: "30px", fontWeight: "600" }}>
+                        {" "}
+                        $ 0.0
+                      </span>
+                    </Grid> */
+}
+{
+  /* <Grid
+              container
+              direction={"row"}
+              xs={8}
+              //   marginLeft
+              sx={{
+                // display: "flex"  ,
+                justifyContent: "space-between",
+                padding: "20px",
+                textAlign: "center",
+                marginLeft: "30px",
+                border: '2px solid blue'
+              }}
+            >
+              <Grid item>
+                <span
+                  style={{
+                    display: "block",
+                    fontSize: "13px",
+                    fontWeight: "600",
+                  }}
+                >
+                  Target Market Qty
+                </span>
+                <span style={{ fontSize: "30px", fontWeight: "600" }}>
+                  {" "}
+                  13400
+                </span>
+              </Grid>
+              <Grid item>
+                <span
+                  style={{
+                    display: "block",
+                    fontSize: "13px",
+                    fontWeight: "600",
+                  }}
+                >
+                  In Market Qty
+                </span>
+                <span style={{ fontSize: "30px", fontWeight: "600" }}>
+                  {" "}
+                  13400
+                </span>
+              </Grid>
+              <Grid item>
+                <span
+                  style={{
+                    display: "block",
+                    fontSize: "13px",
+                    fontWeight: "600",
+                  }}
+                >
+                  Recommended Qty
+                </span>
+                <span style={{ fontSize: "30px", fontWeight: "600" }}>
+                  {" "}
+                  13400
+                </span>
+              </Grid>
+            </Grid> */
+}
 {/* <Menu.Item >
 							Home
 							<Menu.Menu>
