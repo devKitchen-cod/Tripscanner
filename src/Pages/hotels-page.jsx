@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./hotelspage.module.scss";
 import { Grid } from "semantic-ui-react";
 import FilterHotels from "../Common/filter_hotels";
-//adaptation after 1200px
+//adaptation after 1200pxasdasd
 const HotelsPage = () => {
 	return (
 		<Grid>
