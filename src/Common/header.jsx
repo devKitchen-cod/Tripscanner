@@ -97,7 +97,7 @@ function Header() {
 						<Icon name="paper plane outline" />
 						Flights
 					</Button>
-					<Button
+					{/* <Button
 						className={styles.flightsBtn}
 						onClick={() => navigate("/hotels")}
 					>
@@ -107,7 +107,7 @@ function Header() {
 					<Button className={styles.flightsBtn}>
 						<Icon name="paper plane outline" />
 						Car Rental
-					</Button>
+					</Button> */}
 				</Grid.Column>
 			</Grid.Row>
 		</Grid>

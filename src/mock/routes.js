@@ -1,7 +1,7 @@
 import AdminProfileLayout from "../Common/admin-profile-layout";
 import FlightSearch from "../Pages/flights-search-page";
 import HotelsPage from "../Pages/hotels-page";
-import StartPage from "../Pages/start-page";
+import StartPage from "../Pages/flights-page";
 
 export const routes = [
   {

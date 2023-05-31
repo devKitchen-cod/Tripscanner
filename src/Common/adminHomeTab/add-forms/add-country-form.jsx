@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { Navigate } from "react-router-dom";
 import { Button, Dropdown, Form, Grid, Icon, Table } from "semantic-ui-react";
 import { testResSerch } from "../../../mock/mockdata";
-import { reqGetCountries } from "../../../redux/actions";
+import { reqGetCity, reqGetCountries } from "../../../redux/actions";
 import ResCard from "../../result_card";
 import styles from "./add-country-form.module.scss";
 const data = [
@@ -86,7 +86,7 @@ const data = [
 const CountryForm = (disable) => {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(reqGetCountries());
+    dispatch(reqGetCity());
   });
   return (
     <div>

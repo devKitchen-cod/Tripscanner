@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./flight_search_page.module.scss";
+import styles from "./styles/flight_search_page.module.scss";
 
 import { Icon } from "semantic-ui-react";
 import { Button } from "semantic-ui-react";

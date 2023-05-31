@@ -7,6 +7,8 @@ import {
 	SETPASSWORD,
 	FLIGHTS,
 	SETADMINKEY,
+	CITY,
+	AIRPORTS,
 } from "./redux-types";
 
 const start_login = () => {
@@ -100,13 +102,22 @@ export const reqLogout = () => {
 		dispatch({ type: LOGOUT, payload: false });
 	};
 };
-export const reqGetCountries = () => {
+export const reqGetCity = () => {
+	// console.log('ded')
 	return async (dispatch) => {
-		const countries = await axios.get('http://localhost:8080/api/getdata')
-		console.log('countries ==', countries.data		)
+		console.log('ded')
+		const city = await axios.get('http://localhost:8080/api/getCity')
+		dispatch({ type: CITY, payload: city.data });
+
 	}
-	//https://restcountries.com/v3.1/all
-	//http://localhost:8080/api/getdata
+}
+
+export const reqGetAirports = () => {
+	return async(dispatch) => {
+		const airports = await axios.get('http://localhost:8080/api/getAirports')
+		// console.log('countries ==', airports.data)
+		dispatch({ type: AIRPORTS, payload: airports.data });
+	}
 }
 
 export const reqFlights = () => {
