@@ -1,30 +1,15 @@
 /** @format */
 
-import React, {
-  useEffect,
-  useState,
-} from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import {
-  Form,
-  Select,
-} from "semantic-ui-react";
-import {
-  Button,
-  Grid,
-  Icon,
-  Dropdown,
-} from "semantic-ui-react";
+import { Form, Select } from "semantic-ui-react";
+import { Button, Grid, Icon, Dropdown } from "semantic-ui-react";
 import styles from "./styles/filter.module.scss";
 import { useSelector } from "react-redux";
 const Filter = () => {
   const navigate = useNavigate();
-  const city = useSelector(
-    (state) => state.city.res
-  );
-  const [citys, setCitys] = useState(
-    []
-  );
+  const city = useSelector((state) => state.city.res);
+  const [citys, setCitys] = useState([]);
   useEffect(() => {
     console.log("[city]", city);
     setCitys(
@@ -69,53 +54,23 @@ const Filter = () => {
   return (
     <Grid>
       <Grid.Row centered>
-        <Grid.Column
-          width={16}
-          className={styles.filter}>
-          <Grid
-            className={
-              styles.innerfilter
-            }>
+        <Grid.Column width={16} className={styles.filter}>
+          <Grid className={styles.innerfilter}>
             <Grid.Row centered>
-              <Grid.Column
-                width={8}
-                className={
-                  styles.radioBtnGroup
-                }>
-                {radioBtn.map(
-                  (item) => (
-                    <div
-                      className={
-                        styles.filterGroup
-                      }>
-                      <input
-                        type={item.type}
-                        id={item.id}
-                        name={item.name}
-                      />
-                      <label
-                        className={
-                          styles.radioLabel
-                        }
-                        for={item.for}>
-                        {item.content}
-                      </label>
-                    </div>
-                  )
-                )}
+              <Grid.Column width={8} className={styles.radioBtnGroup}>
+                {radioBtn.map((item) => (
+                  <div className={styles.filterGroup}>
+                    <input type={item.type} id={item.id} name={item.name} />
+                    <label className={styles.radioLabel} for={item.for}>
+                      {item.content}
+                    </label>
+                  </div>
+                ))}
               </Grid.Column>
             </Grid.Row>
 
-            <Grid.Row
-              centered
-              className={
-                styles.inputGroup
-              }>
-              <Grid.Column
-                width={14}
-                className={
-                  styles.inputGroupColumn
-                }>
+            <Grid.Row centered className={styles.inputGroup}>
+              <Grid.Column width={14} className={styles.inputGroupColumn}>
                 <Form>
                   <Form.Group
                   // widths={"equal"}
@@ -123,9 +78,7 @@ const Filter = () => {
                     <Form.Input
                       // control={Select}
                       // options={citys}
-                      className={
-                        styles.form1
-                      }
+                      className={styles.form1}
                       label='From'
                       fluid
                       placeholder='Country, city or airport'
@@ -133,9 +86,7 @@ const Filter = () => {
                     <Form.Input
                       // control={Select}
                       // options={citys}
-                      className={
-                        styles.form2
-                      }
+                      className={styles.form2}
                       label='To'
                       fluid
                       placeholder='Country, city or airport'
@@ -158,9 +109,7 @@ const Filter = () => {
                     </div> */}
 
                     <Form.Select
-                      className={
-                        styles.dropdown
-                      }
+                      className={styles.dropdown}
                       fluid
                       label=' Cabin Class &
                       Travelers'
@@ -184,23 +133,12 @@ const Filter = () => {
                       
                     </Button> */}
                     <Button
-                      className={
-                        styles.findBtn1
-                      }
-                      onClick={() =>
-                        navigate(
-                          "/flight-search"
-                        )
-                      }
+                      className={styles.findBtn1}
+                      onClick={() => navigate("/flight-search")}
                       icon
                       labelPosition='right'>
                       Search
-                      <Icon
-                        name='right arrow'
-                        className={
-                          styles.btnIcon
-                        }
-                      />
+                      <Icon name='right arrow' className={styles.btnIcon} />
                     </Button>
                   </Form.Group>
                 </Form>

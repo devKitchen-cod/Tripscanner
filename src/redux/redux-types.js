@@ -7,6 +7,9 @@ export const SETADMINKEY = "SETADMINKEY"
 export const FLIGHTS = "FLIGHTS";
 
 export const AIRPORTS = "AIRPORTS"
+export const FINDEDAIRPORTS= "FINDEDAIRPORTS"
 export const CITY = "CITY"
+
+export const ADDCITY = 'ADDCITY'
 
 // export const ABOUT = "ABOUT"

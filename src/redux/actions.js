@@ -9,6 +9,7 @@ import {
 	SETADMINKEY,
 	CITY,
 	AIRPORTS,
+	FINDEDAIRPORTS,
 } from "./redux-types";
 
 const start_login = () => {
@@ -105,7 +106,7 @@ export const reqLogout = () => {
 export const reqGetCity = () => {
 	// console.log('ded')
 	return async (dispatch) => {
-		console.log('ded')
+		// console.log('ded')
 		const city = await axios.get('http://localhost:8080/api/getCity')
 		dispatch({ type: CITY, payload: city.data });
 
@@ -119,6 +120,16 @@ export const reqGetAirports = () => {
 		dispatch({ type: AIRPORTS, payload: airports.data });
 	}
 }
+export const reqFindAirports = (obj) => {
+	console.log(obj)
+	return async(dispatch) => {
+		const airports = await axios.post('http://localhost:8080/api/getFindedAirports', {
+			origin_city: obj.origin_city,
+			distination_city: obj.distination_city
+		})
+		dispatch({type: FINDEDAIRPORTS, payload: airports.data})
+	}
+}
 
 export const reqFlights = () => {
 	return async (dispatch) => {};
@@ -127,5 +138,17 @@ export const reqFlights = () => {
 export const reqCheckToken = (obj) => {
 	console.log("reqCheckToken obj = ", obj);
 };
+
+//service
+
+export const reqAddCityAirport = (obj) => {
+	return async(dispatch) => {
+		const res = await axios.post("http://localhost:8080/api/addNewField", {
+			city: obj.city,
+			airport: obj.airport
+		})
+		console.log('res', res)
+	}
+}
 
 // res.status<300? localStorage.setItem("token", res.data.token): console.log("error")

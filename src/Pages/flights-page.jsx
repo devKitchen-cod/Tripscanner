@@ -22,7 +22,6 @@ const StartPage = () => {
   }, [])
   const handleGetCityList = () => {
     dispatch(reqGetCity());
-    // dispatch(reqGetAirports());
 
   };
 
