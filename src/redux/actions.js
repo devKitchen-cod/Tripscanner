@@ -150,5 +150,11 @@ export const reqAddCityAirport = (obj) => {
 		console.log('res', res)
 	}
 }
+export const reqAddFlights = (obj) => {
+	return async(dispatch) => {
+		const res = await axios.post("http://localhost:8080/api/addFlight", {obj: obj})
+		console.log('reqAddFlights = ', res)
+	}
+}
 
 // res.status<300? localStorage.setItem("token", res.data.token): console.log("error")

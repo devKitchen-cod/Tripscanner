@@ -1,9 +1,11 @@
 /** @format */
 
 import React from "react";
+import { useSelector } from "react-redux";
 import { Icon, Menu, Table } from "semantic-ui-react";
 
 const TableFlights = (data) => {
+  // const flightsData = useSelector((state) => state.)
   return (
     <div>
       <Table celled>
@@ -13,7 +15,7 @@ const TableFlights = (data) => {
             <Table.HeaderCell>Origin</Table.HeaderCell>
             <Table.HeaderCell>Distination</Table.HeaderCell>
             <Table.HeaderCell>Price</Table.HeaderCell>
-            <Table.HeaderCell> Origin time</Table.HeaderCell>
+            <Table.HeaderCell>Origin time</Table.HeaderCell>
             <Table.HeaderCell>Distination time</Table.HeaderCell>
             <Table.HeaderCell>Flight time</Table.HeaderCell>
           </Table.Row>

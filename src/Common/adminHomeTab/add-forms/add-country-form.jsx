@@ -17,8 +17,9 @@ import {
 
 import styles from "./add-country-form.module.scss";
 import TableFlights from "../tables/table-flight";
-import Calendar from "react-calendar";
-import { reqFindAirports, reqGetCity } from "../../../redux/actions";
+// import Calendar from "react-calendar";
+import { reqAddFlights, reqFindAirports, reqGetCity } from "../../../redux/actions";
+import { Label } from "semantic-ui-react";
 
 const data = [
   {
@@ -106,8 +107,8 @@ const FlightsForm = (disable) => {
 
   const [cityName, setCity] = useState([]);
   const [saveParams, setParams] = useState({
-    origin: "",
-    distination: "",
+    origin_airport: "",
+    distination_airport: "",
     origin_city: "",
     distination_city: "",
     price: "",
@@ -120,9 +121,11 @@ const FlightsForm = (disable) => {
 
   let origin_airport = airport.origin_airports;
   let distination_airport = airport.distination_airports;
+
   useEffect(() => {
     dispatch(reqGetCity());
   }, []);
+
   useEffect(() => {
     setCity(
       city.map((item, key) => {
@@ -146,6 +149,7 @@ const FlightsForm = (disable) => {
         };
       })
     );
+
     setDistinationAirport(
       distination_airport?.map((item, key) => {
         return {
@@ -166,8 +170,10 @@ const FlightsForm = (disable) => {
   const handleSaveParams = (e, { name, value }) => {
     setParams({ ...saveParams, [name]: value });
   };
+
   const handleSub = () => {
     console.log("saveParams", saveParams);
+    dispatch(reqAddFlights(saveParams))
   };
   const handleSerachAirports = () => {
     console.log(saveParams.origin_city, saveParams.distination_city);
@@ -187,42 +193,54 @@ const FlightsForm = (disable) => {
               <Grid.Column width={16}>
                 <Grid className={styles.city_group}>
                   <Grid.Row columns={16} className={styles.row}>
-                    <Grid.Column width={7}>
-                      <Icon name='paper plane' />
-                      <Input
-                        size='small'
-                        control={Select}
-                        options={cityName}
-                        search
-                        name='origin_city'
-                        value={saveParams.origin_city}
-                        label='Origin City'
-                        placeholder='Origin City'
-                        onChange={handleSaveParams}
-                      />
-                    </Grid.Column>
-                    <Grid.Column width={1}>
-                      {" "}
-                      <Icon name='arrow right' />
-                    </Grid.Column>
-                    <Grid.Column width={6}>
-                      <Input
-                        size='small'
-                        control={Select}
-                        options={cityName}
-                        search
-                        name='distination_city'
-                        value={saveParams.distination_city}
-                        label='Distination City'
-                        placeholder='Distination City'
-                        onChange={handleSaveParams}
-                      />
-                    </Grid.Column>
+                    <Grid.Column width={16}>
+                      <Form widths='equal'>
+                        <Form.Group widths={9} inline>
+                          <Icon name='paper plane' />
+                          {/* <Label >Origin_city</Label> */}
+                          <Form.Select
+                            // size='small'
+                            // control={Select}
+                            options={cityName}
+                            search
+                            name='origin_city'
+                            value={saveParams.origin_city}
+                            label='Origin City'
+                            placeholder='Origin City'
+                            onChange={handleSaveParams}
+                          />
 
-                    <Grid.Column width={2}>
-                      {/* <Button onClick={() => handleSerachAirports()}>
-                        Serch
-                      </Button> */}
+                          {/* <Icon
+                            // size='large'
+                            className={styles.arrow1}
+                            name='arrow right'
+                          /> */}
+                          {/* </Form.Group> */}
+                          {/* </Form> */}
+                          {/* </Grid.Column> */}
+                          {/* <Grid.Column width={1}>
+                      
+                      <Icon name='arrow right' />
+                    </Grid.Column> */}
+                          {/* <Grid.Column width={6}> */}
+                          {/* <Form> */}
+                          {/* <Form.Group> */}
+                          <Form.Select
+                            // size='small'
+                            // control={Select}
+                            options={cityName}
+                            search
+                            name='distination_city'
+                            value={saveParams.distination_city}
+                            label='Distination City'
+                            placeholder='Distination City'
+                            onChange={handleSaveParams}
+                          />
+                          <Button onClick={() => handleSerachAirports()}>
+                            Serch
+                          </Button>
+                        </Form.Group>
+                      </Form>
                     </Grid.Column>
                   </Grid.Row>
                 </Grid>
@@ -239,9 +257,9 @@ const FlightsForm = (disable) => {
                       control={Select}
                       options={originAirport}
                       search
-                      name='origin'
-                      value={saveParams.origin}
-                      label='Origin'
+                      name='origin_airport'
+                      value={saveParams.origin_airport}
+                      label='Origin Airport'
                       placeholder='Origin'
                       onChange={handleSaveParams}
                     />
@@ -256,8 +274,8 @@ const FlightsForm = (disable) => {
                       control={Select}
                       options={distinationAirport}
                       search
-                      name='distination'
-                      value={saveParams.distination}
+                      name='distination_airport'
+                      value={saveParams.distination_airport}
                       label='Distination'
                       placeholder='Distination'
                       onChange={handleSaveParams}
