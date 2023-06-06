@@ -27,8 +27,8 @@ const AdminProfileLayout = () => {
   };
   return (
     <Grid className={styles.wrapper}>
-      <Grid.Row>
-        <Grid.Column width={4} className={styles.menu}>
+      <Grid.Row columns={16} centered >
+        <Grid.Column width={2} className={styles.menu}>
           <Menu vertical>
             <Menu.Item>
               <Input placeholder="Search..." />
@@ -77,7 +77,7 @@ const AdminProfileLayout = () => {
           </Menu>
         </Grid.Column>
 
-        <Grid.Column width={12} className={styles.table}>
+        <Grid.Column width={10} className={styles.table}>
           {menuFunc(active)}
         </Grid.Column>
 

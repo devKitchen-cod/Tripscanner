@@ -1,12 +1,15 @@
 :global(#app) {
 	.header {
-		margin-left: 40vh;
-		margin-right: 40vh;
-		padding-top: 25px;
+		// border: 2px solid red;
+		// margin-left: 40vh;
+		// margin-right: 40vh;
+		// padding-top: 25px;
 	}
 	.headerRow {
-		padding-left: 5vh;
-		padding-right: 5vh;
+		// border: 2px solid blue;
+		
+		// padding-left: 5vh;
+		// padding-right: 5vh;
 	}
 	.logo {
 		font-size: 25px;
@@ -14,10 +17,18 @@
 		color: #0770e3;
 	}
 	.groupBtn1 {
+		// border: 2px solid red;
+		.groupBtnRow{
+			// border: 2px solid red;
+			// display: flex;
+			// justify-content: end;
+		}
 		.help {
-			margin-top: 8px;
+			// margin-top: 8px;
+			// border: 2px solid red;
 		}
 		.settingsBtn {
+			// border: 2px solid green;
 			.settings {
 				height: 3em;
 				font-size: 12px;
@@ -31,7 +42,7 @@
 			border-radius: 8px;
 		}
 		.login1 {
-			margin-top: 10px;
+			// margin-top: 10px;
 			font-weight: 600;
 			color: rgb(0, 0, 0);
 			border-radius: 8px;

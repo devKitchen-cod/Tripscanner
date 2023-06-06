@@ -5,7 +5,9 @@ import { useSelector } from "react-redux";
 import { Icon, Menu, Table } from "semantic-ui-react";
 
 const TableFlights = (data) => {
-  // const flightsData = useSelector((state) => state.)
+  const flights = useSelector((state) => state.flights.res);
+  console.log('flights', flights)
+
   return (
     <div>
       <Table celled>
@@ -22,15 +24,15 @@ const TableFlights = (data) => {
         </Table.Header>
 
         <Table.Body>
-          {data.data.map((item) => (
+          {flights.map((item) => (
             <Table.Row>
-              <Table.Cell>{item.name}</Table.Cell>
-              <Table.Cell>{item.city_code}</Table.Cell>
-              <Table.Cell>{item.country_code}</Table.Cell>
-              <Table.Cell>{item.name}</Table.Cell>
-              <Table.Cell>{item.city_code}</Table.Cell>
-              <Table.Cell>{item.country_code}</Table.Cell>
-              <Table.Cell>{item.name}</Table.Cell>
+              <Table.Cell>{item._id}</Table.Cell>
+              <Table.Cell>{item.origin_city}</Table.Cell>
+              <Table.Cell>{item.distination_city}</Table.Cell>
+              <Table.Cell>{item.price}</Table.Cell>
+              <Table.Cell>{item.origin_time}</Table.Cell>
+              <Table.Cell>{item.distination_time}</Table.Cell>
+              <Table.Cell>{item.flight_time}</Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>

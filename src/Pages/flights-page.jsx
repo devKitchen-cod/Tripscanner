@@ -7,7 +7,7 @@ import Filter from "../Common/filter";
 import { flights, options } from "../mock/mockdata";
 import Footer from "../Common/footer";
 import { useDispatch, useSelector } from "react-redux";
-import { reqGetAirports, reqGetCity } from "../redux/actions";
+import { reqGetAirports, reqGetCity } from "../redux/getActions";
 
 
 const StartPage = () => {

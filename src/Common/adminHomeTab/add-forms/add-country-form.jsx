@@ -18,8 +18,13 @@ import {
 import styles from "./add-country-form.module.scss";
 import TableFlights from "../tables/table-flight";
 // import Calendar from "react-calendar";
-import { reqAddFlights, reqFindAirports, reqGetCity } from "../../../redux/actions";
 import { Label } from "semantic-ui-react";
+import { reqAddFlights } from "../../../redux/postActions";
+import {
+  reqFindAirports,
+  reqGetCity,
+  reqGetFlights,
+} from "../../../redux/getActions";
 
 const data = [
   {
@@ -107,6 +112,7 @@ const FlightsForm = (disable) => {
 
   const [cityName, setCity] = useState([]);
   const [saveParams, setParams] = useState({
+    name: "",
     origin_airport: "",
     distination_airport: "",
     origin_city: "",
@@ -124,6 +130,7 @@ const FlightsForm = (disable) => {
 
   useEffect(() => {
     dispatch(reqGetCity());
+    dispatch(reqGetFlights());
   }, []);
 
   useEffect(() => {
@@ -167,13 +174,18 @@ const FlightsForm = (disable) => {
     }
   }, [origin_airport, distination_airport]);
 
+  useEffect(() => {
+    console.log("flights", flights);
+  }, [flights]);
+
   const handleSaveParams = (e, { name, value }) => {
     setParams({ ...saveParams, [name]: value });
   };
 
   const handleSub = () => {
     console.log("saveParams", saveParams);
-    dispatch(reqAddFlights(saveParams))
+    dispatch(reqAddFlights(saveParams));
+    dispatch(reqGetFlights());
   };
   const handleSerachAirports = () => {
     console.log(saveParams.origin_city, saveParams.distination_city);
@@ -190,14 +202,13 @@ const FlightsForm = (disable) => {
         <div className={styles.formCountry}>
           <Grid>
             <Grid.Row centered>
-              <Grid.Column width={16}>
+              <Grid.Column verticalAlign='middle' width={16}>
                 <Grid className={styles.city_group}>
-                  <Grid.Row columns={16} className={styles.row}>
-                    <Grid.Column width={16}>
-                      <Form widths='equal'>
-                        <Form.Group widths={9} inline>
+                  <Grid.Row centered columns={16} className={styles.row}>
+                    <Grid.Column width={8}>
+                      <Form>
+                        <Form.Group inline>
                           <Icon name='paper plane' />
-                          {/* <Label >Origin_city</Label> */}
                           <Form.Select
                             // size='small'
                             // control={Select}
@@ -210,21 +221,6 @@ const FlightsForm = (disable) => {
                             onChange={handleSaveParams}
                           />
 
-                          {/* <Icon
-                            // size='large'
-                            className={styles.arrow1}
-                            name='arrow right'
-                          /> */}
-                          {/* </Form.Group> */}
-                          {/* </Form> */}
-                          {/* </Grid.Column> */}
-                          {/* <Grid.Column width={1}>
-                      
-                      <Icon name='arrow right' />
-                    </Grid.Column> */}
-                          {/* <Grid.Column width={6}> */}
-                          {/* <Form> */}
-                          {/* <Form.Group> */}
                           <Form.Select
                             // size='small'
                             // control={Select}
@@ -243,116 +239,123 @@ const FlightsForm = (disable) => {
                       </Form>
                     </Grid.Column>
                   </Grid.Row>
+                  <Grid.Row columns={16} centered>
+                    <Grid.Column width={16}>
+                      <Form   widths='equal'>
+                        <Form.Group  widths={10} inline className={styles.form}>
+                          <Icon
+                            className={styles.icon}
+                            size='large'
+                            name='arrows alternate'
+                          />
+                          <Form.Field
+                            // disabled={disableForm}
+                            control={Select}
+                            options={originAirport}
+                            search
+                            name='origin_airport'
+                            value={saveParams.origin_airport}
+                            label='Origin Airport'
+                            placeholder='Origin'
+                            onChange={handleSaveParams}
+                          />
+
+                          <Icon
+                            className={styles.icon}
+                            size='large'
+                            name='arrow right'
+                          />
+                          <Form.Field
+                            // disabled={disableForm}
+                            control={Select}
+                            options={distinationAirport}
+                            search
+                            name='distination_airport'
+                            value={saveParams.distination_airport}
+                            label='Distination'
+                            placeholder='Distination'
+                            onChange={handleSaveParams}
+                          />
+
+                          <Icon
+                            className={styles.icon}
+                            size='large'
+                            name='dollar sign'
+                          />
+
+                          <Form.Input
+                            // disabled={disableForm}
+                            fluid
+                            id='form-subcomponent-shorthand-input-first-name'
+                            label='Price'
+                            placeholder='Price'
+                            name='price'
+                            value={saveParams.price}
+                            onChange={handleSaveParams}
+                          />
+                        </Form.Group>
+                        <Form.Group inline className={styles.form}>
+                          <Icon
+                            className={styles.icon}
+                            name='calendar alternate'
+                            size='large'
+                          />
+
+                          <Form.Input
+                            // disabled={disableForm}
+                            fluid
+                            id='form-subcomponent-shorthand-input-first-name'
+                            label=' Origin time'
+                            placeholder='Code'
+                            name='origin_time'
+                            value={saveParams.origin_time}
+                            onChange={handleSaveParams}
+                          />
+                          {/* <Calendar onChange={onChange} value={date}/> */}
+                          <Icon
+                            className={styles.icon}
+                            size='large'
+                            name='arrow right'
+                          />
+
+                          <Form.Input
+                            // disabled={disableForm}
+                            fluid
+                            id='form-subcomponent-shorthand-input-first-name'
+                            label='Distination time'
+                            placeholder='Code'
+                            name='distination_time'
+                            value={saveParams.distination_time}
+                            onChange={handleSaveParams}
+                          />
+                          <Icon
+                            className={styles.icon}
+                            size='large'
+                            name='clock'
+                          />
+                          <Form.Input
+                            // disabled={disableForm}
+                            fluid
+                            id='form-subcomponent-shorthand-input-first-name'
+                            label=' Flight time'
+                            placeholder='Code'
+                            name='flight_time'
+                            value={saveParams.flight_time}
+                            onChange={handleSaveParams}
+                          />
+                        </Form.Group>
+                        <Form.Group>
+                          <Form.Button
+                            // disabled={disableForm}
+                            onClick={() => handleSub()}
+                            className={styles.fbutton}>
+                            Submit
+                          </Form.Button>
+                        </Form.Group>
+                      </Form>
+                    </Grid.Column>
+                  </Grid.Row>
                 </Grid>
-
-                <Form widths='equal'>
-                  <Form.Group widths={10} inline className={styles.form}>
-                    <Icon
-                      className={styles.icon}
-                      size='large'
-                      name='arrows alternate'
-                    />
-                    <Form.Field
-                      disabled={disableForm}
-                      control={Select}
-                      options={originAirport}
-                      search
-                      name='origin_airport'
-                      value={saveParams.origin_airport}
-                      label='Origin Airport'
-                      placeholder='Origin'
-                      onChange={handleSaveParams}
-                    />
-
-                    <Icon
-                      className={styles.icon}
-                      size='large'
-                      name='arrow right'
-                    />
-                    <Form.Field
-                      disabled={disableForm}
-                      control={Select}
-                      options={distinationAirport}
-                      search
-                      name='distination_airport'
-                      value={saveParams.distination_airport}
-                      label='Distination'
-                      placeholder='Distination'
-                      onChange={handleSaveParams}
-                    />
-
-                    <Icon
-                      className={styles.icon}
-                      size='large'
-                      name='dollar sign'
-                    />
-
-                    <Form.Input
-                      disabled={disableForm}
-                      fluid
-                      id='form-subcomponent-shorthand-input-first-name'
-                      label='Price'
-                      placeholder='Price'
-                      name='price'
-                      value={saveParams.price}
-                      onChange={handleSaveParams}
-                    />
-                  </Form.Group>
-                  <Form.Group inline className={styles.form}>
-                    <Icon
-                      className={styles.icon}
-                      name='calendar alternate'
-                      size='large'
-                    />
-
-                    <Form.Input
-                      disabled={disableForm}
-                      fluid
-                      id='form-subcomponent-shorthand-input-first-name'
-                      label=' Origin time'
-                      placeholder='Code'
-                      name='origin_time'
-                      value={saveParams.origin_time}
-                      onChange={handleSaveParams}
-                    />
-                    {/* <Calendar onChange={onChange} value={date}/> */}
-                    <Icon
-                      className={styles.icon}
-                      size='large'
-                      name='arrow right'
-                    />
-
-                    <Form.Input
-                      disabled={disableForm}
-                      fluid
-                      id='form-subcomponent-shorthand-input-first-name'
-                      label='Distination time'
-                      placeholder='Code'
-                      name='distination_time'
-                      value={saveParams.distination_time}
-                      onChange={handleSaveParams}
-                    />
-                    <Icon className={styles.icon} size='large' name='clock' />
-                    <Form.Input
-                      disabled={disableForm}
-                      fluid
-                      id='form-subcomponent-shorthand-input-first-name'
-                      label=' Flight time'
-                      placeholder='Code'
-                      name='flight_time'
-                      value={saveParams.flight_time}
-                      onChange={handleSaveParams}
-                    />
-                  </Form.Group>
-                  <Form.Group>
-                    <Form.Button
-                      disabled={disableForm}
-                      onClick={() => handleSub()}
-                      className={styles.fbutton}>
-                      Submit
-                    </Form.Button>
-                  </Form.Group>
-                </Form>
               </Grid.Column>
             </Grid.Row>
 

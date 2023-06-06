@@ -4,7 +4,6 @@ import React from "react";
 import { useState } from "react";
 import { Form, Grid, Input, Menu } from "semantic-ui-react";
 import { useDispatch, useSelector } from "react-redux";
-import { reqAddCityAirport } from "../../redux/actions";
 import FlightsForm from "./add-forms/add-country-form";
 
 const Add = () => {
