@@ -6,7 +6,7 @@ import { Icon, Menu, Table } from "semantic-ui-react";
 
 const TableFlights = (data) => {
   const flights = useSelector((state) => state.flights.res);
-  console.log('flights', flights)
+  console.log("flights", flights);
 
   return (
     <div>
@@ -36,9 +36,10 @@ const TableFlights = (data) => {
             </Table.Row>
           ))}
         </Table.Body>
+
         <Table.Footer>
           <Table.Row>
-            <Table.HeaderCell colSpan='3'>
+            <Table.HeaderCell colSpan='7'>
               <Menu floated='right' pagination>
                 <Menu.Item as='a' icon>
                   <Icon name='chevron left' />

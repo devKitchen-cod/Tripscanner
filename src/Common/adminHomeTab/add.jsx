@@ -4,7 +4,8 @@ import React from "react";
 import { useState } from "react";
 import { Form, Grid, Input, Menu } from "semantic-ui-react";
 import { useDispatch, useSelector } from "react-redux";
-import FlightsForm from "./add-forms/add-country-form";
+import FlightsForm from "./add-forms/add-flights-form";
+import AirportsForm from "./add-forms/add-airports-form";
 
 const Add = () => {
   const [active, setActive] = useState("flight");
@@ -59,7 +60,7 @@ const menuFunc1 = (active) => {
     case "flight":
       return <FlightsForm />;
     case "airports":
-      return <div>airports</div>;
+      return <AirportsForm/>;
     case "tickets":
       return <div>tickets</div>;
     // return  <div>{testResSerch.map((item) => (<ResCard item = {item} />))}</div>

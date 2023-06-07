@@ -1,26 +1,29 @@
 /** @format */
 
 import axios from "axios";
-import {
-  CITY,
-  AIRPORTS,
-  FINDEDAIRPORTS,
-  FLIGHTS,
-} from "./redux-types";
+import { CITY, AIRPORTS, FINDEDAIRPORTS, FLIGHTS } from "./redux-types";
 
 export const reqGetFlights = () => {
   return async (dispatch) => {
-    const flights = await axios.get("http://localhost:8080/api/getFlights")
-    dispatch({type: FLIGHTS, payload: flights.data})
+    const flights = await axios.get("http://localhost:8080/api/getFlights");
+    dispatch({ type: FLIGHTS, payload: flights.data });
   };
 };
 
 export const reqGetCity = () => {
-  // console.log('ded')
+  console.log('reqGetCity')
   return async (dispatch) => {
     // console.log('ded')
     const city = await axios.get("http://localhost:8080/api/getCity");
-    dispatch({ type: CITY, payload: city.data });
+    let cityRes = city.data.map((item, key) => {
+      return {
+        key: key,
+        text: item.name,
+        value: item.name,
+      };
+    });
+    console.log("cityRes", cityRes);
+    dispatch({ type: CITY, payload: cityRes });
   };
 };
 
@@ -28,6 +31,27 @@ export const reqGetAirports = () => {
   return async (dispatch) => {
     const airports = await axios.get("http://localhost:8080/api/getAirports");
     // console.log('countries ==', airports.data)
+    // let data = airports.data;
+    // let origin_airports = data.origin_airports;
+    // let distination_airports = data.distination_airports;
+    // origin_airports = origin_airports.map((item, key) => {
+    //   return {
+    //     key: key,
+    //     text: item.name,
+    //     value: item.name,
+    //   };
+    // });
+    // distination_airports = distination_airports.map((item, key) => {
+    //   return {
+    //     key: key,
+    //     text: item.name,
+    //     value: item.name,
+    //   };
+    // });
+    // let obj = {
+    //   origin_airports,
+    //   distination_airports,
+    // };
     dispatch({ type: AIRPORTS, payload: airports.data });
   };
 };
