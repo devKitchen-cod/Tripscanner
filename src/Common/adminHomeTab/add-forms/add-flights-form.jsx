@@ -4,16 +4,7 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
-import {
-  Button,
-  Dropdown,
-  Form,
-  Grid,
-  Icon,
-  Input,
-  Select,
-  Table,
-} from "semantic-ui-react";
+import { Form, Grid, Icon, Input, Select, Table } from "semantic-ui-react";
 
 import TableFlights from "../tables/table-flight";
 import { reqAddFlights } from "../../../redux/postActions";
@@ -107,7 +98,6 @@ const FlightsForm = (disable) => {
   const [originAirport, setOriginAirport] = useState([]);
   const [distinationAirport, setDistinationAirport] = useState([]);
 
-  // const [cityName, setCity] = useState([]);
   const [saveParams, setParams] = useState({
     name: "",
     origin_airport: "",
@@ -125,49 +115,33 @@ const FlightsForm = (disable) => {
   let origin_airport = airport.origin_airports;
   let distination_airport = airport.distination_airports;
 
-  // useEffect(() => {
-  //   dispatch(reqGetCity());
-  //   dispatch(reqGetFlights());
-  // }, []);
+  useEffect(() => {
+    console.log("airport", airport);
+    setOriginAirport(
+      origin_airport?.map((item, key) => {
+        return {
+          key: key,
+          text: item.name,
+          value: item.name,
+        };
+      })
+    );
 
-  // useEffect(() => {
-  //   setCity(
-  //     city.map((item, key) => {
-  //       return {
-  //         key: key,
-  //         text: item.name,
-  //         value: item.name,
-  //       };
-  //     })
-  //   );
-  // }, [city]);
-
-  // useEffect(() => {
-  //   console.log("airport", airport);
-  //   setOriginAirport(
-  //     origin_airport?.map((item, key) => {
-  //       return {
-  //         key: key,
-  //         text: item.name,
-  //         value: item.name,
-  //       };
-  //     })
-  //   );
-
-  //   setDistinationAirport(
-  //     distination_airport?.map((item, key) => {
-  //       return {
-  //         key: key,
-  //         text: item.name,
-  //         value: item.name,
-  //       };
-  //     })
-  //   );
-  // }, [airport]);
+    setDistinationAirport(
+      distination_airport?.map((item, key) => {
+        return {
+          key: key,
+          text: item.name,
+          value: item.name,
+        };
+      })
+    );
+  }, [airport]);
 
   useEffect(() => {
     if (origin_airport?.length && distination_airport?.length) {
       setDisableForm(!disableForm);
+      console.log(origin_airport, distination_airport);
     }
   }, [origin_airport, distination_airport]);
 
@@ -184,6 +158,7 @@ const FlightsForm = (disable) => {
     dispatch(reqAddFlights(saveParams));
     dispatch(reqGetFlights());
   };
+
   const handleSerachAirports = () => {
     console.log(saveParams.origin_city, saveParams.distination_city);
     let obj = {
@@ -344,124 +319,3 @@ const FlightsForm = (disable) => {
 };
 
 export default FlightsForm;
-
-// <Form widths='equal'>
-//                         <Form.Group widths={16} inline className={styles.form}>
-//                           {/*
-//                           <Icon
-//                             className={styles.icon}
-//                             size='large'
-//                             name='arrows alternate'
-//                           /> */}
-//                           <Form.Field
-//                             // disabled={disableForm}
-//                             control={Select}
-//                             options={originAirport}
-//                             search
-//                             name='origin_airport'
-//                             value={saveParams.origin_airport}
-//                             label='Origin Airport'
-//                             placeholder='Origin'
-//                             onChange={handleSaveParams}
-//                           />
-
-//                           {/* <Icon
-//                             className={styles.icon}
-//                             size='large'
-//                             name='arrow right'
-//                           /> */}
-//                           <Form.Field
-//                             // disabled={disableForm}
-//                             // icon={'arrow right'}
-//                             // iconPosition={'left'}
-//                             control={Select}
-//                             options={distinationAirport}
-//                             search
-//                             name='distination_airport'
-//                             value={saveParams.distination_airport}
-//                             label='Distination'
-//                             placeholder='Distination'
-//                             onChange={handleSaveParams}
-//                           />
-
-//                           {/* <Icon
-//                             className={styles.icon}
-//                             size='large'
-//                             name='dollar sign'
-//                           /> */}
-
-//                           <Form.Input
-//                             // disabled={disableForm}
-//                             icon={"dollar sign"}
-//                             iconPosition={"left"}
-//                             id='form-subcomponent-shorthand-input-first-name'
-//                             label='Price'
-//                             placeholder='Price'
-//                             name='price'
-//                             value={saveParams.price}
-//                             onChange={handleSaveParams}
-//                           />
-//                         </Form.Group>
-
-//                         <Form.Group inline className={styles.form}>
-//                           {/* <Icon
-//                             className={styles.icon}
-//                             name='calendar alternate'
-//                             size='large'
-//                           /> */}
-
-//                           <Form.Input
-//                             // disabled={disableForm}
-//                             icon={"calendar alternate"}
-//                             iconPosition={"left"}
-//                             id='form-subcomponent-shorthand-input-first-name'
-// label=' Origin time'
-// placeholder='Origin time'
-// name='origin_time'
-// value={saveParams.origin_time}
-// onChange={handleSaveParams}
-//                           />
-//                           {/* <Calendar onChange={onChange} value={date}/> */}
-//                           {/* <Icon
-//                             className={styles.icon}
-//                             size='large'
-//                             name='arrow right'
-//                           /> */}
-
-//                           <Form.Input
-//                             // disabled={disableForm}
-//                             icon={"arrow right"}
-//                             iconPosition='left'
-//                             id='form-subcomponent-shorthand-input-first-name'
-// label='Distination time'
-// placeholder='Distination time'
-// name='distination_time'
-// value={saveParams.distination_time}
-// onChange={handleSaveParams}
-//                           />
-//                           {/* <Icon
-//                             className={styles.icon}
-//                             size='large'
-//                             name='clock'
-//                           /> */}
-//                           <Form.Input
-//                             // disabled={disableForm}
-//                             icon={"clock"}
-//                             iconPosition='left'
-//                             id='form-subcomponent-shorthand-input-first-name'
-//                             label=' Flight time'
-//                             placeholder='Code'
-//                             name='flight_time'
-//                             value={saveParams.flight_time}
-//                             onChange={handleSaveParams}
-//                           />
-//                         </Form.Group>
-//                         <Form.Group>
-//                           <Form.Button
-//                             // disabled={disableForm}
-//                             onClick={() => handleSub()}
-//                             className={styles.fbutton}>
-//                             Submit
-//                           </Form.Button>
-//                         </Form.Group>
-//                       </Form>

@@ -20,3 +20,12 @@ export const reqAddFlights = (obj) => {
     console.log("reqAddFlights = ", res);
   };
 };
+
+export const reqAddAirport = (obj) => {
+  return async (dispatch) => {
+    const res = await axios.post("http://localhost:8080/api/addAirport", {
+      obj: obj
+    })
+  }
+}
+// getAirportsByCity

@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { Dropdown, Grid, Icon, Input, Menu } from "semantic-ui-react";
 import { testResSerch } from "../mock/mockdata";
 import { reqGetCity, reqGetFlights } from "../redux/getActions";
@@ -16,6 +17,9 @@ import styles from "./styles/admin-profile-layout.module.scss";
 // import ResCard from "./result_card";
 const AdminProfileLayout = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+
   const [active, setActive] = useState("home");
 
   const [originAirport, setOriginAirport] = useState([]);

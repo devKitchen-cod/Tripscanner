@@ -6,6 +6,7 @@ import { Form, Grid, Input, Menu } from "semantic-ui-react";
 import { useDispatch, useSelector } from "react-redux";
 import FlightsForm from "./add-forms/add-flights-form";
 import AirportsForm from "./add-forms/add-airports-form";
+import AddTickets from "./add-forms/add-tickets";
 
 const Add = () => {
   const [active, setActive] = useState("flight");
@@ -17,23 +18,23 @@ const Add = () => {
           <Menu pointing>
             <Menu.Item
               name='Add Flights'
-              // active={activeItem === 'home'}
+              active={active === 'flight'}
               onClick={() => setActive("flight")}
             />
             <Menu.Item
               name='Add Airports'
-              // active={activeItem === 'messages'}
+              active={active === 'airports'}
               onClick={() => setActive("airports")}
             />
             <Menu.Item
               name='Add Tickets'
-              // active={active}
+              active={active === 'tickets'}
               // onClick={this.handleItemClick}
               onClick={() => setActive("tickets")}
             />
             <Menu.Item
               name='Add City'
-              // active={active}
+              active={active === 'city'}
               // onClick={this.handleItemClick}
               onClick={() => setActive("city")}
             />
@@ -62,7 +63,7 @@ const menuFunc1 = (active) => {
     case "airports":
       return <AirportsForm/>;
     case "tickets":
-      return <div>tickets</div>;
+      return <AddTickets/>;
     // return  <div>{testResSerch.map((item) => (<ResCard item = {item} />))}</div>
     case "city":
       return <div>some</div>;

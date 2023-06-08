@@ -52,9 +52,11 @@ export const reqGetAirports = () => {
     //   origin_airports,
     //   distination_airports,
     // };
+    // console.log('obj')
     dispatch({ type: AIRPORTS, payload: airports.data });
   };
 };
+
 export const reqFindAirports = (obj) => {
   console.log(obj);
   return async (dispatch) => {

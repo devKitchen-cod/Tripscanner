@@ -1,43 +1,11 @@
 /** @format */
 
 import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-import { Select } from "semantic-ui-react";
-import { Icon } from "semantic-ui-react";
 import { Form } from "semantic-ui-react";
 import { Grid } from "semantic-ui-react";
-import TableAirpots from "../tables/table-airpots";
+import TableTickets from "../tables/table-tickets";
 
-const AirportsForm = () => {
-  const dispatch = useDispatch();
-  const city = useSelector((state) => state.city.res);
-  const airports = useSelector((state) => state.airports.finded_airports)
-  const [saveParams, setParams] = useState({
-    city_name: "",
-    name: "",
-    iata_code: "",
-    lat: "",
-    lng: "",
-    country_code: "",
-  });
-
-  useEffect(() => {
-    console.log(typeof airports)
-  }, [airports])
-
-  const handleSaveParams = (e, { name, value }) => {
-    setParams({ ...saveParams, [name]: value });
-  };
-  const handleSub = () => {
-    console.log(saveParams);
-
-  };
-  
-
-
+const AddTickets = () => {
   return (
     <Grid>
       <Grid.Row>
@@ -48,19 +16,19 @@ const AirportsForm = () => {
                 <Form>
                   <Form.Group inline>
                     <Form.Select
-                      options={city}
-                      search
-                      name='city_name'
-                      value={saveParams.city_name}
+                      //   options={city}
+                      //   search
+                      name='city'
+                      // value={saveParams.distination_city}
                       label='City'
-                      placeholder='City'
-                      onChange={handleSaveParams}
+                      placeholder=' City'
+                      // onChange={handleSaveParams}
                     />
                     {/* <Form.Button
-                    //   onClick={() => handleSerachAirports()}
-                    >
-                      Serch
-                    </Form.Button> */}
+                      //   onClick={() => handleSerachAirports()}
+                      >
+                        Serch
+                      </Form.Button> */}
                   </Form.Group>
                 </Form>
               </Grid.Column>
@@ -72,12 +40,14 @@ const AirportsForm = () => {
                     <Form.Input
                       // disabled={disableForm}
                       fluid
-                      // search
-                      name='name'
-                      value={saveParams.name}
+                      //   control={Select}
+                      // options={originAirport}
+                      search
+                      name='name_airport'
+                      // value={saveParams.origin_airport}
                       label='Name Airport'
                       placeholder='Name'
-                      onChange={handleSaveParams}
+                      // onChange={handleSaveParams}
                     />
 
                     <Form.Input
@@ -86,8 +56,8 @@ const AirportsForm = () => {
                       label='IATA'
                       placeholder='Code'
                       name='iata_code'
-                      value={saveParams.iata_code}
-                      onChange={handleSaveParams}
+                      // value={saveParams.price}
+                      // onChange={handleSaveParams}
                     />
                   </Form.Group>
 
@@ -97,22 +67,18 @@ const AirportsForm = () => {
                       fluid
                       label='LAT'
                       placeholder='Code'
-                      name='lat'
-                      value={saveParams.lat}
-
+                      name='distination_time'
                       // value={saveParams.distination_time}
-                      onChange={handleSaveParams}
+                      // onChange={handleSaveParams}
                     />
                     <Form.Input
                       // disabled={disableForm}
                       fluid
                       label='LNG'
                       placeholder='Code'
-                      name='lng'
-                      value={saveParams.lng}
-
+                      name='flight_time'
                       // value={saveParams.flight_time}
-                      onChange={handleSaveParams}
+                      // onChange={handleSaveParams}
                     />
                   </Form.Group>
                   <Form.Group widths={"equal"}>
@@ -121,9 +87,9 @@ const AirportsForm = () => {
                       fluid
                       label='Country code'
                       placeholder='Code'
-                      name='country_code'
-                      value={saveParams.country_code}
-                      onChange={handleSaveParams}
+                      name='flight_time'
+                      // value={saveParams.flight_time}
+                      // onChange={handleSaveParams}
                     />
                     <Form.TextArea
                       //   disabled={disableForm}
@@ -136,8 +102,9 @@ const AirportsForm = () => {
                     label='I agree to the Terms and Conditions'
                   />
                   <Form.Button
-                    //   disabled={disableForm}
-                    onClick={() => handleSub()}>
+                  //   disabled={disableForm}
+                  //   onClick={() => handleSub()}
+                  >
                     Submit
                   </Form.Button>
                 </Form>
@@ -148,11 +115,11 @@ const AirportsForm = () => {
       </Grid.Row>
       <Grid.Row>
         <Grid.Column>
-          <TableAirpots />
+          <TableTickets />
         </Grid.Column>
       </Grid.Row>
     </Grid>
   );
 };
 
-export default AirportsForm;
+export default AddTickets;

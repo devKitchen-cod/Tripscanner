@@ -9,20 +9,18 @@ import Footer from "../Common/footer";
 import { useDispatch, useSelector } from "react-redux";
 import { reqGetAirports, reqGetCity } from "../redux/getActions";
 
-
 const StartPage = () => {
   const f = flights;
   const dispatch = useDispatch();
-  const city = useSelector((state) => state.city.res)
-  const airports = useSelector((state) => state.airports.res)
+  const city = useSelector((state) => state.city.res);
+  const airports = useSelector((state) => state.airports.res);
 
   useEffect(() => {
-    handleGetCityList()
-    handleAirportsCityList()
-  }, [])
+    handleGetCityList();
+    handleAirportsCityList();
+  }, []);
   const handleGetCityList = () => {
     dispatch(reqGetCity());
-
   };
 
   const handleAirportsCityList = () => {
@@ -32,15 +30,14 @@ const StartPage = () => {
   useEffect(() => {
     console.log("City", city);
     console.log("Airports", airports);
-
   }, [city, airports]);
 
   return (
-    <Grid >
+    <Grid>
       <Grid.Row className={styles.row1}>
         <Grid.Column width={16} className={styles.backImg}>
           <Grid className={styles.innerblockfilter}>
-            <Grid.Row >
+            <Grid.Row>
               <Grid.Column width={16} className={styles.spColumn}>
                 <span className={styles.text1}>
                   Cheap flights everywhere, from {<br />} anywhere
@@ -49,7 +46,7 @@ const StartPage = () => {
             </Grid.Row>
 
             <Grid.Row centered className={styles.filterRow}>
-              <Grid.Column  width={15}>
+              <Grid.Column width={15}>
                 <Filter />
               </Grid.Column>
             </Grid.Row>
@@ -60,7 +57,7 @@ const StartPage = () => {
       <Grid.Row centered className={styles.row2} columns={3}>
         {options.map((item) => (
           <Grid.Column width={item.width} className={styles.options}>
-            <img className={styles.imgIconOptions} src={item.url} alt="some" />
+            <img className={styles.imgIconOptions} src={item.url} alt='some' />
             <span className={styles.textOptions}>{item.text}</span>
           </Grid.Column>
         ))}
@@ -92,8 +89,8 @@ const StartPage = () => {
               <Grid.Column width={5}>
                 <div className={styles.img2row}>
                   <img
-                    src="https://content.skyscnr.com/m/3e55723dcc8a2d0f/original/image1.svg"
-                    alt="some"
+                    src='https://content.skyscnr.com/m/3e55723dcc8a2d0f/original/image1.svg'
+                    alt='some'
                   />
                 </div>
                 <div className={styles.imgText1}>
@@ -111,8 +108,8 @@ const StartPage = () => {
               <Grid.Column width={5}>
                 <div className={styles.img2row}>
                   <img
-                    src="https://content.skyscnr.com/m/7b7b3eaf2ab4081c/original/image2.svg"
-                    alt="some"
+                    src='https://content.skyscnr.com/m/7b7b3eaf2ab4081c/original/image2.svg'
+                    alt='some'
                   />
                 </div>
                 <div className={styles.imgText2}>
@@ -130,8 +127,8 @@ const StartPage = () => {
               <Grid.Column width={5}>
                 <div className={styles.img2row}>
                   <img
-                    src="https://content.skyscnr.com/m/4ab58b7e3ae3790c/original/image3.svg"
-                    alt="some"
+                    src='https://content.skyscnr.com/m/4ab58b7e3ae3790c/original/image3.svg'
+                    alt='some'
                   />
                 </div>
                 <div className={styles.imgText3}>
@@ -168,7 +165,7 @@ const StartPage = () => {
             <Grid.Row className={styles.row5p2} columns={2}>
               <Grid.Column width={8} className={styles.row5p2Col1}>
                 <div className={styles.headRow5p2}>
-                  <Icon name="bell" color="blue" />
+                  <Icon name='bell' color='blue' />
                   <span>Find flexible flight deals</span>
                 </div>
                 <div className={styles.subRow5p2v1}>
@@ -180,7 +177,7 @@ const StartPage = () => {
               </Grid.Column>
               <Grid.Column width={8} className={styles.row5p2Col1}>
                 <div className={styles.head2Row5p2}>
-                  <Icon name="certificate" color="blue" />
+                  <Icon name='certificate' color='blue' />
                   <span>Add hotels and car rentals</span>
                 </div>
                 <div className={styles.subRow5p2v1}>
@@ -209,7 +206,7 @@ const StartPage = () => {
                       <div style={{ marginTop: "15px" }}>
                         <input
                           className={styles.cardInput}
-                          placeholder="Enter your email address"
+                          placeholder='Enter your email address'
                         />
                         <Button style={{ marginLeft: "5px", height: "3em" }}>
                           Sign Up
@@ -224,9 +221,9 @@ const StartPage = () => {
                     </Grid.Column>
                     <Grid.Column width={6}>
                       <img
-                        alt="some"
+                        alt='some'
                         className={styles.cardImg}
-                        src="https://content.skyscnr.com/m/6ea151fbaf83db9e/original/Emailcapture.png"
+                        src='https://content.skyscnr.com/m/6ea151fbaf83db9e/original/Emailcapture.png'
                       />
                     </Grid.Column>
                   </Grid.Row>
