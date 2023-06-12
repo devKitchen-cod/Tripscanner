@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import FlightsForm from "./add-forms/add-flights-form";
 import AirportsForm from "./add-forms/add-airports-form";
 import AddTickets from "./add-forms/add-tickets";
+import AddCityform from "./add-forms/add-city-form";
 
 const Add = () => {
   const [active, setActive] = useState("flight");
@@ -66,7 +67,7 @@ const menuFunc1 = (active) => {
       return <AddTickets/>;
     // return  <div>{testResSerch.map((item) => (<ResCard item = {item} />))}</div>
     case "city":
-      return <div>some</div>;
+      return <AddCityform/>;
       break;
 
     default:

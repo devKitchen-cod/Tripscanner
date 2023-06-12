@@ -1,7 +1,13 @@
 /** @format */
 
 import axios from "axios";
-import { CITY, AIRPORTS, FINDEDAIRPORTS, FLIGHTS } from "./redux-types";
+import {
+  CITY,
+  AIRPORTS,
+  FINDEDAIRPORTS,
+  FLIGHTS,
+  COUNTRY,
+} from "./redux-types";
 
 export const reqGetFlights = () => {
   return async (dispatch) => {
@@ -11,7 +17,7 @@ export const reqGetFlights = () => {
 };
 
 export const reqGetCity = () => {
-  console.log('reqGetCity')
+  console.log("reqGetCity");
   return async (dispatch) => {
     // console.log('ded')
     const city = await axios.get("http://localhost:8080/api/getCity");
@@ -68,5 +74,14 @@ export const reqFindAirports = (obj) => {
       }
     );
     dispatch({ type: FINDEDAIRPORTS, payload: airports.data });
+  };
+};
+
+export const reqGetCountrys = () => {
+  return async (dispatch) => {
+    const country = await axios.get(`http://localhost:8080/api/updateAirports`);
+    // dispatch({type: COUNTRY, payload: country})
+
+    console.log("country", country);
   };
 };

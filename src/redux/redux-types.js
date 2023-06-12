@@ -12,4 +12,6 @@ export const CITY = "CITY"
 
 export const ADDCITY = 'ADDCITY'
 
+export const COUNTRY = "COUNTRY"
+
 // export const ABOUT = "ABOUT"

@@ -1,11 +1,19 @@
 /** @format */
 
 import React from "react";
+import { useDispatch } from "react-redux";
+import { Button } from "semantic-ui-react";
 import { Form } from "semantic-ui-react";
 import { Grid } from "semantic-ui-react";
+import { reqGetCountrys } from "../../../redux/getActions";
 import TableTickets from "../tables/table-tickets";
 
 const AddTickets = () => {
+  const dispatch = useDispatch()
+
+  const handleClick = () => {
+    dispatch(reqGetCountrys())
+  }
   return (
     <Grid>
       <Grid.Row>
@@ -15,6 +23,7 @@ const AddTickets = () => {
               <Grid.Column width={8}>
                 <Form>
                   <Form.Group inline>
+                    <Form.Button onClick={handleClick}>onClick</Form.Button>
                     <Form.Select
                       //   options={city}
                       //   search

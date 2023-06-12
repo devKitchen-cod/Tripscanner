@@ -14,7 +14,8 @@ import TableAirpots from "../tables/table-airpots";
 const AirportsForm = () => {
   const dispatch = useDispatch();
   const city = useSelector((state) => state.city.res);
-  const airports = useSelector((state) => state.airports.finded_airports)
+  const airports = useSelector((state) => state.airports.finded_airports);
+
   const [saveParams, setParams] = useState({
     city_name: "",
     name: "",
@@ -23,20 +24,28 @@ const AirportsForm = () => {
     lng: "",
     country_code: "",
   });
+  const [select, setSelect] = useState();
 
-  useEffect(() => {
-    console.log(typeof airports)
-  }, [airports])
+  const options = [
+    { key: 0, text: "California", value: "California" },
+    { key: 1, text: "Salvador", value: "Salvador" },
+    { key: 2, text: "Paris", value: "Paris" },
+  ];
 
-  const handleSaveParams = (e, { name, value }) => {
-    setParams({ ...saveParams, [name]: value });
+  // useEffect(() => {
+  //   console.log(typeof airports)
+  // }, [airports])
+
+  const handleSaveParams = (data) => {
+    setParams({ ...saveParams, [data.name]: data.value });
+  };
+  const handleSelect = (data) => {
+    console.log("data.value", data);
+    setSelect(data.value);
   };
   const handleSub = () => {
-    console.log(saveParams);
-
+    console.log(saveParams, select);
   };
-  
-
 
   return (
     <Grid>
@@ -51,10 +60,10 @@ const AirportsForm = () => {
                       options={city}
                       search
                       name='city_name'
-                      value={saveParams.city_name}
+                      value={select}
                       label='City'
                       placeholder='City'
-                      onChange={handleSaveParams}
+                      onChange={(e, data) => console.log(data)}
                     />
                     {/* <Form.Button
                     //   onClick={() => handleSerachAirports()}
@@ -77,7 +86,7 @@ const AirportsForm = () => {
                       value={saveParams.name}
                       label='Name Airport'
                       placeholder='Name'
-                      onChange={handleSaveParams}
+                      onChange={(e, data) => handleSaveParams(data)}
                     />
 
                     <Form.Input
@@ -99,7 +108,6 @@ const AirportsForm = () => {
                       placeholder='Code'
                       name='lat'
                       value={saveParams.lat}
-
                       // value={saveParams.distination_time}
                       onChange={handleSaveParams}
                     />
@@ -110,7 +118,6 @@ const AirportsForm = () => {
                       placeholder='Code'
                       name='lng'
                       value={saveParams.lng}
-
                       // value={saveParams.flight_time}
                       onChange={handleSaveParams}
                     />
