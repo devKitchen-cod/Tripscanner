@@ -5,14 +5,14 @@ import { useDispatch } from "react-redux";
 import { Button } from "semantic-ui-react";
 import { Form } from "semantic-ui-react";
 import { Grid } from "semantic-ui-react";
-import { reqGetCountrys } from "../../../redux/getActions";
+import { reqGetCountrys, serviceReqGet } from "../../../redux/getActions";
 import TableTickets from "../tables/table-tickets";
 
 const AddTickets = () => {
   const dispatch = useDispatch()
 
   const handleClick = () => {
-    dispatch(reqGetCountrys())
+    dispatch(serviceReqGet())
   }
   return (
     <Grid>
@@ -23,7 +23,7 @@ const AddTickets = () => {
               <Grid.Column width={8}>
                 <Form>
                   <Form.Group inline>
-                    <Form.Button onClick={handleClick}>onClick</Form.Button>
+                    <Form.Button onClick={handleClick}>ServiceCall</Form.Button>
                     <Form.Select
                       //   options={city}
                       //   search

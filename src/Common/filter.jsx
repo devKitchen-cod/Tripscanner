@@ -11,7 +11,7 @@ const Filter = () => {
   const city = useSelector((state) => state.city.res);
   const [citys, setCitys] = useState([]);
   useEffect(() => {
-    console.log("[city]", city);
+    // console.log("[city]", city);
     setCitys(
       city.map((item) => {
         // setCitys(...item, item.name)
@@ -25,7 +25,7 @@ const Filter = () => {
     );
   }, [city]);
 
-  console.log("citys", citys);
+  // console.log("citys", citys);
 
   const radioBtn = [
     {

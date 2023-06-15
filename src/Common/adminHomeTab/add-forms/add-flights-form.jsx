@@ -176,11 +176,47 @@ const FlightsForm = (disable) => {
             <Grid.Row>
               <Grid.Column width={16}>
                 <Grid>
-                  <Grid.Row columns={16}>
-                    <Grid.Column textAlign='center' width={5}>
+                  <Grid.Row width={16}>
+                    <Grid.Column width={8}>
                       <Form>
+                        <Form.Group>
+                          <Form.Select
+                            label='Origin Country'
+                            placeholder='Origin Country'
+                          />
+                          <Form.Select
+                            options={city}
+                            search
+                            name='distination_city'
+                            value={saveParams.distination_city}
+                            label='Distination Country'
+                            placeholder='Distination Country'
+                            // onChange={handleSaveParams}
+                          />
+                        </Form.Group>
                         <Form.Group inline>
-                          <Icon size='large' name='caret square up' />
+                          <label>Size</label>
+                          <Form.Radio
+                            label='Small'
+                            value='sm'
+                            // checked={value === "sm"}
+                            // onChange={this.handleChange}
+                          />
+                          <Form.Radio
+                            label='Medium'
+                            value='md'
+                            // checked={value === "md"}
+                            // onChange={this.handleChange}
+                          />
+                          <Form.Radio
+                            label='Large'
+                            value='lg'
+                            // checked={value === "lg"}
+                            // onChange={this.handleChange}
+                          />
+                        </Form.Group>
+                        <Form.Group>
+                          {/* <Icon size='large' name='caret square up' /> */}
                           <Form.Select
                             options={city}
                             search
@@ -188,15 +224,8 @@ const FlightsForm = (disable) => {
                             value={saveParams.origin_city}
                             label='Origin City'
                             placeholder='Origin City'
-                            onChange={handleSaveParams}
+                            // onChange={handleSaveParams}
                           />
-                        </Form.Group>
-                      </Form>
-                    </Grid.Column>
-                    <Grid.Column width={8}>
-                      <Form>
-                        <Form.Group inline>
-                          <Icon size='large' name='caret square down' />
                           <Form.Select
                             options={city}
                             search
@@ -204,11 +233,8 @@ const FlightsForm = (disable) => {
                             value={saveParams.distination_city}
                             label='Distination City'
                             placeholder='Distination City'
-                            onChange={handleSaveParams}
+                            // onChange={handleSaveParams}
                           />
-                          <Form.Button onClick={() => handleSerachAirports()}>
-                            Serch
-                          </Form.Button>
                         </Form.Group>
                       </Form>
                     </Grid.Column>
@@ -228,7 +254,7 @@ const FlightsForm = (disable) => {
                             value={saveParams.origin_airport}
                             label='Origin Airport'
                             placeholder='Origin'
-                            onChange={handleSaveParams}
+                            // onChange={handleSaveParams}
                           />
                           <Form.Input
                             disabled={disableForm}
@@ -240,7 +266,7 @@ const FlightsForm = (disable) => {
                             value={saveParams.distination_airport}
                             label='Distination'
                             placeholder='Distination'
-                            onChange={handleSaveParams}
+                            // onChange={handleSaveParams}
                           />
                           <Form.Input
                             disabled={disableForm}
@@ -249,7 +275,7 @@ const FlightsForm = (disable) => {
                             placeholder='Price'
                             name='price'
                             value={saveParams.price}
-                            onChange={handleSaveParams}
+                            // onChange={handleSaveParams}
                           />
                         </Form.Group>
 
@@ -261,7 +287,7 @@ const FlightsForm = (disable) => {
                             placeholder='Origin time'
                             name='origin_time'
                             value={saveParams.origin_time}
-                            onChange={handleSaveParams}
+                            // onChange={handleSaveParams}
                           />
                           <Form.Input
                             disabled={disableForm}
@@ -270,7 +296,7 @@ const FlightsForm = (disable) => {
                             placeholder='Distination time'
                             name='distination_time'
                             value={saveParams.distination_time}
-                            onChange={handleSaveParams}
+                            // onChange={handleSaveParams}
                           />
                           <Form.Input
                             disabled={disableForm}
@@ -279,7 +305,7 @@ const FlightsForm = (disable) => {
                             placeholder='Code'
                             name='flight_time'
                             value={saveParams.flight_time}
-                            onChange={handleSaveParams}
+                            // onChange={handleSaveParams}
                           />
                         </Form.Group>
 

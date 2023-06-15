@@ -9,9 +9,18 @@ import {
   COUNTRY,
 } from "./redux-types";
 
-export const reqGetFlights = () => {
+export const reqGetCountry = (axiosInstance) => {
   return async (dispatch) => {
-    const flights = await axios.get("http://localhost:8080/api/getFlights");
+    console.log(axiosInstance)
+    const country = await axiosInstance.get("/getCountry");
+    dispatch({ type: COUNTRY, payload: country.data });
+  };
+};
+
+export const reqGetFlights = (i) => {
+  return async (dispatch) => {
+    const flights = await i.get("/getFlights");
+    console.log('flights',flights)
     dispatch({ type: FLIGHTS, payload: flights.data });
   };
 };
@@ -83,5 +92,12 @@ export const reqGetCountrys = () => {
     // dispatch({type: COUNTRY, payload: country})
 
     console.log("country", country);
+  };
+};
+
+export const serviceReqGet = () => {
+  return async (dispatch) => {
+    const result = await axios.get(`http://localhost:8080/api/serviceFunction`);
+    console.log(result);
   };
 };

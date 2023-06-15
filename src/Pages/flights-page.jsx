@@ -7,30 +7,50 @@ import Filter from "../Common/filter";
 import { flights, options } from "../mock/mockdata";
 import Footer from "../Common/footer";
 import { useDispatch, useSelector } from "react-redux";
-import { reqGetAirports, reqGetCity } from "../redux/getActions";
+import { reqGetAirports, reqGetCity, reqGetCountry, reqGetFlights } from "../redux/getActions";
+import axios from "axios";
+import { AXIOSINSTANCE, AXIOSINSTANCE_SERVER_URL } from "../redux/redux-types";
 
 const StartPage = () => {
   const f = flights;
   const dispatch = useDispatch();
+
+  const aInstance = useSelector((state) => state.axios_instance);
+
   const city = useSelector((state) => state.city.res);
   const airports = useSelector((state) => state.airports.res);
-
+  const country = useSelector((state) => state.country.res);
+  const flights1 = useSelector((state) => state.flights.res);
   useEffect(() => {
-    handleGetCityList();
-    handleAirportsCityList();
+    dispatch({
+      type: AXIOSINSTANCE_SERVER_URL,
+      payload: process.env.REACT_APP_TRIPSCANNER_SERVER_API_URL,
+    });
+
+    let axiosInstance = axios.create({
+      baseURL: process.env.REACT_APP_TRIPSCANNER_SERVER_API_URL,
+      cache: false,
+      headers: {
+        authorization: `Bearer ${aInstance.token}`,
+      },
+    });
+    dispatch({ type: AXIOSINSTANCE, payload: axiosInstance });
+    console.log("START");
+
+    dispatch(reqGetCountry(axiosInstance));
+    // handleGetCityList();instance
+    // handleAirportsCityList();
   }, []);
-  const handleGetCityList = () => {
-    dispatch(reqGetCity());
-  };
-
-  const handleAirportsCityList = () => {
-    dispatch(reqGetAirports());
-  };
 
   useEffect(() => {
-    console.log("City", city);
-    console.log("Airports", airports);
-  }, [city, airports]);
+    // console.log("aInstance123", aInstance.instance);
+    // console.log("Airports", airports);
+    dispatch(reqGetFlights(aInstance.instance))
+  }, [aInstance]);
+
+  useEffect(() => {
+    console.log('flights1',flights1)
+  }, [flights1])
 
   return (
     <Grid>
