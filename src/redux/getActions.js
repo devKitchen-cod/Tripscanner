@@ -13,28 +13,27 @@ export const reqGetCountry = (axiosInstance) => {
   return async (dispatch) => {
     console.log(axiosInstance)
     const country = await axiosInstance.get("/getCountry");
-    dispatch({ type: COUNTRY, payload: country.data });
+    let res = country.data.map((item, key) => {
+      return{
+        key: item._id,
+        text: item.name,
+        value: item._id
+      }
+    })
+    dispatch({ type: COUNTRY, payload: res });
   };
 };
 
-export const reqGetFlights = (i) => {
-  return async (dispatch) => {
-    const flights = await i.get("/getFlights");
-    console.log('flights',flights)
-    dispatch({ type: FLIGHTS, payload: flights.data });
-  };
-};
-
-export const reqGetCity = () => {
+export const reqGetCity = (axiosInstance, obj) => {
   console.log("reqGetCity");
   return async (dispatch) => {
     // console.log('ded')
-    const city = await axios.get("http://localhost:8080/api/getCity");
+    const city = await axiosInstance.get("/getCity", obj);
     let cityRes = city.data.map((item, key) => {
       return {
         key: key,
         text: item.name,
-        value: item.name,
+        value: item._id,
       };
     });
     console.log("cityRes", cityRes);
@@ -42,9 +41,18 @@ export const reqGetCity = () => {
   };
 };
 
+export const reqGetFlights = (i) => {
+  return async (dispatch) => {
+    const flights = await i.get("/getFlights");
+    console.log("flights", flights);
+    dispatch({ type: FLIGHTS, payload: flights.data });
+  };
+};
+
 export const reqGetAirports = () => {
   return async (dispatch) => {
     const airports = await axios.get("http://localhost:8080/api/getAirports");
+
     // console.log('countries ==', airports.data)
     // let data = airports.data;
     // let origin_airports = data.origin_airports;
@@ -68,6 +76,7 @@ export const reqGetAirports = () => {
     //   distination_airports,
     // };
     // console.log('obj')
+
     dispatch({ type: AIRPORTS, payload: airports.data });
   };
 };

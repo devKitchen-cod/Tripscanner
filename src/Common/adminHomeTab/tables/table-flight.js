@@ -6,7 +6,7 @@ import { Icon, Menu, Table } from "semantic-ui-react";
 
 const TableFlights = (data) => {
   const flights = useSelector((state) => state.flights.res);
-  console.log("flights", flights);
+  // console.log("flights", flights);
 
   return (
     <div>

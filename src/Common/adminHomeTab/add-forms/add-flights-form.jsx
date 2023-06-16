@@ -10,7 +10,9 @@ import TableFlights from "../tables/table-flight";
 import { reqAddFlights } from "../../../redux/postActions";
 import {
   reqFindAirports,
+  reqGetAirports,
   reqGetCity,
+  reqGetCountry,
   reqGetFlights,
 } from "../../../redux/getActions";
 
@@ -91,15 +93,25 @@ const data = [
 const FlightsForm = (disable) => {
   const dispatch = useDispatch();
 
-  const flights = useSelector((state) => state.flights.res);
-  const airport = useSelector((state) => state.airports.finded_airports);
+  const country = useSelector((state) => state.country.res);
   const city = useSelector((state) => state.city.res);
+  const airport = useSelector((state) => state.airports.finded_airports);
+  const flights = useSelector((state) => state.flights.res);
 
+  const axiosInstance = useSelector((state) => state.axios_instance.instance);
   const [originAirport, setOriginAirport] = useState([]);
   const [distinationAirport, setDistinationAirport] = useState([]);
 
   const [saveParams, setParams] = useState({
     name: "",
+    origin_country: {
+      id: "",
+      name: "",
+    },
+    distination_country: {
+      id: "",
+      name: "",
+    },
     origin_airport: "",
     distination_airport: "",
     origin_city: "",
@@ -110,62 +122,43 @@ const FlightsForm = (disable) => {
     flight_time: "",
   });
 
-  const [disableForm, setDisableForm] = useState(true);
+  const [disableForm, setDisableForm] = useState(false);
 
   let origin_airport = airport.origin_airports;
   let distination_airport = airport.distination_airports;
 
   useEffect(() => {
-    console.log("airport", airport);
-    setOriginAirport(
-      origin_airport?.map((item, key) => {
-        return {
-          key: key,
-          text: item.name,
-          value: item.name,
-        };
-      })
-    );
-
-    setDistinationAirport(
-      distination_airport?.map((item, key) => {
-        return {
-          key: key,
-          text: item.name,
-          value: item.name,
-        };
-      })
-    );
-  }, [airport]);
+    console.log("asd");
+    dispatch(reqGetCountry(axiosInstance));
+    // dispatch(reqGetCity(axiosInstance));
+    // dispatch(reqFindAirports(axiosInstance, ));
+    // dispatch(reqFindAirports());
+  }, []);
 
   useEffect(() => {
-    if (origin_airport?.length && distination_airport?.length) {
-      setDisableForm(!disableForm);
-      console.log(origin_airport, distination_airport);
+    console.log("country", country);
+    // console.log('city', city)
+  }, [country]);
+
+  useEffect(() => {
+    if(saveParams.origin_country.id && saveParams.distination_country.id){
+      let obj = {
+        origin: saveParams.origin_country.id,
+        distination: saveParams.distination_country.id,
+      }
+      // dispatch(reqGetCity(axiosInstance, obj));
     }
-  }, [origin_airport, distination_airport]);
-
-  useEffect(() => {
-    console.log("flights", flights);
-  }, [flights]);
-
-  const handleSaveParams = (e, { name, value }) => {
-    setParams({ ...saveParams, [name]: value });
-  };
-
-  const handleSub = () => {
+    console.log("save country", saveParams.origin_country.id);
+    console.log("save country", saveParams.origin_country.name);
     console.log("saveParams", saveParams);
-    dispatch(reqAddFlights(saveParams));
-    dispatch(reqGetFlights());
-  };
+  }, [saveParams]);
 
-  const handleSerachAirports = () => {
-    console.log(saveParams.origin_city, saveParams.distination_city);
-    let obj = {
-      origin_city: saveParams.origin_city,
-      distination_city: saveParams.distination_city,
-    };
-    dispatch(reqFindAirports(obj));
+  const handleSetCountry = (e, { name, value, options }) => {
+    const t = options.find((o) => o.value === value)
+    setParams({
+      ...saveParams,
+      [name]: { id: value, name: t.text },
+    });
   };
 
   return (
@@ -181,23 +174,27 @@ const FlightsForm = (disable) => {
                       <Form>
                         <Form.Group>
                           <Form.Select
+                            options={country}
+                            search
+                            name='origin_country'
+                            // value={saveParams.origin_country}
                             label='Origin Country'
                             placeholder='Origin Country'
+                            onChange={handleSetCountry}
                           />
                           <Form.Select
-                            options={city}
+                            options={country}
                             search
-                            name='distination_city'
-                            value={saveParams.distination_city}
+                            name='distination_country'
                             label='Distination Country'
                             placeholder='Distination Country'
-                            // onChange={handleSaveParams}
+                            onChange={handleSetCountry}
                           />
                         </Form.Group>
                         <Form.Group inline>
                           <label>Size</label>
                           <Form.Radio
-                            label='Small'
+                            label='Inside Country'
                             value='sm'
                             // checked={value === "sm"}
                             // onChange={this.handleChange}
@@ -320,7 +317,8 @@ const FlightsForm = (disable) => {
                         />
                         <Form.Button
                           disabled={disableForm}
-                          onClick={() => handleSub()}>
+                          // onClick={() => handleSub()}
+                        >
                           Submit
                         </Form.Button>
                       </Form>

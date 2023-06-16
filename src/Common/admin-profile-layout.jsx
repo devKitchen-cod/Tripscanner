@@ -26,38 +26,38 @@ const AdminProfileLayout = () => {
   const [distinationAirport, setDistinationAirport] = useState([]);
 
   useEffect(() => {
-    console.log("active===", active);
+    // console.log("active===", active);
   }, [active]);
   useEffect(() => {
-    dispatch(reqGetCity());
-    dispatch(reqGetFlights());
+    // dispatch(reqGetCity());
+    // dispatch(reqGetFlights());
   }, []);
 
-  const airport = useSelector((state) => state.airports.finded_airports);
-  let origin_airport = airport.origin_airports;
-  let distination_airport = airport.distination_airports;
-  useEffect(() => {
-    console.log("airport", airport);
-    setOriginAirport(
-      origin_airport?.map((item, key) => {
-        return {
-          key: key,
-          text: item.name,
-          value: item.name,
-        };
-      })
-    );
+  // const airport = useSelector((state) => state.airports.finded_airports);
+  // let origin_airport = airport.origin_airports;
+  // let distination_airport = airport.distination_airports;
+  // useEffect(() => {
+  //   console.log("airport", airport);
+  //   setOriginAirport(
+  //     origin_airport?.map((item, key) => {
+  //       return {
+  //         key: key,
+  //         text: item.name,
+  //         value: item.name,
+  //       };
+  //     })
+  //   );
 
-    setDistinationAirport(
-      distination_airport?.map((item, key) => {
-        return {
-          key: key,
-          text: item.name,
-          value: item.name,
-        };
-      })
-    );
-  }, [airport]);
+  //   setDistinationAirport(
+  //     distination_airport?.map((item, key) => {
+  //       return {
+  //         key: key,
+  //         text: item.name,
+  //         value: item.name,
+  //       };
+  //     })
+  //   );
+  // }, [airport]);
 
   const handleSetActive = (event, data) => {
     console.log(data);

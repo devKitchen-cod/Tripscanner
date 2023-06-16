@@ -37,7 +37,7 @@ const StartPage = () => {
     dispatch({ type: AXIOSINSTANCE, payload: axiosInstance });
     console.log("START");
 
-    dispatch(reqGetCountry(axiosInstance));
+    // dispatch(reqGetCountry(axiosInstance));
     // handleGetCityList();instance
     // handleAirportsCityList();
   }, []);
@@ -45,11 +45,11 @@ const StartPage = () => {
   useEffect(() => {
     // console.log("aInstance123", aInstance.instance);
     // console.log("Airports", airports);
-    dispatch(reqGetFlights(aInstance.instance))
+    // dispatch(reqGetFlights(aInstance.instance))
   }, [aInstance]);
 
   useEffect(() => {
-    console.log('flights1',flights1)
+    // console.log('flights1',flights1)
   }, [flights1])
 
   return (
