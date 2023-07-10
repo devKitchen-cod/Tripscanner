@@ -15,80 +15,7 @@ import {
   reqGetCountry,
   reqGetFlights,
 } from "../../../redux/getActions";
-
-const data = [
-  {
-    name: "California",
-    city_code: "WCC",
-    lat: 37.25022,
-    lng: -119.75126,
-    country_code: "US",
-  },
-  {
-    name: "California",
-    city_code: "WCC",
-    lat: 37.25022,
-    lng: -119.75126,
-    country_code: "US",
-  },
-  {
-    name: "California",
-    city_code: "WCC",
-    lat: 37.25022,
-    lng: -119.75126,
-    country_code: "US",
-  },
-  {
-    name: "California",
-    city_code: "WCC",
-    lat: 37.25022,
-    lng: -119.75126,
-    country_code: "US",
-  },
-  {
-    name: "California",
-    city_code: "WCC",
-    lat: 37.25022,
-    lng: -119.75126,
-    country_code: "US",
-  },
-  {
-    name: "California",
-    city_code: "WCC",
-    lat: 37.25022,
-    lng: -119.75126,
-    country_code: "US",
-  },
-
-  {
-    name: "California",
-    city_code: "WCC",
-    lat: 37.25022,
-    lng: -119.75126,
-    country_code: "US",
-  },
-  {
-    name: "California",
-    city_code: "WCC",
-    lat: 37.25022,
-    lng: -119.75126,
-    country_code: "US",
-  },
-  {
-    name: "California",
-    city_code: "WCC",
-    lat: 37.25022,
-    lng: -119.75126,
-    country_code: "US",
-  },
-  {
-    name: "California",
-    city_code: "WCC",
-    lat: 37.25022,
-    lng: -119.75126,
-    country_code: "US",
-  },
-];
+import TableAirplane from "../tables/table-airplane";
 
 const FlightsForm = (disable) => {
   const dispatch = useDispatch();
@@ -121,6 +48,16 @@ const FlightsForm = (disable) => {
     distination_time: "",
     flight_time: "",
   });
+  const [saveCountry, setCountry] = useState({
+    origin_country: {
+      id: "",
+      name: "",
+    },
+    distination_country: {
+      id: "",
+      name: "",
+    },
+  });
 
   const [disableForm, setDisableForm] = useState(false);
 
@@ -128,12 +65,8 @@ const FlightsForm = (disable) => {
   let distination_airport = airport.distination_airports;
 
   useEffect(() => {
-    console.log("asd");
     dispatch(reqGetCountry(axiosInstance));
-    // dispatch(reqGetCity(axiosInstance));
-    // dispatch(reqFindAirports(axiosInstance, ));
-    // dispatch(reqFindAirports());
-  }, []);
+  }, [axiosInstance]);
 
   useEffect(() => {
     console.log("country", country);
@@ -141,24 +74,33 @@ const FlightsForm = (disable) => {
   }, [country]);
 
   useEffect(() => {
-    if(saveParams.origin_country.id && saveParams.distination_country.id){
+    if (saveParams.origin_country.id && saveParams.distination_country.id) {
       let obj = {
         origin: saveParams.origin_country.id,
         distination: saveParams.distination_country.id,
-      }
-      // dispatch(reqGetCity(axiosInstance, obj));
+      };
+      dispatch(reqGetCity(axiosInstance, obj));
     }
-    console.log("save country", saveParams.origin_country.id);
-    console.log("save country", saveParams.origin_country.name);
-    console.log("saveParams", saveParams);
+
+    // console.log("save country", saveParams.origin_country.id);
+    // console.log("save country", saveParams.origin_country.name);
+    // console.log("saveParams", saveParams);
   }, [saveParams]);
+  // useEffect(() => {
+  //   console.log('saveCountry', saveCountry)
+  // }, [saveCountry])
 
   const handleSetCountry = (e, { name, value, options }) => {
-    const t = options.find((o) => o.value === value)
+    const t = options.find((o) => o.value === value);
     setParams({
       ...saveParams,
       [name]: { id: value, name: t.text },
     });
+    setCountry({
+      ...saveCountry({
+        [name]: {id: value, name: t.text}
+      })
+    })
   };
 
   return (
@@ -170,7 +112,7 @@ const FlightsForm = (disable) => {
               <Grid.Column width={16}>
                 <Grid>
                   <Grid.Row width={16}>
-                    <Grid.Column width={8}>
+                    <Grid.Column width={6}>
                       <Form>
                         <Form.Group>
                           <Form.Select
@@ -212,6 +154,7 @@ const FlightsForm = (disable) => {
                             // onChange={this.handleChange}
                           />
                         </Form.Group>
+
                         <Form.Group>
                           {/* <Icon size='large' name='caret square up' /> */}
                           <Form.Select
@@ -234,6 +177,9 @@ const FlightsForm = (disable) => {
                           />
                         </Form.Group>
                       </Form>
+                    </Grid.Column>
+                    <Grid.Column width={10}>
+                      <TableAirplane />
                     </Grid.Column>
                   </Grid.Row>
 
@@ -330,7 +276,7 @@ const FlightsForm = (disable) => {
 
             <Grid.Row>
               <Grid.Column>
-                <TableFlights data={data} />
+                <TableFlights />
               </Grid.Column>
             </Grid.Row>
           </Grid>

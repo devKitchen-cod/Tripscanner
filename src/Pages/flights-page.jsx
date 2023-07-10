@@ -21,6 +21,7 @@ const StartPage = () => {
   const airports = useSelector((state) => state.airports.res);
   const country = useSelector((state) => state.country.res);
   const flights1 = useSelector((state) => state.flights.res);
+  
   useEffect(() => {
     dispatch({
       type: AXIOSINSTANCE_SERVER_URL,
@@ -36,21 +37,9 @@ const StartPage = () => {
     });
     dispatch({ type: AXIOSINSTANCE, payload: axiosInstance });
     console.log("START");
-
-    // dispatch(reqGetCountry(axiosInstance));
-    // handleGetCityList();instance
-    // handleAirportsCityList();
   }, []);
 
-  useEffect(() => {
-    // console.log("aInstance123", aInstance.instance);
-    // console.log("Airports", airports);
-    // dispatch(reqGetFlights(aInstance.instance))
-  }, [aInstance]);
 
-  useEffect(() => {
-    // console.log('flights1',flights1)
-  }, [flights1])
 
   return (
     <Grid>

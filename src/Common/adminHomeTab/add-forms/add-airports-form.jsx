@@ -10,9 +10,13 @@ import { Icon } from "semantic-ui-react";
 import { Form } from "semantic-ui-react";
 import { Grid } from "semantic-ui-react";
 import TableAirpots from "../tables/table-airpots";
+import { reqGetCountry } from "../../../redux/getActions";
 
 const AirportsForm = () => {
   const dispatch = useDispatch();
+  const axiosInstance = useSelector((state) => state.axios_instance.instance);
+
+  const country = useSelector((state) => state.country.res);
   const city = useSelector((state) => state.city.res);
   const airports = useSelector((state) => state.airports.finded_airports);
 
@@ -24,28 +28,42 @@ const AirportsForm = () => {
     lng: "",
     country_code: "",
   });
-  const [select, setSelect] = useState();
+  const [selectCountry, setSelectCountry] = useState({
+    countryNamed: "",
+    id: "",
+  });
+  useEffect(() => {
+    console.log('wer')
+    dispatch(reqGetCountry(axiosInstance))
+  }, [axiosInstance])
+  
+  useEffect(() => {
+    console.log('country', country)
+  }, [country])
 
-  const options = [
-    { key: 0, text: "California", value: "California" },
-    { key: 1, text: "Salvador", value: "Salvador" },
-    { key: 2, text: "Paris", value: "Paris" },
-  ];
-
-  // useEffect(() => {
-  //   console.log(typeof airports)
-  // }, [airports])
+  useEffect(() => {
+    console.log('selectCountry111', selectCountry)
+  }, [selectCountry]);
 
   const handleSaveParams = (data) => {
     setParams({ ...saveParams, [data.name]: data.value });
   };
   const handleSelect = (data) => {
     console.log("data.value", data);
-    setSelect(data.value);
+    setSelectCountry(data.value);
   };
-  const handleSub = () => {
-    console.log(saveParams, select);
+
+  const handleSelectCountry = (e, { name, value, options }) => {
+    const temp = options.find((f) => f.value === value)
+    setSelectCountry({...selectCountry, id:temp.value, countryNamed: temp.text})
+    // setSelectCountry({
+    //   ...selectCountry, [name]
+    // })
+    // console.log(value, temp)
   };
+  // const handleSub = () => {
+  //   console.log(saveParams, select);
+  // };
 
   return (
     <Grid>
@@ -57,19 +75,23 @@ const AirportsForm = () => {
                 <Form>
                   <Form.Group inline>
                     <Form.Select
+                      options={country}
+                      search
+                      name='country_name'
+                      // value={select}
+                      label='Country'
+                      placeholder='Country'
+                      onChange={handleSelectCountry}
+                    />
+                    <Form.Select
                       options={city}
                       search
                       name='city_name'
-                      value={select}
+                      // value={select}
                       label='City'
                       placeholder='City'
                       onChange={(e, data) => console.log(data)}
                     />
-                    {/* <Form.Button
-                    //   onClick={() => handleSerachAirports()}
-                    >
-                      Serch
-                    </Form.Button> */}
                   </Form.Group>
                 </Form>
               </Grid.Column>
@@ -144,7 +166,8 @@ const AirportsForm = () => {
                   />
                   <Form.Button
                     //   disabled={disableForm}
-                    onClick={() => handleSub()}>
+                    // onClick={() => handleSub()}
+                    >
                     Submit
                   </Form.Button>
                 </Form>

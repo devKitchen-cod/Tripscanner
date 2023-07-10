@@ -8,7 +8,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Dropdown, Grid, Icon, Input, Menu } from "semantic-ui-react";
 import { testResSerch } from "../mock/mockdata";
-import { reqGetCity, reqGetFlights } from "../redux/getActions";
+import { reqGetCity, reqGetCountry, reqGetFlights } from "../redux/getActions";
 import About from "./adminHomeTab/about";
 import Add from "./adminHomeTab/add";
 import ResCard from "./result_card";
@@ -29,35 +29,12 @@ const AdminProfileLayout = () => {
     // console.log("active===", active);
   }, [active]);
   useEffect(() => {
+    console.log('AdminProfile')
+    // dispatch(reqGetCountry())
     // dispatch(reqGetCity());
     // dispatch(reqGetFlights());
   }, []);
 
-  // const airport = useSelector((state) => state.airports.finded_airports);
-  // let origin_airport = airport.origin_airports;
-  // let distination_airport = airport.distination_airports;
-  // useEffect(() => {
-  //   console.log("airport", airport);
-  //   setOriginAirport(
-  //     origin_airport?.map((item, key) => {
-  //       return {
-  //         key: key,
-  //         text: item.name,
-  //         value: item.name,
-  //       };
-  //     })
-  //   );
-
-  //   setDistinationAirport(
-  //     distination_airport?.map((item, key) => {
-  //       return {
-  //         key: key,
-  //         text: item.name,
-  //         value: item.name,
-  //       };
-  //     })
-  //   );
-  // }, [airport]);
 
   const handleSetActive = (event, data) => {
     console.log(data);

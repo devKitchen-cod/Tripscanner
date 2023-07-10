@@ -25,10 +25,10 @@ export const reqGetCountry = (axiosInstance) => {
 };
 
 export const reqGetCity = (axiosInstance, obj) => {
-  console.log("reqGetCity");
+  console.log("reqGetCity", obj);
   return async (dispatch) => {
     // console.log('ded')
-    const city = await axiosInstance.get("/getCity", obj);
+    const city = await axiosInstance.post("/getCity", obj);
     let cityRes = city.data.map((item, key) => {
       return {
         key: key,
