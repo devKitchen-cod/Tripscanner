@@ -8,12 +8,14 @@ import {
   AXIOSINSTANCE,
   AXIOSINSTANCE_SERVER_URL,
   AXIOSINSTANCE_TOKEN,
-  CITY,
+  CITY_AIRPORT,
+  CITY_O_D,
   COUNTRY,
   FINDEDAIRPORTS,
   FLIGHTS,
   LOGIN,
   LOGOUT,
+  SAVEFLIGHT,
   SETADMINKEY,
   SETEMAIL,
   SETNAME,
@@ -86,32 +88,7 @@ function Login(state = init_login, action) {
       return state;
   }
 }
-const init_getFlights = {
-  res: [],
-};
-function get_Flights(state = init_getFlights, action) {
-  switch (action.type) {
-    case FLIGHTS: {
-      return { ...state, res: action.payload };
-    }
-    default:
-      return state;
-  }
-}
-const init_airports = {
-  res: [],
-  finded_airports: [],
-};
-function get_Airport(state = init_airports, action) {
-  switch (action.type) {
-    case AIRPORTS:
-      return { ...state, res: action.payload };
-    case FINDEDAIRPORTS:
-      return { ...state, finded_airports: action.payload };
-    default:
-      return state;
-  }
-}
+
 
 const init_country = {
   res: [],
@@ -129,15 +106,50 @@ function get_Country(state = init_country, action) {
 }
 
 const init_city = {
-  res: [],
+  city_o_d: [],
+  city_airport_dislocation: [],
   temp: [],
 };
+
 function get_City(state = init_city, action) {
   switch (action.type) {
-    case CITY:
-      return { ...state, res: action.payload };
+    case CITY_O_D:
+      return { ...state, city_o_d: action.payload };
     case ADDCITY:
       return { ...state, temp: action.payload };
+    case CITY_AIRPORT: 
+      return {...state, city_airport_dislocation: action.payload}
+    default:
+      return state;
+  }
+}
+
+const init_getFlights = {
+  saved_flight:{},
+  res: [],
+};
+function get_Flights(state = init_getFlights, action) {
+  switch (action.type) {
+    case SAVEFLIGHT: {
+      return{...state, saved_flight: action.payload}
+    }
+    case FLIGHTS: {
+      return { ...state, res: action.payload };
+    }
+    default:
+      return state;
+  }
+}
+const init_airports = {
+  res: [],
+  finded_airports: [],
+};
+function get_Airport(state = init_airports, action) {
+  switch (action.type) {
+    case AIRPORTS:
+      return { ...state, res: action.payload };
+    case FINDEDAIRPORTS:
+      return { ...state, finded_airports: action.payload };
     default:
       return state;
   }

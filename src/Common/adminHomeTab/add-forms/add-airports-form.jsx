@@ -17,7 +17,7 @@ const AirportsForm = () => {
   const axiosInstance = useSelector((state) => state.axios_instance.instance);
 
   const country = useSelector((state) => state.country.res);
-  const city = useSelector((state) => state.city.res);
+  const city = useSelector((state) => state.city.city_o_d);
   const airports = useSelector((state) => state.airports.finded_airports);
 
   const [saveParams, setParams] = useState({
@@ -33,13 +33,13 @@ const AirportsForm = () => {
     id: "",
   });
   useEffect(() => {
-    console.log('wer')
+    // console.log('wer')
     dispatch(reqGetCountry(axiosInstance))
   }, [axiosInstance])
   
-  useEffect(() => {
-    console.log('country', country)
-  }, [country])
+  // useEffect(() => {
+  //   console.log('country', country)
+  // }, [country])
 
   useEffect(() => {
     console.log('selectCountry111', selectCountry)
@@ -84,7 +84,7 @@ const AirportsForm = () => {
                       onChange={handleSelectCountry}
                     />
                     <Form.Select
-                      options={city}
+                      // options={city}
                       search
                       name='city_name'
                       // value={select}

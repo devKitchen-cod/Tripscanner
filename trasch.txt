@@ -1,3 +1,28 @@
+
+    // console.log('countries ==', airports.data)
+    // let data = airports.data;
+    // let origin_airports = data.origin_airports;
+    // let distination_airports = data.distination_airports;
+    // origin_airports = origin_airports.map((item, key) => {
+    //   return {
+    //     key: key,
+    //     text: item.name,
+    //     value: item.name,
+    //   };
+    // });
+    // distination_airports = distination_airports.map((item, key) => {
+    //   return {
+    //     key: key,
+    //     text: item.name,
+    //     value: item.name,
+    //   };
+    // });
+    // let obj = {
+    //   origin_airports,
+    //   distination_airports,
+    // };
+    // console.log('obj')
+
   useEffect(() => {
     // console.log("airport", airport);
     setOriginAirport(

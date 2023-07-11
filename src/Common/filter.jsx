@@ -8,22 +8,23 @@ import styles from "./styles/filter.module.scss";
 import { useSelector } from "react-redux";
 const Filter = () => {
   const navigate = useNavigate();
-  const city = useSelector((state) => state.city.res);
+  const city = useSelector((state) => state.city.city_o_d);
   const [citys, setCitys] = useState([]);
-  useEffect(() => {
-    // console.log("[city]", city);
-    setCitys(
-      city.map((item) => {
-        // setCitys(...item, item.name)
-        // console.log(item.name);
-        return {
-          key: item.name,
-          text: item.name,
-          value: item.name,
-        };
-      })
-    );
-  }, [city]);
+
+  // useEffect(() => {
+  //   // console.log("[city]", city);
+  //   setCitys(
+  //     city.map((item) => {
+  //       // setCitys(...item, item.name)
+  //       // console.log(item.name);
+  //       return {
+  //         key: item.name,
+  //         text: item.name,
+  //         value: item.name,
+  //       };
+  //     })
+  //   );
+  // }, [city]);
 
   // console.log("citys", citys);
 

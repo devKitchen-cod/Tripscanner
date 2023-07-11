@@ -17,10 +17,10 @@ const StartPage = () => {
 
   const aInstance = useSelector((state) => state.axios_instance);
 
-  const city = useSelector((state) => state.city.res);
-  const airports = useSelector((state) => state.airports.res);
-  const country = useSelector((state) => state.country.res);
-  const flights1 = useSelector((state) => state.flights.res);
+  // const city = useSelector((state) => state.city.city_o_d);
+  // const airports = useSelector((state) => state.airports.res);
+  // const country = useSelector((state) => state.country.res);
+  // const flights1 = useSelector((state) => state.flights.res);
   
   useEffect(() => {
     dispatch({
