@@ -3,6 +3,13 @@
 import axios from "axios";
 import { AIRPORTS, CITY_O_D, FINDEDAIRPORTS } from "./redux-types";
 
+export const reqFindCityAirports = (axiosInstance, obj) => {
+  return async (dispatch) => {
+    const city = await axiosInstance.post("/getCity", obj);
+    console.log('city', city)
+  };
+};
+
 export const reqFindCity = (axiosInstance, obj) => {
   console.log("reqGetCity", obj);
   return async (dispatch) => {
@@ -34,9 +41,8 @@ export const reqFindAirports = (axiosInstance, obj) => {
     const airports = await axiosInstance.post("/getFindedAirports", obj);
     console.log("airports data", airports.data);
 
-
     let res_origin = airports.data.origin_airports.map((item, key) => {
-      console.log(item.name)
+      console.log(item.name);
       return {
         key: key,
         text: item.name,
@@ -44,21 +50,30 @@ export const reqFindAirports = (axiosInstance, obj) => {
       };
     });
 
-    console.log('res_origin', res_origin)
+    console.log("res_origin", res_origin);
 
-    let res_distination = airports.data.distination_airports.map((item, key) => {
-      return {
-        key: key,
-        text: item.name,
-        value: item._id,
-      };
-    });
+    let res_distination = airports.data.distination_airports.map(
+      (item, key) => {
+        return {
+          key: key,
+          text: item.name,
+          value: item._id,
+        };
+      }
+    );
     dispatch({
       type: FINDEDAIRPORTS,
       payload: { res_origin, res_distination },
     });
   };
 };
+export const reqAddFlights = (axiosInstance, obj) => {
+  return async (dispatch) => {
+    const res = await axiosInstance.post("/addFlight", obj);
+    console.log("reqAddFlights = ", res);
+  };
+};
+
 export const reqAddCityAirport = (obj) => {
   return async (dispatch) => {
     const res = await axios.post("http://localhost:8080/api/addNewField", {
@@ -66,14 +81,6 @@ export const reqAddCityAirport = (obj) => {
       airport: obj.airport,
     });
     console.log("res", res);
-  };
-};
-export const reqAddFlights = (obj) => {
-  return async (dispatch) => {
-    const res = await axios.post("http://localhost:8080/api/addFlight", {
-      obj: obj,
-    });
-    console.log("reqAddFlights = ", res);
   };
 };
 

@@ -11,6 +11,7 @@ import { Form } from "semantic-ui-react";
 import { Grid } from "semantic-ui-react";
 import TableAirpots from "../tables/table-airpots";
 import { reqGetCountry } from "../../../redux/getActions";
+import { reqFindCityAirports } from "../../../redux/postActions";
 
 const AirportsForm = () => {
   const dispatch = useDispatch();
@@ -43,6 +44,7 @@ const AirportsForm = () => {
 
   useEffect(() => {
     console.log('selectCountry111', selectCountry)
+    dispatch(reqFindCityAirports(axiosInstance, selectCountry))
   }, [selectCountry]);
 
   const handleSaveParams = (data) => {

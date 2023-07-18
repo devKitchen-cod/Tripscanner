@@ -27,21 +27,6 @@ const FlightsForm = (disable) => {
   const [disableForm, setDisableForm] = useState(false);
 
   const [Params, setParams] = useState({
-    name: "",
-    origin_country: {
-      id: "",
-      name: "",
-    },
-    distination_country: {
-      id: "",
-      name: "",
-    },
-    origin_city: "",
-    distination_city: "",
-
-    origin_airport: "",
-    distination_airport: "",
-    
     price: "",
     origin_time: "",
     distination_time: "",
@@ -104,9 +89,8 @@ const FlightsForm = (disable) => {
     }
   }, [City]);
 
-  useEffect(() => {
-    console.log("airport", Params);
-  }, [Params]);
+  // useEffect(() => {
+  // }, [Params]);
 
   const handleSetCountry = (e, { name, value, options }) => {
     const finded_name = options.find((o) => o.value === value);
@@ -144,7 +128,15 @@ const FlightsForm = (disable) => {
   };
 
   const handleSub =() => {
-
+    let obj ={
+      params: Params,
+      country: Country,
+      city: City,
+      airport: Airport
+    }
+    dispatch(reqAddFlights(axiosInstance, obj))
+    console.log('obj', obj)
+    
   }
   return (
     <div>
@@ -302,7 +294,7 @@ const FlightsForm = (disable) => {
 
                         <Form.Button
                           disabled={disableForm}
-                          // onClick={() => handleSub()}
+                          onClick={() => handleSub()}
                         >
                           Submit
                         </Form.Button>
