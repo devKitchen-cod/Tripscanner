@@ -18,54 +18,49 @@ const AirportsForm = () => {
   const axiosInstance = useSelector((state) => state.axios_instance.instance);
 
   const country = useSelector((state) => state.country.res);
-  const city = useSelector((state) => state.city.city_o_d);
-  const airports = useSelector((state) => state.airports.finded_airports);
+  const city = useSelector((state) => state.city.city_airport_dislocation);
+  // const airports = useSelector((state) => state.airports.res);
 
   const [saveParams, setParams] = useState({
-    city_name: "",
     name: "",
     iata_code: "",
+    icao_code: "",
     lat: "",
-    lng: "",
-    country_code: "",
+    lon: "",
+    timezone_name: "",
+    timezone_offset: "",
+    timezone_offsetHours: "",
+    timezone_abbr: "",
+    timezone_abbrName: "",
+    timezone_isDst: "",
   });
   const [selectCountry, setSelectCountry] = useState({
     countryNamed: "",
     id: "",
   });
   useEffect(() => {
-    // console.log('wer')
-    dispatch(reqGetCountry(axiosInstance))
-  }, [axiosInstance])
-  
-  // useEffect(() => {
-  //   console.log('country', country)
-  // }, [country])
+    dispatch(reqGetCountry(axiosInstance));
+  }, [axiosInstance]);
 
   useEffect(() => {
-    console.log('selectCountry111', selectCountry)
-    dispatch(reqFindCityAirports(axiosInstance, selectCountry))
+    dispatch(reqFindCityAirports(axiosInstance, selectCountry));
   }, [selectCountry]);
 
-  const handleSaveParams = (data) => {
-    setParams({ ...saveParams, [data.name]: data.value });
-  };
-  const handleSelect = (data) => {
-    console.log("data.value", data);
-    setSelectCountry(data.value);
+  const handleSaveParams = (e, { name, value}) => {
+    setParams({ ...saveParams, [name]: value });
   };
 
   const handleSelectCountry = (e, { name, value, options }) => {
-    const temp = options.find((f) => f.value === value)
-    setSelectCountry({...selectCountry, id:temp.value, countryNamed: temp.text})
-    // setSelectCountry({
-    //   ...selectCountry, [name]
-    // })
-    // console.log(value, temp)
+    const temp = options.find((f) => f.value === value);
+    setSelectCountry({
+      ...selectCountry,
+      id: temp.value,
+      countryNamed: temp.text,
+    });
   };
-  // const handleSub = () => {
-  //   console.log(saveParams, select);
-  // };
+  const handleSub = () => {
+    console.log("saveParams", saveParams);
+  };
 
   return (
     <Grid>
@@ -86,7 +81,7 @@ const AirportsForm = () => {
                       onChange={handleSelectCountry}
                     />
                     <Form.Select
-                      // options={city}
+                      options={city}
                       search
                       name='city_name'
                       // value={select}
@@ -105,12 +100,10 @@ const AirportsForm = () => {
                     <Form.Input
                       // disabled={disableForm}
                       fluid
-                      // search
                       name='name'
-                      value={saveParams.name}
                       label='Name Airport'
                       placeholder='Name'
-                      onChange={(e, data) => handleSaveParams(data)}
+                      onChange={handleSaveParams}
                     />
 
                     <Form.Input
@@ -120,6 +113,15 @@ const AirportsForm = () => {
                       placeholder='Code'
                       name='iata_code'
                       value={saveParams.iata_code}
+                      onChange={handleSaveParams}
+                    />
+                    <Form.Input
+                      // disabled={disableForm}
+                      fluid
+                      label='ICAO'
+                      placeholder='Code'
+                      name='icao_code'
+                      value={saveParams.icao_code}
                       onChange={handleSaveParams}
                     />
                   </Form.Group>
@@ -132,44 +134,29 @@ const AirportsForm = () => {
                       placeholder='Code'
                       name='lat'
                       value={saveParams.lat}
-                      // value={saveParams.distination_time}
                       onChange={handleSaveParams}
                     />
                     <Form.Input
                       // disabled={disableForm}
                       fluid
-                      label='LNG'
+                      label='LON'
                       placeholder='Code'
-                      name='lng'
-                      value={saveParams.lng}
-                      // value={saveParams.flight_time}
+                      name='lon'
+                      value={saveParams.lon}
                       onChange={handleSaveParams}
                     />
                   </Form.Group>
                   <Form.Group widths={"equal"}>
-                    <Form.Input
-                      // disabled={disableForm}
-                      fluid
-                      label='Country code'
-                      placeholder='Code'
-                      name='country_code'
-                      value={saveParams.country_code}
-                      onChange={handleSaveParams}
-                    />
                     <Form.TextArea
                       //   disabled={disableForm}
                       label='Note'
                       placeholder='Note'
                     />
                   </Form.Group>
-                  <Form.Checkbox
-                    //   disabled={disableForm}
-                    label='I agree to the Terms and Conditions'
-                  />
+
                   <Form.Button
                     //   disabled={disableForm}
-                    // onClick={() => handleSub()}
-                    >
+                    onClick={() => handleSub()}>
                     Submit
                   </Form.Button>
                 </Form>

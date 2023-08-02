@@ -1,19 +1,27 @@
 /** @format */
 
 import axios from "axios";
-import { AIRPORTS, CITY_O_D, FINDEDAIRPORTS } from "./redux-types";
+import { AIRPORTS, CITY_AIRPORT, CITY_O_D, FINDEDAIRPORTS } from "./redux-types";
 
 export const reqFindCityAirports = (axiosInstance, obj) => {
   return async (dispatch) => {
     const city = await axiosInstance.post("/getCity", obj);
     console.log('city', city)
+    let res = city.data.map((item, key) => {
+      return{
+        key: key,
+        text: item.name,
+        value: item._id
+      }
+    })
+    dispatch({type: CITY_AIRPORT, payload: res})
   };
 };
 
 export const reqFindCity = (axiosInstance, obj) => {
   console.log("reqGetCity", obj);
   return async (dispatch) => {
-    const city = await axiosInstance.post("/getCity", obj);
+    const city = await axiosInstance.post("/getDirection", obj);
     console.log("cityRes", city.data);
     let cityRes = city.data;
 

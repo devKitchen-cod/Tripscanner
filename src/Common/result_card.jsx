@@ -2,11 +2,16 @@
 
 import React from "react";
 import styles from "./styles/result_card.module.scss";
-import { Grid, Icon } from "semantic-ui-react";
+import { Button, Grid, Icon } from "semantic-ui-react";
 import flightSvg from "../static/flight.svg";
+import { useNavigate } from "react-router-dom";
 
 const ResCard = (flight_card_data) => {
   const obj = flight_card_data.item;
+  const navigate = useNavigate();
+  const handleClick = () => {
+    console.log("Click");
+  };
   return (
     <Grid>
       <Grid.Row centered className={styles.row1}>
@@ -16,9 +21,8 @@ const ResCard = (flight_card_data) => {
               <Grid.Column className={styles.logoflight} width={4}>
                 <img
                   className={styles.logoFlight}
-                  alt="Austrian Airlines"
-                  src={obj.flight_logo}
-                ></img>
+                  alt='Austrian Airlines'
+                  src={obj.flight_logo}></img>
               </Grid.Column>
 
               <Grid.Column className={styles.timeTo} width={12}>
@@ -48,9 +52,8 @@ const ResCard = (flight_card_data) => {
               <Grid.Column className={styles.logoflight} width={4}>
                 <img
                   className={styles.logoFlight}
-                  alt="Austrian Airlines"
-                  src={flight_card_data.item.flight_logo}
-                ></img>
+                  alt='Austrian Airlines'
+                  src={flight_card_data.item.flight_logo}></img>
               </Grid.Column>
 
               <Grid.Column className={styles.timeFrom} width={12}>
@@ -83,10 +86,18 @@ const ResCard = (flight_card_data) => {
             <span className={styles.countPrice}>{obj.deals} deals from</span>
             <span className={styles.coastPrice}>{obj.price}</span>
           </div>
-          <button className={styles.buyFlight}>
+          <button className={styles.buyFlight} onClick={() => navigate("/ticket-details")}>
             <span>Select</span>
             <Icon name="arrow right" color="white" className={styles.arr} />
           </button>
+          {/* <Button
+            className={styles.findBtn1}
+            onClick={() => navigate("/flight-search")}
+            icon
+            labelPosition='right'>
+            Search
+            <Icon name='right arrow' className={styles.btnIcon} />
+          </Button> */}
         </Grid.Column>
       </Grid.Row>
     </Grid>

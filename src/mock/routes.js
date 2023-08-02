@@ -5,6 +5,7 @@ import FlightSearch from "../Pages/flights-search-page";
 import HotelsPage from "../Pages/hotels-page";
 import StartPage from "../Pages/flights-page";
 import Add from "../Common/adminHomeTab/add";
+import TicketDetailsPage from "../Pages/ticket-details-page";
 
 export const routes = [
   {
@@ -27,5 +28,8 @@ export const routes = [
     path: "/add",
     element: <Add />,
   },
-  
+  {
+    path: "/ticket-details",
+    element: <TicketDetailsPage />,
+  },
 ];

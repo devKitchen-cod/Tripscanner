@@ -2,13 +2,13 @@
 
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Form, Select } from "semantic-ui-react";
+import { Form, Search, Select } from "semantic-ui-react";
 import { Button, Grid, Icon, Dropdown } from "semantic-ui-react";
 import styles from "./styles/filter.module.scss";
 import { useSelector } from "react-redux";
 const Filter = () => {
   const navigate = useNavigate();
-  const city = useSelector((state) => state.city.city_o_d);
+  // const city = useSelector((state) => state.city.city_o_d);
   const [citys, setCitys] = useState([]);
 
   // useEffect(() => {
@@ -27,6 +27,11 @@ const Filter = () => {
   // }, [city]);
 
   // console.log("citys", citys);
+  const [val, setVal] = useState();
+  const handleOnSearchChange = (e) => {
+    console.log("SEARCH", e.target.value);
+    setVal(e.target.value);
+  };
 
   const radioBtn = [
     {
@@ -76,17 +81,23 @@ const Filter = () => {
                   <Form.Group
                   // widths={"equal"}
                   >
-                    <Form.Input
-                      // control={Select}
-                      // options={citys}
+                    <Form.Field
+                      control={Search}
+                      // as={Search}
+                      // onResultSelect={""}
+                      onSearchChange={handleOnSearchChange}
+                      results={val}
                       className={styles.form1}
                       label='From'
                       fluid
                       placeholder='Country, city or airport'
                     />
-                    <Form.Input
-                      // control={Select}
+                    <Form.Field
+                      control={Search}
                       // options={citys}
+                      onSearchChange={handleOnSearchChange}
+                      results={val}
+                      // onResultSelect={""}
                       className={styles.form2}
                       label='To'
                       fluid

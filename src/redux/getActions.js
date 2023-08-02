@@ -9,6 +9,10 @@ import {
   COUNTRY,
 } from "./redux-types";
 
+// export const getAllCountry
+// export const getAllCity
+// export const getAllAirport
+
 export const reqGetCountry = (axiosInstance) => {
   return async (dispatch) => {
     const country = await axiosInstance.get("/getCountry");
