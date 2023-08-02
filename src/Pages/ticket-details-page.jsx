@@ -128,6 +128,7 @@ const TicketDetailsPage = () => {
                         </Grid.Row>
                       </Grid>
                     </Grid.Column>
+
                   </Grid.Row>
                 </Grid>
               </Grid.Column>
