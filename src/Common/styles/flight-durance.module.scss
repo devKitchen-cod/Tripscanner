@@ -8,6 +8,7 @@
     height: 15px;
     width: 15px;
   }
+  
   .row1 {
     // margin-top: 5px;
     // border: 2px solid green;
@@ -21,28 +22,34 @@
       color: rgb(12, 12, 12);
     }
     .f {
-      //   display: flex;
-    //   border: 1px solid black;
+      display: flex;
+      align-items: baseline;
+      //   border: 1px solid black;
       .divider {
         // float: left;
         height: min-content;
         border-bottom: 2px solid rgb(103, 103, 103);
-        // width: 150px;
+        width: 100%;
         display: inline-flex;
       }
-      .time_flight {
-        // border: 1px solid red;
-        // overflow: hidden;
-        // display: flex;
-        // margin-left: 50px;
-        // justify-content: center;
-      }
+    }
+    :hover .f{
+      transition: 0.5s;
+      transform: scale(1.05);
+    }
+    .time_flight {
+      display: flex;
+      justify-content: center;
+      // border: 1px solid red;
+      // overflow: hidden;
+      // display: flex;
+      // margin-left: 50px;
+      // justify-content: center;
     }
   }
-  .row2{
-    
-    .animate{
-        border:1px solid red;
+  .row2 {
+    .animate {
+      // border: 1px solid red;
     }
   }
 }

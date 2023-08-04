@@ -16,11 +16,10 @@ const ResCard = (flight_card_data) => {
   };
   return (
     <Grid>
-      <Grid.Row  className={styles.row1}>
+      <Grid.Row className={styles.row1}>
         <Grid.Column className={styles.timeFlight} width={16}>
           <Grid>
             <Grid.Row className={styles.row2}>
-
               <Grid.Column className={styles.logoflight} width={2}>
                 <img
                   className={styles.logoFlight}
@@ -48,43 +47,25 @@ const ResCard = (flight_card_data) => {
                   <span className={styles.flightFrom}>{obj.outbound.to}</span>
                   <span className={styles.countryName}>{obj.name_to}</span>
                 </div> */}
-                <FlightDurance  obj={obj}/>
+                <FlightDurance obj={obj} />
               </Grid.Column>
             </Grid.Row>
 
             <Grid.Row className={styles.row3}>
-              {/* <Grid.Column className={styles.logoflight} width={4}>
+              <Grid.Column className={styles.logoflight} width={2}>
                 <img
                   className={styles.logoFlight}
                   alt='Austrian Airlines'
                   src={flight_card_data.item.flight_logo}></img>
               </Grid.Column>
 
-              <Grid.Column className={styles.timeFrom} width={12}>
-                <div>
-                  <span className={styles.flightTo}>{obj.return.from}</span>
-                  <span className={styles.countryName}>{obj.name_to}</span>
-                </div>
-                <div className={styles.f}>
-                  <div className={styles.divider}>
-                    <span className={styles.time_flight}>
-                      {obj.return.total_time}
-                    </span>
-                  </div>
-                  <div className={styles.flightsvg}>
-                    <img src={flightSvg} />
-                  </div>
-                </div>
-
-                <div>
-                  <span className={styles.flightFrom}>{obj.return.to}</span>
-                  <span className={styles.countryName}>{obj.name_from}</span>
-                </div>
-              </Grid.Column> */}
+              <Grid.Column className={styles.timeFrom} width={8}>
+                <FlightDurance obj={obj} />
+              </Grid.Column>
             </Grid.Row>
           </Grid>
         </Grid.Column>
-{/* 
+        {/* 
         <Grid.Column className={styles.priceFlight} width={6}>
           <div className={styles.price}>
             <span className={styles.countPrice}>{obj.deals} deals from</span>
@@ -103,7 +84,6 @@ const ResCard = (flight_card_data) => {
             <Icon name='right arrow' className={styles.btnIcon} />
           </Button> *
         </Grid.Column> */}
-
       </Grid.Row>
     </Grid>
   );
