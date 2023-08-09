@@ -12,11 +12,12 @@
     }
     .timeFlight {
       // position: absolute;
+      // border: 2px solid red;
       border-right: 1px solid rgb(204, 200, 200);
       border-bottom-left-radius: 7px;
       border-top-left-radius: 7px;
-      border-bottom-right-radius: 7px;
-      border-top-right-radius: 7px;
+      // border-bottom-right-radius: 7px;
+      // border-top-right-radius: 7px;
 
       .row2 {
         display: flex;
@@ -70,7 +71,7 @@
       }
     }
     .priceFlight {
-      border: 2px solid green;
+      // border: 2px solid green;
       border-bottom-right-radius: 7px;
       border-top-right-radius: 7px;
       // padding-top: 30px;
