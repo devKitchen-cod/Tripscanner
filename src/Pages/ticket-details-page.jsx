@@ -11,6 +11,7 @@ import {
 } from "semantic-ui-react";
 import styles from "./styles/ticket-details-page.module.scss";
 import ResCard from "../Common/result_card";
+import DetailCard from "../Common/detail_card";
 // import blueSvg from "../static/backg.svg"
 
 const TicketDetailsPage = () => {
@@ -60,6 +61,11 @@ const TicketDetailsPage = () => {
                 </svg>
               </Grid.Column>
             </Grid.Row>
+            <Grid.Row centered>
+              <Grid.Column width={6}>
+                <ResCard item={o} />
+              </Grid.Column>
+            </Grid.Row>
 
             <Grid.Row centered>
               <Grid.Column width={14} style={{ border: "2px solid blue" }}>
@@ -71,23 +77,37 @@ const TicketDetailsPage = () => {
                       style={{ border: "2px solid green" }}>
                       <Grid>
                         <Grid.Row>
-                          <Grid.Column width={16}>
-                            <p>Outbound Tue, 25 Jul 2023</p>
+                          <Grid.Column
+                            width={16}
+                            style={{ border: "2px solid red" }}>
+                            <p
+                              style={{
+                                color: "#05203c",
+                                fontSize: "25px",
+                                fontWeight: 700,
+                              }}>
+                              Outbound Tue, 25 Jul 2023
+                            </p>
                             {/* <Container > */}
                             <Grid>
-                              <Grid.Row>
-                                <Grid.Column
-                                  width={14}
-                                  style={{ border: "2px solid red" }}>
-                                  <Grid>
+                              <Grid.Row centered>
+                                <Grid.Column width={14}>
+                                  {/* <ResCard item={o} /> */}
+
+                                  {/* <Grid>
                                     <Grid.Row>
                                       <Grid.Column>Name Company</Grid.Column>
-                                      <Grid.Column>
+                                      <Grid.Column style ={{border: '2px solid red'}}>
                                         <ResCard item = {o}/>
                                       </Grid.Column>
                                     </Grid.Row>
-                                  </Grid>
+                                  </Grid> */}
                                 </Grid.Column>
+                              </Grid.Row>
+                              <Grid.Row centered>
+                                  <Grid.Column width={14}>
+                                    <DetailCard obj ={o}/>
+                                  </Grid.Column>
                               </Grid.Row>
                             </Grid>
                             {/* </Container> */}
@@ -128,7 +148,6 @@ const TicketDetailsPage = () => {
                         </Grid.Row>
                       </Grid>
                     </Grid.Column>
-
                   </Grid.Row>
                 </Grid>
               </Grid.Column>

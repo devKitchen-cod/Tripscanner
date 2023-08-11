@@ -10,10 +10,11 @@ import { animated, useSpring } from "@react-spring/web";
 
 const ResCard = (flight_card_data) => {
   const obj = flight_card_data.item;
+
   const [clicked, isClicked] = useState(true);
   const [show, isShow] = useState(true);
 
-  console.log("obj123", clicked);
+  console.log("obj123", obj);
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -31,9 +32,7 @@ const ResCard = (flight_card_data) => {
   };
 
   const [{ xys }, api] = useSpring(
-    () => ({ xys: [0, 0, 1], config, 
-      // onRes/t: () => isShow(!show),
-    }),
+    () => ({ xys: [0, 0, 1], config }),
     [config]
   );
   const handleMouseLeave = () =>
@@ -44,11 +43,10 @@ const ResCard = (flight_card_data) => {
   const handleOnClick = () => {
     isClicked(clicked);
     api.start({
-      xys: [0, 180, 1],
+      xys: [180, 0, 1],
     });
     // api.stop({});
   };
- 
 
   const handleMouseMove = (e) => {
     const rect = cardRef.current.getBoundingClientRect();
@@ -57,80 +55,79 @@ const ResCard = (flight_card_data) => {
     });
   };
   const calc = (x, y, rect) => [
-    (y - rect.top - rect.height / 20) / 100,
-    -(x - rect.left - rect.width / 20) / 100,
-    1.2,
+    -(y - rect.top - rect.height / 20) / 100,
+    (x - rect.left - rect.width / 20) / 100,
+    1.1,
   ];
 
   const trans = (x, y, s) =>
     `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`;
 
   return (
-    <div className={styles.cardMain} ref={cardRef}   onClick={handleOnClick}>
+    <div className={styles.cardMain} ref={cardRef} onClick={handleOnClick}>
       <animated.div
         className={styles.card}
         style={{
           transform: xys.to(trans),
           // backfaceVisibility: 'hidden'
         }}
-      
         onMouseLeave={handleMouseLeave}
         onMouseMove={handleMouseMove}>
-        {/* {show ? ( */}
-          <Grid>
-            <Grid.Row className={styles.row1}>
-              <Grid.Column className={styles.timeFlight} width={10}>
-                <Grid>
-                  <Grid.Row className={styles.row2}>
-                    <Grid.Column className={styles.logoflight} width={4}>
-                      <img
-                        className={styles.logoFlight}
-                        alt='Austrian Airlines'
-                        src={obj.flight_logo}></img>
-                    </Grid.Column>
+       
+        <Grid>
+          <Grid.Row className={styles.row1}>
+            <Grid.Column className={styles.timeFlight} width={10}>
+              <Grid>
+                <Grid.Row className={styles.row2}>
+                  <Grid.Column className={styles.logoflight} width={4}>
+                    <img
+                      className={styles.logoFlight}
+                      alt='Austrian Airlines'
+                      src={obj.flight_logo}></img>
+                  </Grid.Column>
 
-                    <Grid.Column className={styles.timeTo} width={11}>
-                      <FlightDurance obj={obj} />
-                    </Grid.Column>
-                  </Grid.Row>
+                  <Grid.Column className={styles.timeTo} width={11}>
+                    <FlightDurance obj={flight_card_data.item} />
+                  </Grid.Column>
+                </Grid.Row>
 
-                  <Grid.Row className={styles.row3}>
-                    <Grid.Column className={styles.logoflight} width={4}>
-                      <img
-                        className={styles.logoFlight}
-                        alt='Austrian Airlines'
-                        src={flight_card_data.item.flight_logo}></img>
-                    </Grid.Column>
+                <Grid.Row className={styles.row3}>
+                  <Grid.Column className={styles.logoflight} width={4}>
+                    <img
+                      className={styles.logoFlight}
+                      alt='Austrian Airlines'
+                      src={flight_card_data.item.flight_logo}></img>
+                  </Grid.Column>
 
-                    <Grid.Column className={styles.timeFrom} width={11}>
-                      <FlightDurance obj={obj} />
-                    </Grid.Column>
-                  </Grid.Row>
-                </Grid>
-              </Grid.Column>
+                  <Grid.Column className={styles.timeFrom} width={11}>
+                    <FlightDurance obj ={flight_card_data.item} />
+                  </Grid.Column>
+                </Grid.Row>
+              </Grid>
+            </Grid.Column>
 
-              <Grid.Column className={styles.priceFlight} width={6}>
-                <div className={styles.price}>
-                  <span className={styles.countPrice}>
-                    {obj.deals} deals from
-                  </span>
-                  <span className={styles.coastPrice}>{obj.price}</span>
-                </div>
-                <div className={styles.btn_wrapper}>
-                  <button
-                    className={styles.buyFlight}
-                    onClick={() => navigate("/ticket-details")}>
-                    <span>Select</span>
-                    <Icon
-                      name='arrow right'
-                      color='white'
-                      className={styles.arr}
-                    />
-                  </button>
-                </div>
-              </Grid.Column>
-            </Grid.Row>
-          </Grid>
+            <Grid.Column className={styles.priceFlight} width={6}>
+              <div className={styles.price}>
+                <span className={styles.countPrice}>
+                  {obj.deals} deals from
+                </span>
+                <span className={styles.coastPrice}>{obj.price}</span>
+              </div>
+              <div className={styles.btn_wrapper}>
+                <button
+                  className={styles.buyFlight}
+                  onClick={() => navigate("/ticket-details")}>
+                  <span>Select</span>
+                  <Icon
+                    name='arrow right'
+                    color='white'
+                    className={styles.arr}
+                  />
+                </button>
+              </div>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
         {/* ) : (
           <Grid>
             <Grid.Row className={styles.row1}>
