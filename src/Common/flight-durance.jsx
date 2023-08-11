@@ -9,8 +9,9 @@ const FlightDurance = (obj1) => {
   const obj = obj1.obj;
   // const config = useC
   const springs = useSpring({
-    from: { x: 0, opacity: 0, y: 0  },
-    to: { x: 130, opacity: 1, y: 2 },
+    from: { x:0, opacity: 0, y: 5,transform: `scale(0.5)` },
+    to: { x: 130, opacity: 1, y: 5,transform: `scale(1.5)`  },
+    // transform: `scale(1)`,
     // scale: [1, 5, 10],
     config:{
       mass: 2,

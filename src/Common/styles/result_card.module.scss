@@ -28,7 +28,7 @@
           // border: 2px solid red;
         }
         .timeTo {
-        //   border: 2px solid red;
+          //   border: 2px solid red;
         }
       }
       .row2,
@@ -47,17 +47,17 @@
         // 	.f {
         // 		display: inline-flex;
         // 	}
-        	// .divider {
-        	// 	float: left;
-        	// 	height: min-content;
-        	// 	border-bottom: 2px solid rgb(103, 103, 103);
-        	// 	// width: 150px;
-        	// 	display: inline-flex;
-        	// 	margin-top: -5px;
-        	// 	.time_flight {
-        	// 		// margin-left: 50px;
-        	// 	}
-        	// }
+        // .divider {
+        // 	float: left;
+        // 	height: min-content;
+        // 	border-bottom: 2px solid rgb(103, 103, 103);
+        // 	// width: 150px;
+        // 	display: inline-flex;
+        // 	margin-top: -5px;
+        // 	.time_flight {
+        // 		// margin-left: 50px;
+        // 	}
+        // }
         // .flightsvg {
         // 	padding-top: 8px;
         // 	float: right;
@@ -76,16 +76,26 @@
       border-top-right-radius: 7px;
       // padding-top: 30px;
       // padding-left: 100px;
+      // display: fle;
+
       .price {
         .countPrice {
-          display: block;
+          display: flex;
+          justify-content: center;
           margin-bottom: 10px;
           color: #7f8383;
         }
         .coastPrice {
+          display: flex;
+          justify-content: center;
           // margin-top: 10px;
           font-size: 30px;
         }
+      }
+      .btn_wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
       }
       .buyFlight {
         // margin-top: 10px;
@@ -97,9 +107,10 @@
         background-color: #00a698;
         color: #fff;
         font-size: 18px;
-        .arr {
-          // margin-left: 6px;
-        }
+      }
+      :hover {
+        transition: 0.5s;
+        transform: scale(1.05);
       }
     }
   }
