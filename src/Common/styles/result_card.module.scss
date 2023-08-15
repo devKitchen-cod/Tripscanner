@@ -1,85 +1,117 @@
-:global(#app) {
-	.row1 {
-		border-radius: 5px;
-		margin-top: 20px;
-		.timeFlight,
-		.priceFlight {
-			height: 10em;
-			box-shadow: 10px 9px 29px rgb(223, 218, 218);
-			background-color: #fff;
-		}
-		.timeFlight {
-			border-right: 1px solid rgb(204, 200, 200);
-			border-bottom-left-radius: 7px;
-			border-top-left-radius: 7px;
+/** @format */
 
-			.row2,
-			.row3 {
-				margin-top: 10px;
-				.timeFrom,
-				.timeTo {
-					display: inline-flex;
-					.flightTo,
-					.flightFrom {
-						font-size: 25px;
-						color: rgb(12, 12, 12);
-					}
-					.f {
-						display: inline-flex;
-					}
-					.divider {
-						float: left;
-						height: min-content;
-						border-bottom: 2px solid rgb(103, 103, 103);
-						width: 150px;
-						display: inline-flex;
-						margin-top: -5px;
-						.time_flight {
-							margin-left: 50px;
-						}
-					}
-					.flightsvg {
-						padding-top: 8px;
-						float: right;
-						height: 15px;
-						width: 15px;
-					}
-					.countryName {
-						display: block;
-					}
-				}
-			}
-		}
-		.priceFlight {
-			border-bottom-right-radius: 7px;
-			border-top-right-radius: 7px;
-			padding-top: 30px;
-			padding-left: 100px;
-			.price {
-				.countPrice {
-					display: block;
-					margin-bottom: 10px;
-					color: #7f8383;
-				}
-				.coastPrice {
-					// margin-top: 10px;
-					font-size: 30px;
-				}
-			}
-			.buyFlight {
-				margin-top: 10px;
-				height: 2em;
-				width: 7em;
-				margin-left: -18px;
-				border-radius: 5px;
-				border: none;
-				background-color: #00a698;
-				color: #fff;
-				font-size: 18px;
-				.arr {
-					margin-left: 6px;
-				}
-			}
-		}
-	}
+:global(#app) {
+  .row1 {
+    border-radius: 5px;
+    // margin-top: 20px;
+    .timeFlight,
+    .priceFlight {
+      // height: 10em;
+      box-shadow: 10px 9px 29px rgb(223, 218, 218);
+      background-color: #fff;
+    }
+    .timeFlight {
+      // position: absolute;
+      // border: 2px solid red;
+      border-right: 1px solid rgb(204, 200, 200);
+      border-bottom-left-radius: 7px;
+      border-top-left-radius: 7px;
+      // border-bottom-right-radius: 7px;
+      // border-top-right-radius: 7px;
+
+      .row2 {
+        display: flex;
+
+        // border: 2px solid black;
+        // position: relative;
+        .logoflight {
+          // border: 2px solid red;
+        }
+        .timeTo {
+          //   border: 2px solid red;
+        }
+      }
+      .row2,
+      .row3 {
+        // background-color: #00a698;
+        // display: inline;
+        // margin-top: 10px;
+        // .timeFrom,
+        // .timeTo {
+        // 	display: inline-flex;
+        // .flightTo,
+        // .flightFrom {
+        // 	font-size: 25px;
+        // 	color: rgb(12, 12, 12);
+        // }
+        // 	.f {
+        // 		display: inline-flex;
+        // 	}
+        // .divider {
+        // 	float: left;
+        // 	height: min-content;
+        // 	border-bottom: 2px solid rgb(103, 103, 103);
+        // 	// width: 150px;
+        // 	display: inline-flex;
+        // 	margin-top: -5px;
+        // 	.time_flight {
+        // 		// margin-left: 50px;
+        // 	}
+        // }
+        // .flightsvg {
+        // 	padding-top: 8px;
+        // 	float: right;
+        // 	height: 15px;
+        // 	width: 15px;
+        // }
+        // 	.countryName {
+        // 		display: block;
+        // 	}
+        // }
+      }
+    }
+    .priceFlight {
+      // border: 2px solid green;
+      border-bottom-right-radius: 7px;
+      border-top-right-radius: 7px;
+      // padding-top: 30px;
+      // padding-left: 100px;
+      // display: fle;
+
+      .price {
+        .countPrice {
+          display: flex;
+          justify-content: center;
+          margin-bottom: 10px;
+          color: #7f8383;
+        }
+        .coastPrice {
+          display: flex;
+          justify-content: center;
+          // margin-top: 10px;
+          font-size: 30px;
+        }
+      }
+      .btn_wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+      }
+      .buyFlight {
+        // margin-top: 10px;
+        // height: 2em;
+        // width: 7em;
+        // margin-left: -18px;
+        border-radius: 5px;
+        border: none;
+        background-color: #00a698;
+        color: #fff;
+        font-size: 18px;
+      }
+      :hover {
+        transition: 0.5s;
+        transform: scale(1.05);
+      }
+    }
+  }
 }

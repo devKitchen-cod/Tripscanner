@@ -1,4 +1,80 @@
-{
+
+    // console.log('countries ==', airports.data)
+    // let data = airports.data;
+    // let origin_airports = data.origin_airports;
+    // let distination_airports = data.distination_airports;
+    // origin_airports = origin_airports.map((item, key) => {
+    //   return {
+    //     key: key,
+    //     text: item.name,
+    //     value: item.name,
+    //   };
+    // });
+    // distination_airports = distination_airports.map((item, key) => {
+    //   return {
+    //     key: key,
+    //     text: item.name,
+    //     value: item.name,
+    //   };
+    // });
+    // let obj = {
+    //   origin_airports,
+    //   distination_airports,
+    // };
+    // console.log('obj')
+
+  useEffect(() => {
+    // console.log("airport", airport);
+    setOriginAirport(
+      origin_airport?.map((item, key) => {
+        return {
+          key: key,
+          text: item.name,
+          value: item.name,
+        };
+      })
+    );
+
+    setDistinationAirport(
+      distination_airport?.map((item, key) => {
+        return {
+          key: key,
+          text: item.name,
+          value: item.name,
+        };
+      })
+    );
+  }, [airport]);
+
+  useEffect(() => {
+    if (origin_airport?.length && distination_airport?.length) {
+      setDisableForm(!disableForm);
+      console.log(origin_airport, distination_airport);
+    }
+  }, [origin_airport, distination_airport]);
+
+  useEffect(() => {
+    console.log("flights", flights);
+  }, [flights]);
+
+  const handleSaveParams = (e, { name, value }) => {
+    setParams({ ...saveParams, [name]: value });
+  };
+
+  const handleSub = () => {
+    console.log("saveParams", saveParams);
+    // dispatch(reqAddFlights(saveParams));
+    // dispatch(reqGetFlights());
+  };
+
+  const handleSerachAirports = () => {
+    console.log(saveParams.origin_city, saveParams.distination_city);
+    let obj = {
+      origin_city: saveParams.origin_city,
+      distination_city: saveParams.distination_city,
+    };
+    dispatch(reqFindAirports(obj));
+  };{
   /* <Grid item xs={12} display={'flex'} justifyContent={'end'} marginTop={'20px'}>
 <Paper elevation={2} sx={{ height: "60px", padding: '15px',}}>
   {/* <TextField label="O" sx={{width: '2em'}}/>

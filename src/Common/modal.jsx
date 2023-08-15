@@ -119,7 +119,6 @@ const AuthModal = ({ setOpen1, open1 }) => {
 									icon="checkmark"
 									onClick={() => {
 										setOpen1(false);
-
 										handleSubAuth();
 									}}
 									positive
