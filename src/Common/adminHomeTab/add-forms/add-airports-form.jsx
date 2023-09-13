@@ -16,7 +16,6 @@ import { reqFindCityAirports } from "../../../redux/postActions";
 const AirportsForm = () => {
   const dispatch = useDispatch();
   const axiosInstance = useSelector((state) => state.axios_instance.instance);
-
   const country = useSelector((state) => state.country.res);
   const city = useSelector((state) => state.city.city_airport_dislocation);
   // const airports = useSelector((state) => state.airports.res);

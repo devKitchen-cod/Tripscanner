@@ -16,6 +16,7 @@ import {
   LOGIN,
   LOGOUT,
   SAVEFLIGHT,
+  SEARCH,
   SETADMINKEY,
   SETEMAIL,
   SETNAME,
@@ -154,6 +155,18 @@ function get_Airport(state = init_airports, action) {
       return state;
   }
 }
+
+const init_search ={
+  result: []
+}
+function Search(state = init_search, action){
+  switch (action.type) {
+    case SEARCH:
+      return {...state, result: action.payload}  
+    default:
+      return state;
+  }
+}
 // const init = {
 
 // }
@@ -171,6 +184,7 @@ export const rootReducer = combineReducers({
   airports: get_Airport,
   country: get_Country,
   city: get_City,
+  search: Search
 
   // rend: getRender
 });

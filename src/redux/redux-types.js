@@ -19,3 +19,5 @@ export const CITY_AIRPORT = "CITY_AIRPORT"
 
 export const SAVEFLIGHT = "SAVEFLIGHT"
 // export const ABOUT = "ABOUT"
+
+export const SEARCH = "SEARCH"
