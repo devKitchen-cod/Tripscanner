@@ -90,6 +90,7 @@ export const reqFindAirports = (axiosInstance, obj) => {
     });
   };
 };
+
 export const reqAddFlights = (axiosInstance, obj) => {
   return async (dispatch) => {
     const res = await axiosInstance.post("/addFlight", obj);

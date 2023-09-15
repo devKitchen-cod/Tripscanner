@@ -3,6 +3,14 @@
 import { combineReducers } from "redux";
 // import About from "../Common/about";
 import {
+  ALLCOUNTRIES,
+  COUNTRYBYID,
+  ALLCITIES,
+  CITYBYID,
+  ALLAIRPORTS,
+  AIRPORTBYID,
+
+  
   ADDCITY,
   AIRPORTS,
   AXIOSINSTANCE,
@@ -28,7 +36,6 @@ const init_aInstance = {
   token: "",
   instance: "",
 };
-
 function AxiosInstance(state = init_aInstance, action) {
   switch (action.type) {
     case AXIOSINSTANCE_SERVER_URL: {
@@ -90,15 +97,18 @@ function Login(state = init_login, action) {
   }
 }
 
-
 const init_country = {
-  res: [],
+  all_countries: [],
+  country_by_id: [],
 };
 
-function get_Country(state = init_country, action) {
+function countryReducer(state = init_country, action) {
   switch (action.type) {
-    case COUNTRY: {
-      return { ...state, res: action.payload };
+    case ALLCOUNTRIES: {
+      return { ...state, all_countries: action.payload };
+    }
+    case COUNTRYBYID: {
+      return { ...state, country_by_id: action.payload };
     }
 
     default:
@@ -107,46 +117,44 @@ function get_Country(state = init_country, action) {
 }
 
 const init_city = {
+  all_cities: [],
+  city_by_id: [],
+
   city_o_d: [],
   city_airport_dislocation: [],
   temp: [],
 };
 
-function get_City(state = init_city, action) {
+function cityReducer(state = init_city, action) {
   switch (action.type) {
+    case ALLCITIES:
+      return { ...state, all_cities: action.payload };
+    case CITYBYID:
+      return { ...state, city_by_id: action.payload };
+
     case CITY_O_D:
       return { ...state, city_o_d: action.payload };
     case ADDCITY:
       return { ...state, temp: action.payload };
-    case CITY_AIRPORT: 
-      return {...state, city_airport_dislocation: action.payload}
+    case CITY_AIRPORT:
+      return { ...state, city_airport_dislocation: action.payload };
     default:
       return state;
   }
 }
 
-const init_getFlights = {
-  saved_flight:{},
-  res: [],
-};
-function get_Flights(state = init_getFlights, action) {
-  switch (action.type) {
-    case SAVEFLIGHT: {
-      return{...state, saved_flight: action.payload}
-    }
-    case FLIGHTS: {
-      return { ...state, res: action.payload };
-    }
-    default:
-      return state;
-  }
-}
 const init_airports = {
-  res: [],
+  all_airports: [],
+  airport_by_id: [],
   finded_airports: [],
 };
-function get_Airport(state = init_airports, action) {
+function airportReducer(state = init_airports, action) {
   switch (action.type) {
+    case ALLAIRPORTS:
+      return { ...state, all_airports: action.payload };
+    case AIRPORTBYID:
+      return { ...state, airport_by_id: action.payload };
+
     case AIRPORTS:
       return { ...state, res: action.payload };
     case FINDEDAIRPORTS:
@@ -156,35 +164,42 @@ function get_Airport(state = init_airports, action) {
   }
 }
 
-const init_search ={
-  result: []
-}
-function Search(state = init_search, action){
+const init_getFlights = {
+  saved_flight: {},
+  res: [],
+};
+function flightReduser(state = init_getFlights, action) {
   switch (action.type) {
-    case SEARCH:
-      return {...state, result: action.payload}  
+    case SAVEFLIGHT: {
+      return { ...state, saved_flight: action.payload };
+    }
+    case FLIGHTS: {
+      return { ...state, res: action.payload };
+    }
     default:
       return state;
   }
 }
-// const init = {
 
-// }
-// function getRender (state = init, action){
-// 	switch(action.type){
-// 		case ABOUT: { return(<About/>) }
-// 	}
-// }
+const init_search = {
+  result: [],
+};
+function Search(state = init_search, action) {
+  switch (action.type) {
+    case SEARCH:
+      return { ...state, result: action.payload };
+    default:
+      return state;
+  }
+}
 
 export const rootReducer = combineReducers({
   axios_instance: AxiosInstance,
   login: Login,
   auth: Auth,
-  flights: get_Flights,
-  airports: get_Airport,
-  country: get_Country,
-  city: get_City,
-  search: Search
-
-  // rend: getRender
+  flights: flightReduser,
+  airports: airportReducer,
+  country: countryReducer,
+  city: cityReducer,
+  search: Search,
 });
