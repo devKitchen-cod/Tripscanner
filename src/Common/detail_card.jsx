@@ -15,8 +15,8 @@ const DetailCard = (obj1) => {
             <FlightDurance obj={obj} />
           </Grid.Column>
         </Grid.Row>
-        <Grid.Row>
-          <Grid.Column>
+        <Grid.Row >
+          <Grid.Column width={10}>
             <CustomizedFlight />
           </Grid.Column>
         </Grid.Row>
