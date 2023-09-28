@@ -9,8 +9,6 @@ import {
   CITYBYID,
   ALLAIRPORTS,
   AIRPORTBYID,
-
-  
   ADDCITY,
   AIRPORTS,
   AXIOSINSTANCE,
@@ -29,6 +27,10 @@ import {
   SETEMAIL,
   SETNAME,
   SETPASSWORD,
+  CLEAN_QUERY,
+  START_SEARCH,
+  FINISH_SEARCH,
+  UPDATE_SELECTION,
 } from "./redux-types";
 
 const init_aInstance = {
@@ -182,14 +184,23 @@ function flightReduser(state = init_getFlights, action) {
 }
 
 const init_search = {
-  result: [],
+  loading: false,
+  results: [],
+  value: "",
 };
+
 function Search(state = init_search, action) {
   switch (action.type) {
-    case SEARCH:
-      return { ...state, result: action.payload };
-    default:
+    case CLEAN_QUERY:
       return state;
+    case START_SEARCH:
+      return { ...state, loading: true, value: action.query };
+    case FINISH_SEARCH:
+      return { ...state, loading: false, results: action.results };
+    case UPDATE_SELECTION:
+      return { ...state, value: action.selection };
+    default:
+      throw new Error();
   }
 }
 

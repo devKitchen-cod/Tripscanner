@@ -18,6 +18,12 @@ export const CITYBYID = "CITYBYID";
 export const ALLAIRPORTS = "ALLAIRPORTS";
 export const AIRPORTBYID = "AIRPORTBYID";
 
+export const CLEAN_QUERY = 'CLEAN_QUERY';
+export const START_SEARCH = 'START_SEARCH';
+export const FINISH_SEARCH = 'FINISH_SEARCH';
+export const UPDATE_SELECTION = 'UPDATE_SELECTION';
+
+
 export const CITY_O_D = "CITY_O_D";
 export const COUNTRY = "COUNTRY";
 export const AIRPORTS = "AIRPORTS";
