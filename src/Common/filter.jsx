@@ -7,9 +7,11 @@ import { Button, Grid, Icon, Dropdown } from "semantic-ui-react";
 import styles from "./styles/filter.module.scss";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
+
 // import { reqSearch } from "../redux/postActions";
 // import { reqGetCountry } from "../redux/getActions";
 import { reqGetAllCountries } from "../redux/country_actions";
+import _ from "lodash";
 const Filter = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -46,43 +48,43 @@ const Filter = () => {
     },
   ];
 
-  useEffect(() => {
-    console.log("GET");
-    dispatch(reqGetAllCountries(axiosInstance));
-  }, [axiosInstance]);
+  // useEffect(() => {
+  //   console.log("GET");
+  //   dispatch(reqGetAllCountries(axiosInstance));
+  // }, [axiosInstance]);
 
-  useEffect(() => {
-    console.log(country);
-  }, [country]);
+  // useEffect(() => {
+  //   console.log(country);
+  // }, [country]);
 
   // const [state, dispatch] = React.useReducer(exampleReducer, initialState)
-  const { loading, results, value } = state;
+  // const { loading, results, value } = state;
 
-  const timeoutRef = React.useRef();
-  const handleSearchChange = React.useCallback((e, data) => {
-    clearTimeout(timeoutRef.current);
-    dispatch({ type: "START_SEARCH", query: data.value });
+  // const timeoutRef = React.useRef();
+  // const handleSearchChange = React.useCallback((e, data) => {
+  //   clearTimeout(timeoutRef.current);
+  //   dispatch({ type: "START_SEARCH", query: data.value });
 
-    timeoutRef.current = setTimeout(() => {
-      if (data.value.length === 0) {
-        dispatch({ type: "CLEAN_QUERY" });
-        return;
-      }
+  //   timeoutRef.current = setTimeout(() => {
+  //     if (data.value.length === 0) {
+  //       dispatch({ type: "CLEAN_QUERY" });
+  //       return;
+  //     }
 
-      const re = new RegExp(_.escapeRegExp(data.value), "i");
-      const isMatch = (result) => re.test(result.title);
+  //     const re = new RegExp(_.escapeRegExp(data.value), "i");
+  //     const isMatch = (result) => re.test(result.title);
 
-      dispatch({
-        type: "FINISH_SEARCH",
-        results: _.filter(source, isMatch),
-      });
-    }, 300);
-  }, []);
-  React.useEffect(() => {
-    return () => {
-      clearTimeout(timeoutRef.current);
-    };
-  }, []);
+  //     // dispatch({
+  //     //   type: "FINISH_SEARCH",
+  //     //   results: _.filter(source, isMatch),
+  //     // });
+  //   }, 300);
+  // }, []);
+  // React.useEffect(() => {
+  //   return () => {
+  //     clearTimeout(timeoutRef.current);
+  //   };
+  // }, []);
 
   // useEffect(() => {
   //   console.log('GET')
