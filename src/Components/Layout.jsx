@@ -13,7 +13,7 @@ const Layout = ({ children }) => {
   useEffect(() => {
     const { pathname } = location;
     setCurrentPath(pathname);
-    console.log(pathname);
+    // console.log(pathname);
   }, [location]);
 
   return (

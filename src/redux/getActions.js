@@ -51,19 +51,3 @@ export const reqGetFlights = (i) => {
     dispatch({ type: FLIGHTS, payload: flights.data });
   };
 };
-
-export const reqGetCountrys = () => {
-  return async (dispatch) => {
-    const country = await axios.get(`http://localhost:8080/api/updateAirports`);
-    // dispatch({type: COUNTRY, payload: country})
-
-    console.log("country", country);
-  };
-};
-
-export const serviceReqGet = () => {
-  return async (dispatch) => {
-    const result = await axios.get(`http://localhost:8080/api/serviceFunction`);
-    console.log(result);
-  };
-};

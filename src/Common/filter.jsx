@@ -6,32 +6,23 @@ import { Form, Search, Select } from "semantic-ui-react";
 import { Button, Grid, Icon, Dropdown } from "semantic-ui-react";
 import styles from "./styles/filter.module.scss";
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+
+// import { reqSearch } from "../redux/postActions";
+// import { reqGetCountry } from "../redux/getActions";
+import { reqGetAllCountries } from "../redux/country_actions";
+import _ from "lodash";
 const Filter = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const axiosInstance = useSelector((state) => state.axios_instance.instance);
+
+  const country = useSelector((state) => state.country.all_countries);
+  const state = useSelector((state) => state.search);
+  // const city = useSelector((state) => state.city.city_airport_dislocation);
+  // const airports = useSelector((state) => state.airports.res);
   // const city = useSelector((state) => state.city.city_o_d);
   const [citys, setCitys] = useState([]);
-
-  // useEffect(() => {
-  //   // console.log("[city]", city);
-  //   setCitys(
-  //     city.map((item) => {
-  //       // setCitys(...item, item.name)
-  //       // console.log(item.name);
-  //       return {
-  //         key: item.name,
-  //         text: item.name,
-  //         value: item.name,
-  //       };
-  //     })
-  //   );
-  // }, [city]);
-
-  // console.log("citys", citys);
-  const [val, setVal] = useState();
-  const handleOnSearchChange = (e) => {
-    console.log("SEARCH", e.target.value);
-    setVal(e.target.value);
-  };
 
   const radioBtn = [
     {
@@ -57,6 +48,90 @@ const Filter = () => {
     },
   ];
 
+  // useEffect(() => {
+  //   console.log("GET");
+  //   dispatch(reqGetAllCountries(axiosInstance));
+  // }, [axiosInstance]);
+
+  // useEffect(() => {
+  //   console.log(country);
+  // }, [country]);
+
+  // const [state, dispatch] = React.useReducer(exampleReducer, initialState)
+  // const { loading, results, value } = state;
+
+  // const timeoutRef = React.useRef();
+  // const handleSearchChange = React.useCallback((e, data) => {
+  //   clearTimeout(timeoutRef.current);
+  //   dispatch({ type: "START_SEARCH", query: data.value });
+
+  //   timeoutRef.current = setTimeout(() => {
+  //     if (data.value.length === 0) {
+  //       dispatch({ type: "CLEAN_QUERY" });
+  //       return;
+  //     }
+
+  //     const re = new RegExp(_.escapeRegExp(data.value), "i");
+  //     const isMatch = (result) => re.test(result.title);
+
+  //     // dispatch({
+  //     //   type: "FINISH_SEARCH",
+  //     //   results: _.filter(source, isMatch),
+  //     // });
+  //   }, 300);
+  // }, []);
+  // React.useEffect(() => {
+  //   return () => {
+  //     clearTimeout(timeoutRef.current);
+  //   };
+  // }, []);
+
+  // useEffect(() => {
+  //   console.log('GET')
+  //   dispatch(reqGetCountry(axiosInstance))
+  // }, [axiosInstance]);
+
+  // useEffect(() => {
+  //   console.log('[country]', country)
+  // }, [country])
+
+  // useEffect(() => {
+  //   // console.log("[city]", city);
+  //   setCitys(
+  //     city.map((item) => {
+  //       // setCitys(...item, item.name)
+  //       // console.log(item.name);
+  //       return {
+  //         key: item.name,
+  //         text: item.name,
+  //         value: item.name,
+  //       };
+  //     })
+  //   );
+  // }, [city]);
+
+  // console.log("citys", citys);
+
+  const [val, setVal] = useState();
+
+  const handleOnSearchChange = (e) => {
+    let obj = {
+      value: e.target.value,
+    };
+    // dispatch(reqSearch(axiosInstance, obj));
+
+    console.log("SEARCH", e.target.value);
+    setVal(e.target.value);
+  };
+
+  // useEffect(() => {
+  //   setVal(city);
+  // }, [city]);
+
+  useEffect(() => {
+    console.log("[val]", val);
+  }, [val]);
+
   return (
     <Grid>
       <Grid.Row centered>
@@ -81,11 +156,12 @@ const Filter = () => {
                   <Form.Group
                   // widths={"equal"}
                   >
-                    <Form.Field
+                    <Form.Select
                       control={Search}
                       // as={Search}
                       // onResultSelect={""}
                       onSearchChange={handleOnSearchChange}
+                      // options={}
                       results={val}
                       className={styles.form1}
                       label='From'
@@ -94,9 +170,9 @@ const Filter = () => {
                     />
                     <Form.Field
                       control={Search}
-                      // options={citys}
+                      options={val}
                       onSearchChange={handleOnSearchChange}
-                      results={val}
+                      // results={val}
                       // onResultSelect={""}
                       className={styles.form2}
                       label='To'

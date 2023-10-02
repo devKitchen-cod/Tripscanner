@@ -5,14 +5,14 @@ import { useDispatch } from "react-redux";
 import { Button } from "semantic-ui-react";
 import { Form } from "semantic-ui-react";
 import { Grid } from "semantic-ui-react";
-import { reqGetCountrys, serviceReqGet } from "../../../redux/getActions";
+// import { reqGetCountrys, serviceReqGet } from "../../../redux/getActions";
 import TableTickets from "../tables/table-tickets";
 
 const AddTickets = () => {
   const dispatch = useDispatch()
 
   const handleClick = () => {
-    dispatch(serviceReqGet())
+    // dispatch(serviceReqGet())
   }
   return (
     <Grid>

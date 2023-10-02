@@ -12,6 +12,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { reqLogout } from "../redux/actions";
 import AdminModal from "./adminModal";
+
 function Header() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -22,9 +23,9 @@ function Header() {
   const isAuth = useSelector((state) => state.login.isAuth);
   const name = useSelector((state) => state.auth.email);
   const key = useSelector((state) => state.auth.key);
-  useEffect(() => {
-    console.log("key =", key);
-  }, [key]);
+  // useEffect(() => {
+  //   console.log("key =", key);
+  // }, [key]);
 
   const handleLogOut = () => {
     localStorage.setItem("token", null);
@@ -34,26 +35,36 @@ function Header() {
 
   return (
     <Grid className={styles.header}>
-      <Grid.Row className={styles.headerRow}  verticalAlign ={'middle'} centered columns={16}>
-
+      <Grid.Row
+        className={styles.headerRow}
+        verticalAlign={"middle"}
+        centered
+        columns={16}>
         <Grid.Column width={9} className={styles.logo}>
           <span onClick={() => navigate("/")}>Tripscanner</span>
         </Grid.Column>
 
-        <Grid.Column width={5}  className={styles.groupBtn1}>
+        <Grid.Column width={5} className={styles.groupBtn1}>
           <Grid>
-            <Grid.Row  verticalAlign ={'middle'} className ={styles.groupBtnRow} >
-              <Grid.Column width={8} textAlign ={'right'} floated = {'right'} className={styles.help}>
+            <Grid.Row verticalAlign={"middle"} className={styles.groupBtnRow}>
+              <Grid.Column
+                width={8}
+                textAlign={"right"}
+                floated={"right"}
+                className={styles.help}>
                 <a href='#'>Help</a>
               </Grid.Column>
 
-              <Grid.Column width={5} textAlign ={'right'} className={styles.settingsBtn}>
+              <Grid.Column
+                width={5}
+                textAlign={"right"}
+                className={styles.settingsBtn}>
                 <Button className={styles.settings}>
                   English(UK) {getUnicodeFlagIcon("ua")} Ukraine $USD
                 </Button>
               </Grid.Column>
 
-              <Grid.Column width={3} textAlign ={'right'} >
+              <Grid.Column width={3} textAlign={"right"}>
                 {isAuth ? (
                   // <Button className={styles.login}>
                   <Dropdown text={name} className={styles.login1}>
@@ -88,14 +99,12 @@ function Header() {
                   </Button>
                 )}
               </Grid.Column>
-
             </Grid.Row>
           </Grid>
 
           <AuthModal setOpen1={setOpen1} open1={open1} type={type} />
           <AdminModal setOpenAdm={setOpenAdmMod} openAdm={open_admin_modal} />
         </Grid.Column>
-
       </Grid.Row>
     </Grid>
   );

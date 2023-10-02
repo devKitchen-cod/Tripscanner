@@ -22,25 +22,24 @@ const StartPage = () => {
   // const country = useSelector((state) => state.country.res);
   // const flights1 = useSelector((state) => state.flights.res);
   
-  useEffect(() => {
-    dispatch({
-      type: AXIOSINSTANCE_SERVER_URL,
-      payload: process.env.REACT_APP_TRIPSCANNER_SERVER_API_URL,
-    });
+  // useEffect(() => {
+  //   dispatch({
+  //     type: AXIOSINSTANCE_SERVER_URL,
+  //     payload: process.env.REACT_APP_TRIPSCANNER_SERVER_API_URL,
+  //   });
 
-    let axiosInstance = axios.create({
-      baseURL: process.env.REACT_APP_TRIPSCANNER_SERVER_API_URL,
-      cache: false,
-      headers: {
-        authorization: `Bearer ${aInstance.token}`,
-      },
-    });
-    dispatch({ type: AXIOSINSTANCE, payload: axiosInstance });
-    console.log("START");
-  }, []);
+  //   let axiosInstance = axios.create({
+  //     baseURL: process.env.REACT_APP_TRIPSCANNER_SERVER_API_URL,
+  //     cache: false,
+  //     headers: {
+  //       authorization: `Bearer ${aInstance.token}`,
+  //     },
+  //   });
+  //   dispatch({ type: AXIOSINSTANCE, payload: axiosInstance });
+  //   console.log("START");
+  // }, []);
 
-
-
+  
   return (
     <Grid>
       <Grid.Row className={styles.row1}>

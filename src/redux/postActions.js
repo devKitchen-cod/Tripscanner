@@ -1,20 +1,35 @@
 /** @format */
 
 import axios from "axios";
-import { AIRPORTS, CITY_AIRPORT, CITY_O_D, FINDEDAIRPORTS } from "./redux-types";
+import {
+  AIRPORTS,
+  CITY_AIRPORT,
+  CITY_O_D,
+  FINDEDAIRPORTS,
+  SEARCH,
+} from "./redux-types";
+
+export const reqSearch = (axiosInstance, obj) => {
+  return async (dispatch) => {
+    console.log('obj', obj)
+    const result = await axiosInstance.post("/search", obj);
+    console.log('[result]', result.data);
+    dispatch({ type: SEARCH, payload: result });
+  };
+};
 
 export const reqFindCityAirports = (axiosInstance, obj) => {
   return async (dispatch) => {
     const city = await axiosInstance.post("/getCity", obj);
-    console.log('city', city)
+    console.log("city", city);
     let res = city.data.map((item, key) => {
-      return{
+      return {
         key: key,
         text: item.name,
-        value: item._id
-      }
-    })
-    dispatch({type: CITY_AIRPORT, payload: res})
+        value: item._id,
+      };
+    });
+    dispatch({ type: CITY_AIRPORT, payload: res });
   };
 };
 
@@ -75,6 +90,7 @@ export const reqFindAirports = (axiosInstance, obj) => {
     });
   };
 };
+
 export const reqAddFlights = (axiosInstance, obj) => {
   return async (dispatch) => {
     const res = await axiosInstance.post("/addFlight", obj);
