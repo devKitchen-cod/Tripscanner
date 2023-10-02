@@ -189,20 +189,20 @@ const init_search = {
   value: "",
 };
 
-// function Search(state = init_search, action) {
-//   switch (action.type) {
-//     case CLEAN_QUERY:
-//       return state;
-//     case START_SEARCH:
-//       return { ...state, loading: true, value: action.query };
-//     case FINISH_SEARCH:
-//       return { ...state, loading: false, results: action.results };
-//     case UPDATE_SELECTION:
-//       return { ...state, value: action.selection };
-//     default:
-//       throw new Error();
-//   }
-// }
+function Search(state = init_search, action) {
+  switch (action.type) {
+    case CLEAN_QUERY:
+      return state;
+    case START_SEARCH:
+      return { ...state, loading: true, value: action.query };
+    case FINISH_SEARCH:
+      return { ...state, loading: false, results: action.results };
+    case UPDATE_SELECTION:
+      return { ...state, value: action.selection };
+    default:
+      return state;
+  }
+}
 
 export const rootReducer = combineReducers({
   axios_instance: AxiosInstance,
@@ -212,5 +212,5 @@ export const rootReducer = combineReducers({
   airports: airportReducer,
   country: countryReducer,
   city: cityReducer,
-  // search: Search,
+  search: Search,
 });

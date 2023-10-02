@@ -6,10 +6,12 @@ export const reqCreateCountry = () => {};
 
 export const reqGetAllCountries = (axiosInstance) => {
   return async (dispatch) => {
-    console.log('i')
-    const allCountries = await axiosInstance.get("/getAllCountries");
-    // console.log("[allCountries]", allCountries.data);
-    dispatch({ type: ALLCOUNTRIES, payload: allCountries.data });
+    try {
+      const allCountries = await axiosInstance.get("/getAllCountries");
+      dispatch({ type: ALLCOUNTRIES, payload: allCountries.data });
+    } catch (error) {
+      console.log(error);
+    }
   };
 };
 
