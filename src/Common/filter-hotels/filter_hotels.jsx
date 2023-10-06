@@ -8,7 +8,8 @@ import { Button } from "semantic-ui-react";
 import { Dropdown } from "semantic-ui-react";
 import { Form } from "semantic-ui-react";
 import { Grid } from "semantic-ui-react";
-import styles from "./styles/filter_hotels.module.scss";
+
+import styles from "./filter_hotels.module.scss";
 const FilterHotels = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const handleClick = (e, titleProps) => {

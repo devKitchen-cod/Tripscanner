@@ -7,12 +7,13 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Dropdown, Grid, Icon, Input, Menu } from "semantic-ui-react";
-import { testResSerch } from "../mock/mockdata";
-import { reqGetCity, reqGetCountry, reqGetFlights } from "../redux/getActions";
-import About from "./adminHomeTab/about";
-import Add from "./adminHomeTab/add";
-import ResCard from "./result_card";
-import styles from "./styles/admin-profile-layout.module.scss";
+import { testResSerch } from "../../mock/mockdata";
+import { reqGetCity, reqGetCountry, reqGetFlights } from "../../redux/getActions";
+import About from "../adminHomeTab/about";
+import Add from "../adminHomeTab/add";
+import ResCard from "../result-card/result_card";
+
+import styles from "./admin-profile-layout.module.scss";
 // import { testResSerch } from "../mock/mockdata";
 // import ResCard from "./result_card";
 const AdminProfileLayout = () => {

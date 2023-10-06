@@ -1,12 +1,13 @@
 /** @format */
 
 import React, { useEffect, useRef, useState } from "react";
-import styles from "./styles/result_card.module.scss";
 import { Button, Grid, Icon } from "semantic-ui-react";
 import { useNavigate } from "react-router-dom";
-import FlightDurance from "./flight-durance";
-
+import FlightDurance from "../flight-durance/flight-durance";
 import { animated, useSpring } from "@react-spring/web";
+
+import styles from "./result_card.module.scss";
+
 
 const ResCard = (flight_card_data) => {
   const obj = flight_card_data.item;

@@ -1,10 +1,12 @@
 /** @format */
 
 import React, { useState } from "react";
-import styles from "./styles/filter_flight_search.module.scss";
 import { Divider, Form, Grid, Icon } from "semantic-ui-react";
 import { Accordion } from "semantic-ui-react";
-import { Airlines } from "../mock/mockdata";
+import { Airlines } from "../../mock/mockdata";
+
+import styles from "./filter_flight_search.module.scss";
+
 
 const FilterSearch = () => {
   const [openStops, setOpenStops] = useState(true);

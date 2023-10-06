@@ -4,11 +4,11 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Form, Input, Label, Search, Select } from "semantic-ui-react";
 import { Button, Grid, Icon, Dropdown } from "semantic-ui-react";
-import styles from "./styles/filter.module.scss";
+import styles from "./filter.module.scss";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { reqGetFindedCities } from "../redux/search_actions";
-import DropdownResults from "./dropdownResults";
+import { reqGetFindedCities } from "../../redux/search_actions";
+import DropdownResults from "../dropdown-results/dropdownResults";
 
 const radioBtn = [
   {

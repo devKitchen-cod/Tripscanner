@@ -10,8 +10,8 @@ import {
   Menu,
 } from "semantic-ui-react";
 import styles from "./styles/ticket-details-page.module.scss";
-import ResCard from "../Common/result_card";
-import DetailCard from "../Common/detail_card";
+import ResCard from "../Common/result-card/result_card";
+import DetailCard from "../Common/detail-card/detail_card";
 // import blueSvg from "../static/backg.svg"
 
 const TicketDetailsPage = () => {

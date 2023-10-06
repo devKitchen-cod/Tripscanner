@@ -2,9 +2,9 @@
 
 import React from "react";
 import { Grid } from "semantic-ui-react";
-import styles from "../Common/styles/detail_card.module.scss";
-import FlightDurance from "./flight-durance";
-import CustomizedFlight from "./styles/customized_flight";
+import styles from "./detail_card.module.scss";
+import FlightDurance from "../flight-durance/flight-durance";
+import CustomizedFlight from "../customized_flight";
 const DetailCard = (obj1) => {
   const obj = obj1.obj;
   return (

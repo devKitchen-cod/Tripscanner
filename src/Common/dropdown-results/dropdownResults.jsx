@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Grid } from "semantic-ui-react";
-import styles from "./styles/filter.module.scss";
+import styles from "../filter/filter.module.scss";
 
 const DropdownResults = (options, onSelect) => {
   const result = useSelector((state) => state.search.results);

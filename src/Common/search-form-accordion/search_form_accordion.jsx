@@ -1,11 +1,13 @@
 /** @format */
 
 import React from "react";
-import styles from "./styles/search_form_accordion.module.scss";
 import { useState } from "react";
 import { Button, Dropdown, Form, Grid, Icon } from "semantic-ui-react";
-import { radioBtn } from "../mock/mockdata";
+import { radioBtn } from "../../mock/mockdata";
 import { Navigate } from "react-router-dom";
+
+import styles from "./search_form_accordion.module.scss";
+
 const SearchForm = () => {
   const [isopen, setIsiopen] = useState(false);
   const obj = {

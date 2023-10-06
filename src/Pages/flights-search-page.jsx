@@ -5,11 +5,11 @@ import { Icon } from "semantic-ui-react";
 import { Button } from "semantic-ui-react";
 import { Grid } from "semantic-ui-react";
 import { Dropdown } from "semantic-ui-react";
-
 import { testResSerch } from "../mock/mockdata";
-import ResCard from "../Common/result_card";
-import FilterSearch from "../Common/filter_flight_search";
-import SearchForm from "../Common/search_form_accordion";
+
+import ResCard from "../Common/result-card/result_card";
+import FilterSearch from "../Common/filter-flight-search/filter_flight_search";
+import SearchForm from "../Common/search-form-accordion/search_form_accordion";
 
 const FlightSearch = () => {
 	const [open, setOpen] = useState(true);

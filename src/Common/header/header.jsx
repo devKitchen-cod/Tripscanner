@@ -4,16 +4,18 @@ import React, { useEffect } from "react";
 import { Dropdown, Icon } from "semantic-ui-react";
 import { Button } from "semantic-ui-react";
 import { Grid } from "semantic-ui-react";
-import styles from "./styles/header.module.scss";
 import getUnicodeFlagIcon from "country-flag-icons/unicode";
 import { useState } from "react";
-import AuthModal from "./modal";
+import AuthModal from "../modal/modal";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { reqLogout } from "../redux/actions";
-import AdminModal from "./adminModal";
+import { reqLogout } from "../../redux/actions";
+import AdminModal from "../admin-modal/adminModal";
 
-function Header() {
+import styles from "./header.module.scss";
+
+
+function CustomHeader() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [type, setType] = useState("");
@@ -110,7 +112,7 @@ function Header() {
   );
 }
 
-export default Header;
+export default CustomHeader;
 
 /*
 <Grid.Row style={{ paddingLeft: "5vh", paddingRight: "5vh" }}>

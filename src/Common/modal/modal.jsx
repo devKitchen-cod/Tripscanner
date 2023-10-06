@@ -5,8 +5,8 @@ import { useDispatch } from "react-redux";
 import { Button, Grid } from "semantic-ui-react";
 import { Form } from "semantic-ui-react";
 import { Modal } from "semantic-ui-react";
-import { reqAuth, reqLogin } from "../redux/actions";
-import styles from "../../src/Common/styles/auth_modal.module.scss";
+import { reqAuth, reqLogin } from "../../redux/actions";
+import styles from "./auth_modal.module.scss";
 
 const AuthModal = ({ setOpen1, open1 }) => {
   const dispatch = useDispatch();

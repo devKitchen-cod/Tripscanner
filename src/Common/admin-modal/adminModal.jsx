@@ -3,8 +3,8 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Button, Form, Grid, Modal } from "semantic-ui-react";
-import { reqGetAdmin } from "../redux/actions";
-import styles from "./styles/admin_modal.module.scss";
+import { reqGetAdmin } from "../../redux/actions";
+import styles from "./admin_modal.module.scss";
 const AdminModal = ({ setOpenAdm, openAdm }) => {
   const [key, setKey] = useState("");
   const email = useSelector((state) => state.auth.email);

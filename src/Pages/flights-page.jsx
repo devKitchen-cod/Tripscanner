@@ -2,12 +2,14 @@
 
 import React, { useEffect } from "react";
 import { Button, Card, Grid, Icon } from "semantic-ui-react";
-import styles from "./styles/startpage.module.scss";
-import Filter from "../Common/filter";
+import Filter from "../Common/filter/filter";
 import { flights, options } from "../mock/mockdata";
-import Footer from "../Common/footer";
+import Footer from "../Common/footer/footer";
 import { useDispatch, useSelector } from "react-redux";
-import { reqGetAirports, reqGetCity, reqGetCountry, reqGetFlights } from "../redux/getActions";
+
+import styles from "./styles/startpage.module.scss";
+
+// import { reqGetAirports, reqGetCity, reqGetCountry, reqGetFlights } from "../redux/getActions";
 import axios from "axios";
 import { AXIOSINSTANCE, AXIOSINSTANCE_SERVER_URL } from "../redux/redux-types";
 

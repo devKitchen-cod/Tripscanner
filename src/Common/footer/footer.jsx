@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid } from "semantic-ui-react";
-import { countries, footerData } from "../mock/mockdata";
-import styles from "./styles/footer.module.scss";
+import { countries, footerData } from "../../mock/mockdata";
+import styles from "./footer.module.scss";
 
 const Footer = () => {
 	return (
