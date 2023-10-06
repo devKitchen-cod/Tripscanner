@@ -40,8 +40,10 @@ const Filter = () => {
   const axiosInstance = useSelector((state) => state.axios_instance.instance);
   const result = useSelector((state) => state.search.results);
   const [state, setState] = useState([]);
+  
 
   const handleSet = (e, data) => {
+    if(!data.value.length)return console.log('error')
     dispatch(reqGetFindedCities(axiosInstance, data.value));
   };
   useEffect(() => {
