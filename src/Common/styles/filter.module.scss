@@ -1,132 +1,71 @@
+/** @format */
+
 :global(#app) {
-	.filter {
-		// height: 100%;
-		// margin-top: -20px;
-		background-color: #111236;
-		color: #fff;
-		border-radius: 3px;
-	}
+  .filter {
+    background-color: #111236;
+    color: #fff;
+    border-radius: 3px;
+  }
 
+  .radioBtnGroup {
+    text-align: center;
+    margin-top: 2%;
+    .filterGroup {
+      margin-left: 1%;
+      display: inline;
+      font-size: 17px;
+    }
+    .radioLabel {
+      margin-left: 1%;
+    }
+    label {
+      // display: block;
+      color: #fff;
+      // font-size: 0.75rem;
+      font-weight: 700;
+      line-height: 1rem;
+    }
+  }
 
-	.radioBtnGroup {
-		text-align: center;
-		margin-top: 2%;
-		.filterGroup {
-			margin-left: 1%;
-			display: inline;
-			font-size: 17px;
-		}
-		.radioLabel {
-			margin-left: 1%;
-		}
-	}
+  .findBtn1 {
+    border-radius: 0.375rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    background-color: #00a698;
+    padding: 0.8rem 1rem;
+    color: #fff;
+    width: 100%;
+    margin-left: 0;
+  }
 
-	.inputGroup {
-		label {
-			display: block;
-			color: #fff;
-			font-size: 0.75rem;
-			font-weight: 700;
-			line-height: 1rem;
-		}
-	}
-	.inputGroupColumn {
-		// display: flex;
-		// justify-content: lef;
-		// margin-left: 1%;
-		// .changrBtn {
-		// 	border: none;
-		// 	background-color: #fff;
-		// 	background-image: url("../../static/changeArrow.svg");
-		// 	background-size: cover;
-		// 	margin-top: 18px;
-		// 	min-width: 3em;
-		// 	max-height: 3em;
-		// }
-		.form1,
-		.form2 {
-			min-width: 25%;
-			
-			// padding: 0;
-			input {
-				// min-height: 3em;
-				// border-radius: 0;
-			}
-		}
-		// .form3 {
-		// 	input {
-		// 		border-left: 1px solid gray;
-		// 	}
-		// }
-		// .form3,
-		// .form4 {
-		// 	min-width: 9em;
-		// 	padding: 0;
-		// 	input {
-		// 		min-height: 3em;
-		// 		border-radius: 0;
-		// 	}
-		// }
-		// .select1 {
-		// 	border-radius: 0;
-		// 	padding: 0;
-		// }
-		// .select1 {
-		// 	input {
-		// 		border-radius: 0;
-		// 	}
-		// }
+  .dropdown {
+    width: 100%;
+  }
 
-		.dropdown {
-			// margin-top: 4px;
-			// height: 3em;
-			min-width: 25%;
-			padding: 0;
-			// border-left: 1px solid gray;
-			// border-radius: 0;
-			// border-bottom-right-radius: 3px;
-			// border-top-right-radius: 3px;
-		}
-	}
+  .block {
+    display: flex;
+    align-items: end;
+  }
 
-	// .labelGroup {
-	// 	margin-top: -10px;
-	// 	.label1 {
-	// 		margin-right: 130px;
-	// 	}
-	// 	.label3 {
-	// 		display: block;
-	// 		margin-top: 20px;
-	// 	}
-	// 	.label1,
-	// 	.label2,
-	// 	.label3 {
-	// 		cursor: pointer;
-	// 	}
-	// }
+  .label {
+    margin-bottom: 0;
+  }
 
-	.findBtn1 {
-		min-width: 10%;
-		margin-top: 2.1%;
-		margin-left: 1%;
-		// max-height: 20%e;
-		height: 39px;
-		border-radius: 0.375rem;
-		font-size: 1.5rem;
-		// line-height: 1.875rem;
-		// font-weight: 700;
-		// text-align: center;
-		// text-decoration: none;
-		cursor: pointer;
-		background-color: #00a698;
-		padding: 0.8rem 1rem;
-		// margin: 0;
-		// width: 10em;
-		// float: r/ighte;
-		color: #fff;
-		
-		p{
-			margin-top: -10px;
-		}
-	}
+  .scrolabelContainer {
+    max-height: 150px;
+	width: 87%;
+	border-radius: 3px;
+    overflow-y: auto;
+	overflow-x: none;
+    position: absolute;
+	background-color: #fcfcfc;
+	color: #111236;
+	list-style: none;
+	z-index: 1;
+  }
+
+  .item{
+	padding: 0.5rem 1rem;
+	border-bottom: 1px solid rgba(183, 181, 181, 0.727);
+  }
 }

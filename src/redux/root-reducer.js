@@ -31,6 +31,7 @@ import {
   START_SEARCH,
   FINISH_SEARCH,
   UPDATE_SELECTION,
+  FINDEDCITIES,
 } from "./redux-types";
 
 const init_aInstance = {
@@ -121,7 +122,6 @@ function countryReducer(state = init_country, action) {
 const init_city = {
   all_cities: [],
   city_by_id: [],
-
   city_o_d: [],
   city_airport_dislocation: [],
   temp: [],
@@ -133,13 +133,13 @@ function cityReducer(state = init_city, action) {
       return { ...state, all_cities: action.payload };
     case CITYBYID:
       return { ...state, city_by_id: action.payload };
-
     case CITY_O_D:
       return { ...state, city_o_d: action.payload };
     case ADDCITY:
       return { ...state, temp: action.payload };
     case CITY_AIRPORT:
       return { ...state, city_airport_dislocation: action.payload };
+  
     default:
       return state;
   }
@@ -194,9 +194,9 @@ function Search(state = init_search, action) {
     case CLEAN_QUERY:
       return state;
     case START_SEARCH:
-      return { ...state, loading: true, value: action.query };
+      return { ...state, loading: true, value: action.payload };
     case FINISH_SEARCH:
-      return { ...state, loading: false, results: action.results };
+      return { ...state, loading: false, results: action.payload };
     case UPDATE_SELECTION:
       return { ...state, value: action.selection };
     default:
