@@ -14,34 +14,6 @@ import axios from "axios";
 import { AXIOSINSTANCE, AXIOSINSTANCE_SERVER_URL } from "../redux/redux-types";
 
 const StartPage = () => {
-  const f = flights;
-  const dispatch = useDispatch();
-
-  const aInstance = useSelector((state) => state.axios_instance);
-
-  // const city = useSelector((state) => state.city.city_o_d);
-  // const airports = useSelector((state) => state.airports.res);
-  // const country = useSelector((state) => state.country.res);
-  // const flights1 = useSelector((state) => state.flights.res);
-  
-  // useEffect(() => {
-  //   dispatch({
-  //     type: AXIOSINSTANCE_SERVER_URL,
-  //     payload: process.env.REACT_APP_TRIPSCANNER_SERVER_API_URL,
-  //   });
-
-  //   let axiosInstance = axios.create({
-  //     baseURL: process.env.REACT_APP_TRIPSCANNER_SERVER_API_URL,
-  //     cache: false,
-  //     headers: {
-  //       authorization: `Bearer ${aInstance.token}`,
-  //     },
-  //   });
-  //   dispatch({ type: AXIOSINSTANCE, payload: axiosInstance });
-  //   console.log("START");
-  // }, []);
-
-  
   return (
     <Grid>
       <Grid.Row className={styles.row1}>
@@ -265,7 +237,7 @@ const StartPage = () => {
 
           <Grid className={styles.linkGroup}>
             <Grid.Row columns={4}>
-              {f.map((item) => (
+              {flights.map((item) => (
                 <Grid.Column className={styles.links}>
                   <a href={item.url}>{item.text}</a>
                 </Grid.Column>
