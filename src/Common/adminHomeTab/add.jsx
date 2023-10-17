@@ -8,10 +8,11 @@ import FlightsForm from "./add-forms/add-flights-form";
 import AirportsForm from "./add-forms/add-airports-form";
 import AddTickets from "./add-forms/add-tickets";
 import AddCityform from "./add-forms/add-city-form";
+import AddClassFlightForm from "./add-forms/add-classFlight-form";
 
 const Add = () => {
   const [active, setActive] = useState("flight");
-  
+
   return (
     <Grid>
       <Grid.Row>
@@ -19,26 +20,33 @@ const Add = () => {
           <Menu pointing>
             <Menu.Item
               name='Add Flights'
-              active={active === 'flight'}
+              active={active === "flight"}
               onClick={() => setActive("flight")}
             />
             <Menu.Item
               name='Add Airports'
-              active={active === 'airports'}
+              active={active === "airports"}
               onClick={() => setActive("airports")}
             />
             <Menu.Item
               name='Add Tickets'
-              active={active === 'tickets'}
+              active={active === "tickets"}
               // onClick={this.handleItemClick}
               onClick={() => setActive("tickets")}
             />
             <Menu.Item
               name='Add City'
-              active={active === 'city'}
+              active={active === "city"}
               // onClick={this.handleItemClick}
               onClick={() => setActive("city")}
             />
+            <Menu.Item
+              name='Add Class Flight'
+              active={active === "class"}
+              // onClick={this.handleItemClick}
+              onClick={() => setActive("class")}
+            />
+
             <Menu.Menu position='right'>
               <Menu.Item>
                 <Input icon='search' placeholder='Search...' />
@@ -62,12 +70,14 @@ const menuFunc1 = (active) => {
     case "flight":
       return <FlightsForm />;
     case "airports":
-      return <AirportsForm/>;
+      return <AirportsForm />;
     case "tickets":
-      return <AddTickets/>;
+      return <AddTickets />;
     // return  <div>{testResSerch.map((item) => (<ResCard item = {item} />))}</div>
     case "city":
-      return <AddCityform/>;
+      return <AddCityform />;
+    case "class":
+      return <AddClassFlightForm />;
       break;
 
     default:

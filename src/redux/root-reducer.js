@@ -30,8 +30,13 @@ import {
   CLEAN_QUERY,
   START_SEARCH,
   FINISH_SEARCH,
-  UPDATE_SELECTION,
   FINDEDCITIES,
+  UPDATE_SELECTION_FROM,
+  UPDATE_SELECTION_TO,
+  FINISH_SEARCH_FROM,
+  FINISH_SEARCH_TO,
+  CREATECLASSFLIGHT,
+  GETALLCLASSESFLIGHT,
 } from "./redux-types";
 
 const init_aInstance = {
@@ -139,7 +144,7 @@ function cityReducer(state = init_city, action) {
       return { ...state, temp: action.payload };
     case CITY_AIRPORT:
       return { ...state, city_airport_dislocation: action.payload };
-  
+
     default:
       return state;
   }
@@ -185,8 +190,10 @@ function flightReduser(state = init_getFlights, action) {
 
 const init_search = {
   loading: false,
-  results: [],
-  value: "",
+  resultsFrom: [],
+  resultsTo: [],
+  valueFrom: "",
+  valueTo: "",
 };
 
 function Search(state = init_search, action) {
@@ -195,10 +202,30 @@ function Search(state = init_search, action) {
       return state;
     case START_SEARCH:
       return { ...state, loading: true, value: action.payload };
-    case FINISH_SEARCH:
-      return { ...state, loading: false, results: action.payload };
-    case UPDATE_SELECTION:
-      return { ...state, value: action.selection };
+    case FINISH_SEARCH_FROM:
+      return { ...state, loading: false, resultsFrom: action.payload };
+    case FINISH_SEARCH_TO:
+      return { ...state, loading: false, resultsTo: action.payload };
+    case UPDATE_SELECTION_FROM:
+      return { ...state, valueFrom: action.selectionFrom };
+    case UPDATE_SELECTION_TO:
+      return { ...state, valueTo: action.selectionTo };
+    default:
+      return state;
+  }
+}
+
+const init_flightClass = {
+  flight_classes: [],
+  res: [],
+};
+
+function ClassFlight(state = init_flightClass, action) {
+  switch (action.type) {
+    case CREATECLASSFLIGHT:
+      return { ...state, flight_classes: action.payload };
+    case GETALLCLASSESFLIGHT:
+      return { ...state, res: action.payload };
     default:
       return state;
   }
@@ -213,4 +240,5 @@ export const rootReducer = combineReducers({
   country: countryReducer,
   city: cityReducer,
   search: Search,
+  classFlight: ClassFlight,
 });

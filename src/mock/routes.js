@@ -1,6 +1,6 @@
 /** @format */
 
-// import AdminProfileLayout from "../Common/admin-profile-layout/admin-profile-layout";
+import AdminProfileLayout from "../Common/admin-profile-layout/admin-profile-layout";
 import FlightSearch from "../Pages/search-page";
 // import HotelsPage from "../Pages/hotels-page";
 // import StartPage from "../Pages/flights-page";
@@ -19,7 +19,7 @@ export const routes = [
   },
   {
     path: "/admin-profile",
-    // element: <AdminProfileLayout />,
+    element: <AdminProfileLayout />,
   },
   {
     path: "/add",
