@@ -8,7 +8,7 @@ import { Grid } from "semantic-ui-react";
 // import { reqGetCountrys, serviceReqGet } from "../../../redux/getActions";
 import TableTickets from "../tables/table-tickets";
 
-const AddTickets = () => {
+const AddPlaces = () => {
   const dispatch = useDispatch()
 
   const handleClick = () => {
@@ -131,4 +131,4 @@ const AddTickets = () => {
   );
 };
 
-export default AddTickets;
+export default AddPlaces;

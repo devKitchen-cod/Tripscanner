@@ -16,6 +16,7 @@ import {
   UPDATE_SELECTION_TO,
 } from "../../redux/redux-types";
 import { reqGetAllClassesFlight } from "../../redux/classFlight_actions";
+import { reqFindFlight } from "../../redux/flight_actoins";
 
 const radioBtn = [
   {
@@ -70,7 +71,15 @@ const Filter = () => {
       to: selectedOptionTo,
       type: selectedOptionClass,
     };
-    console.log("[params]", [params]);
+    const allFieldsHaveValue = Object.values(params).every(
+      (value) => value !== undefined && value !== null
+    );
+
+    if (axiosInstance && allFieldsHaveValue) {
+      dispatch(reqFindFlight(axiosInstance, params));
+    } else {
+      console.log("error", params);
+    }
   };
 
   useEffect(() => {
@@ -82,6 +91,7 @@ const Filter = () => {
   }, [resAllClasses]);
 
   useEffect(() => {
+    // console.log('resultFrom', resultFrom)
     setResFromState([]);
     setResFromState(resultFrom);
   }, [resultFrom]);
@@ -102,6 +112,7 @@ const Filter = () => {
   }, [searchTo]);
 
   useEffect(() => {
+    console.log("[selectedOptionFrom]", selectedOptionFrom);
     dispatch({
       type: UPDATE_SELECTION_FROM,
       selectionFrom: selectedOptionFrom,
@@ -137,12 +148,17 @@ const Filter = () => {
             selection
             defaultUpward
             options={resFromState}
-            onChange={(e, data) => setSelectedOptionFrom(data.value)}
+            onChange={(e, data) => {
+              let finded = resFromState.find((item) => {
+                if (item.value === data.value) return item;
+              });
+              setSelectedOptionFrom(finded);
+            }}
             onSearchChange={(e, data) => {
               setTemp(data.searchQuery);
               setResFromState([]);
             }}
-            value={valueFrom}
+            value={valueFrom?.value}
           />
         </Grid.Column>
 
@@ -155,12 +171,17 @@ const Filter = () => {
             selection
             defaultUpward
             options={resToState}
-            onChange={(e, data) => setSelectedOptionTo(data.value)}
+            onChange={(e, data) => {
+              let finded = resToState.find((item) => {
+                if (item.value === data.value) return item;
+              });
+              setSelectedOptionTo(finded);
+            }}
             onSearchChange={(e, data) => {
               setSearchTo(data.searchQuery);
               setResToState([]);
             }}
-            value={valueTo}
+            value={valueTo?.value}
           />
         </Grid.Column>
 
@@ -184,7 +205,7 @@ const Filter = () => {
             className={styles.findBtn1}
             onClick={() => {
               handleSearch();
-              navigate("/flight-search");
+              // navigate("/flight-search");
             }}
             icon
             labelPosition='right'>

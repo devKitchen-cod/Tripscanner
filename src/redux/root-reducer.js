@@ -37,6 +37,12 @@ import {
   FINISH_SEARCH_TO,
   CREATECLASSFLIGHT,
   GETALLCLASSESFLIGHT,
+  GETALLFLIGHT,
+  CREATEFLIGHT,
+  FINDFLIGHT,
+  CREATEAIRCRAFT,
+  FINDAIRCRAFTBYID,
+  GETALLAIRCRAFT,
 } from "./redux-types";
 
 const init_aInstance = {
@@ -171,12 +177,43 @@ function airportReducer(state = init_airports, action) {
   }
 }
 
-const init_getFlights = {
+const init_aircraftReducer = {
+  createdAircraft: [],
+  getAllAircrafts: [],
+  findedAircraftById: [],
+};
+function aircraftReducer(state = init_aircraftReducer, action) {
+  switch (action.type) {
+    case CREATEAIRCRAFT:
+      return { ...state, createdAircraft: action.payload };
+    case GETALLAIRCRAFT:
+      return { ...state, getAllAircrafts: action.payload };
+    case FINDAIRCRAFTBYID:
+      return { ...state, findedAircraftById: action.payload };
+    default:
+      return state;
+  }
+}
+
+const init_flightReduser = {
   saved_flight: {},
   res: [],
+
+  get_all_flight: [],
+  created_flight: [],
+  finded_flight: [],
 };
-function flightReduser(state = init_getFlights, action) {
+function flightReduser(state = init_flightReduser, action) {
   switch (action.type) {
+    case GETALLFLIGHT: {
+      return { ...state, get_all_flight: action.payload };
+    }
+    case CREATEFLIGHT: {
+      return { ...state, created_flight: action.payload };
+    }
+    case FINDFLIGHT: {
+      return { ...state, finded_flight: action.payload };
+    }
     case SAVEFLIGHT: {
       return { ...state, saved_flight: action.payload };
     }
@@ -196,7 +233,7 @@ const init_search = {
   valueTo: "",
 };
 
-function Search(state = init_search, action) {
+function searchReducer(state = init_search, action) {
   switch (action.type) {
     case CLEAN_QUERY:
       return state;
@@ -220,7 +257,7 @@ const init_flightClass = {
   res: [],
 };
 
-function ClassFlight(state = init_flightClass, action) {
+function classFlightReducer(state = init_flightClass, action) {
   switch (action.type) {
     case CREATECLASSFLIGHT:
       return { ...state, flight_classes: action.payload };
@@ -239,6 +276,7 @@ export const rootReducer = combineReducers({
   airports: airportReducer,
   country: countryReducer,
   city: cityReducer,
-  search: Search,
-  classFlight: ClassFlight,
+  search: searchReducer,
+  classFlight: classFlightReducer,
+  aircraft: aircraftReducer,
 });
