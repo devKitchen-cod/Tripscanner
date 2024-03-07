@@ -7,6 +7,7 @@ export const reqCreateAirport = (axiosInstance, obj) => {};
 export const reqGetAllAirport = (axiosInstance) => {
   return async (dispatch) => {
     const airports = await axiosInstance.get("/");
+    // const airports = '2'
     console.log("[airports]", airports);
     dispatch({ type: ALLAIRPORTS, payload: airports });
   };

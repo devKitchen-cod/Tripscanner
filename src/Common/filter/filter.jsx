@@ -83,7 +83,7 @@ const Filter = () => {
   };
 
   useEffect(() => {
-    dispatch(reqGetAllClassesFlight(axiosInstance));
+    // dispatch(reqGetAllClassesFlight(axiosInstance));
   }, [axiosInstance]);
 
   useEffect(() => {
@@ -203,7 +203,7 @@ const Filter = () => {
         <Grid.Column width={4} className={styles.filter}>
           <Button
             className={styles.findBtn1}
-            onClick={handleSearch}
+            onClick={()=>navigate('/flight-search')}
             icon
             labelPosition='right'>
             Search

@@ -21,8 +21,8 @@ export const reqFindFlight = (axiosInstance, params) => {
     try {
       console.log("[params]", params);
       const finded = await axiosInstance.post("/findFlights", params)
-      console.log(finded)
-    //   dispatch({type: FINDFLIGHT, payload: finded.data})
+      // console.log(finded)
+      dispatch({type: FINDFLIGHT, payload: finded.data})
     } catch (error) {
       console.log(error);
     }
