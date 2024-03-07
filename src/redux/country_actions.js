@@ -17,7 +17,7 @@ export const reqGetAllCountries = (axiosInstance) => {
 
 export const reqGetCountryById = (axiosInstance, id) => {
   return async (dispatch) => {
-    const countryById = await axiosInstance.post("/", id);
+    const countryById = await axiosInstance.post("//getCountryById", id);
     console.log("[countryById]", countryById.data);
     dispatch({ type: COUNTRYBYID, payload: countryById.data });
   };

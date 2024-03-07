@@ -1,4 +1,54 @@
+ // const handleSetFrom = (e, data) => {
+  //   console.log("[data from]", data.value);
+  //   // if (!data.value.length) return console.log("error");
+  //   // if (!isOpenFrom) setSelectedOptionFrom(true);
+  //   // console.log("[isOpenFrom]", isOpenFrom);
+  //   dispatch(reqGetFindedCitiesFrom(axiosInstance, data.value));
+  // };
 
+  // const handleSetTo = (e, data) => {
+  //   if (!data.value.length) return console.log("error");
+  //   dispatch(reqGetFindedCitiesTo(axiosInstance, data.value));
+  // };
+
+  // const handleSelectFrom = (option) => {
+  //   // console.log("[handleSelectFrom]", data.value);
+  //   setSelectedOptionFrom(option);
+  //   // setIsOpenFrom(!isOpenFrom);
+  // };
+
+  // const handleSelectTo = (option) => {
+  //   setSelectedOptionTo(option);
+  //   setIsOpenTo(!isOpenTo);
+  // };
+
+{/* <Input
+            onChange={handleSetFrom}
+            fluid
+            placeholder='Country, city or airport'
+            value={valueFrom}
+            
+          /> */}
+          {/* <div>
+            {isOpenFrom && (
+              <Grid>
+                <Grid.Row>
+                  <Grid.Column width={16}>
+                    <div className={styles.scrolabelContainer}>
+                      {resultFrom?.map((item, key) => (
+                        <div
+                          className={styles.item}
+                          onBlur={() => setIsOpenFrom(!isOpenFrom)}
+                          onClick={() => handleSelectFrom(item.title)}>
+                          {item.title}
+                        </div>
+                      ))}
+                    </div>
+                  </Grid.Column>
+                </Grid.Row>
+              </Grid>
+            )}
+          </div> */}
     // console.log('countries ==', airports.data)
     // let data = airports.data;
     // let origin_airports = data.origin_airports;
