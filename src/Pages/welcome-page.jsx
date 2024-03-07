@@ -10,8 +10,8 @@ import { useDispatch, useSelector } from "react-redux";
 import styles from "./styles/startpage.module.scss";
 
 // import { reqGetAirports, reqGetCity, reqGetCountry, reqGetFlights } from "../redux/getActions";
-import axios from "axios";
-import { AXIOSINSTANCE, AXIOSINSTANCE_SERVER_URL } from "../redux/redux-types";
+// import axios from "axios";
+// import { AXIOSINSTANCE, AXIOSINSTANCE_SERVER_URL } from "../redux/redux-types";
 
 const StartPage = () => {
   return (
