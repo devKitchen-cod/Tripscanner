@@ -30,8 +30,19 @@ import {
   CLEAN_QUERY,
   START_SEARCH,
   FINISH_SEARCH,
-  UPDATE_SELECTION,
   FINDEDCITIES,
+  UPDATE_SELECTION_FROM,
+  UPDATE_SELECTION_TO,
+  FINISH_SEARCH_FROM,
+  FINISH_SEARCH_TO,
+  CREATECLASSFLIGHT,
+  GETALLCLASSESFLIGHT,
+  GETALLFLIGHT,
+  CREATEFLIGHT,
+  FINDFLIGHT,
+  CREATEAIRCRAFT,
+  FINDAIRCRAFTBYID,
+  GETALLAIRCRAFT,
 } from "./redux-types";
 
 const init_aInstance = {
@@ -139,7 +150,7 @@ function cityReducer(state = init_city, action) {
       return { ...state, temp: action.payload };
     case CITY_AIRPORT:
       return { ...state, city_airport_dislocation: action.payload };
-  
+
     default:
       return state;
   }
@@ -166,12 +177,43 @@ function airportReducer(state = init_airports, action) {
   }
 }
 
-const init_getFlights = {
+const init_aircraftReducer = {
+  createdAircraft: [],
+  getAllAircrafts: [],
+  findedAircraftById: [],
+};
+function aircraftReducer(state = init_aircraftReducer, action) {
+  switch (action.type) {
+    case CREATEAIRCRAFT:
+      return { ...state, createdAircraft: action.payload };
+    case GETALLAIRCRAFT:
+      return { ...state, getAllAircrafts: action.payload };
+    case FINDAIRCRAFTBYID:
+      return { ...state, findedAircraftById: action.payload };
+    default:
+      return state;
+  }
+}
+
+const init_flightReduser = {
   saved_flight: {},
   res: [],
+
+  get_all_flight: [],
+  created_flight: [],
+  finded_flight: [],
 };
-function flightReduser(state = init_getFlights, action) {
+function flightReduser(state = init_flightReduser, action) {
   switch (action.type) {
+    case GETALLFLIGHT: {
+      return { ...state, get_all_flight: action.payload };
+    }
+    case CREATEFLIGHT: {
+      return { ...state, created_flight: action.payload };
+    }
+    case FINDFLIGHT: {
+      return { ...state, finded_flight: action.payload };
+    }
     case SAVEFLIGHT: {
       return { ...state, saved_flight: action.payload };
     }
@@ -185,20 +227,42 @@ function flightReduser(state = init_getFlights, action) {
 
 const init_search = {
   loading: false,
-  results: [],
-  value: "",
+  resultsFrom: [],
+  resultsTo: [],
+  valueFrom: "",
+  valueTo: "",
 };
 
-function Search(state = init_search, action) {
+function searchReducer(state = init_search, action) {
   switch (action.type) {
     case CLEAN_QUERY:
       return state;
     case START_SEARCH:
       return { ...state, loading: true, value: action.payload };
-    case FINISH_SEARCH:
-      return { ...state, loading: false, results: action.payload };
-    case UPDATE_SELECTION:
-      return { ...state, value: action.selection };
+    case FINISH_SEARCH_FROM:
+      return { ...state, loading: false, resultsFrom: action.payload };
+    case FINISH_SEARCH_TO:
+      return { ...state, loading: false, resultsTo: action.payload };
+    case UPDATE_SELECTION_FROM:
+      return { ...state, valueFrom: action.selectionFrom };
+    case UPDATE_SELECTION_TO:
+      return { ...state, valueTo: action.selectionTo };
+    default:
+      return state;
+  }
+}
+
+const init_flightClass = {
+  flight_classes: [],
+  res: [],
+};
+
+function classFlightReducer(state = init_flightClass, action) {
+  switch (action.type) {
+    case CREATECLASSFLIGHT:
+      return { ...state, flight_classes: action.payload };
+    case GETALLCLASSESFLIGHT:
+      return { ...state, res: action.payload };
     default:
       return state;
   }
@@ -212,5 +276,7 @@ export const rootReducer = combineReducers({
   airports: airportReducer,
   country: countryReducer,
   city: cityReducer,
-  search: Search,
+  search: searchReducer,
+  classFlight: classFlightReducer,
+  aircraft: aircraftReducer,
 });

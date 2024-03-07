@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 
 import { useLocation } from "react-router-dom";
 import { Grid } from "semantic-ui-react";
-import Header from "../Common/header";
+import CustomHeader from "../Common/header/header";
 
 const Layout = ({ children }) => {
   const location = useLocation();
@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
     <Grid>
       <Grid.Row centered columns={16}>
         <Grid.Column width={16}>
-          <div style={{marginTop: '1%', marginBottom: '1%'}}>{currentPath !== "/login" && <Header />}</div>
+          <div style={{marginTop: '1%', marginBottom: '1%'}}>{currentPath !== "/login" && <CustomHeader />}</div>
           <div>{children}</div>
         </Grid.Column>
       </Grid.Row>
