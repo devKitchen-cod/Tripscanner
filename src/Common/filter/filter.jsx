@@ -65,7 +65,7 @@ const Filter = () => {
   const [resToState, setResToState] = useState([]);
 
   const handleSearch = () => {
-    // console.log()
+    // console.log("fix");
     let params = {
       from: selectedOptionFrom,
       to: selectedOptionTo,
@@ -203,10 +203,7 @@ const Filter = () => {
         <Grid.Column width={4} className={styles.filter}>
           <Button
             className={styles.findBtn1}
-            onClick={() => {
-              handleSearch();
-              // navigate("/flight-search");
-            }}
+            onClick={handleSearch}
             icon
             labelPosition='right'>
             Search
