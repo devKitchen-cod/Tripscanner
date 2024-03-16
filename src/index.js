@@ -1,3 +1,5 @@
+/** @format */
+
 import { configureStore } from "@reduxjs/toolkit";
 import React from "react";
 import ReactDOM from "react-dom/client";
@@ -11,23 +13,23 @@ import App from "./App";
 import { rootReducer } from "./redux/root-reducer";
 
 export const store = createStore(
-	rootReducer,
-	compose(
-		applyMiddleware(thunk),
-		window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-	)
+  rootReducer,
+  // compose(
+  //   applyMiddleware(thunk),
+  //   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  // )
 );
 
 const styleLink = document.createElement("link");
 styleLink.rel = "stylesheet";
 styleLink.href =
-	"https://cdn.jsdelivr.net/npm/semantic-ui/dist/semantic.min.css";
+  "https://cdn.jsdelivr.net/npm/semantic-ui/dist/semantic.min.css";
 document.head.appendChild(styleLink);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-	<Provider store={store}>
-		<BrowserRouter>
-			<App />
-		</BrowserRouter>
-	</Provider>
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>
 );
